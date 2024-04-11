@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block page_title %}
+    صفحه ورود
+{% endblock page_title %}
+
+
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">login</button>
+</form>
+{% endblock content %}
