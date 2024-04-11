@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     #local 
     "accounts",
+    "store",
 ]
 
 MIDDLEWARE = [
@@ -165,6 +166,8 @@ LOGIN_REDIRECT_URL = "home_page"
 #allauth-settings
 ACCOUNT_AUTHENTICATIONS_METHOD = "email"
 ACCOUNT_SIGNUP_REDIRECT_URL = "home_page"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
 SITE_ID = 1
 # email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
