@@ -1,1 +1,35 @@
 {% extends "_base.html" %}
+{% load store_filters %}
+
+
+{% block page_title %}
+  home
+{% endblock page_title %}
+
+{% block content %}
+<h1>slider</h1>
+{% for product in products %}
+<h3>{{product.title}}</h3>
+<img src="{{product.images.all|first_image}}" alt="{{product.title}} image">
+{% endfor %}
+
+
+<h1>products</h1>
+
+{% for product in products %}
+  <h3>{{product.title}}</h3>
+  <h3>{{product.description}}</h3>
+
+  <ul>
+    {% for image in product.images.all %}
+    <li><img src="{{image.image.url}}" alt="{{product.title}} image"></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
+
+{% endblock content %}
+  
+
+
+
