@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.shortcuts import reverse
 class Category(models.Model):
     """Represent category obj in database."""
     title = models.CharField(max_length=255)
@@ -40,6 +40,10 @@ class Product(models.Model):
     def __str__(self):
         """Return product title."""
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse("product_detail", kwargs={"pk": self.pk})
+    
     
     
     

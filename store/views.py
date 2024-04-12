@@ -9,3 +9,9 @@ class HomeView(generic.ListView):
     template_name = "store/home.html"
     context_object_name = "products"
     
+    
+class ProductDetailView(generic.DetailView):
+    model = models.Product
+    template_name = "store/product_detail.html"
+    context_object_name = "product"
+    

@@ -17,13 +17,11 @@
 <h1>products</h1>
 
 {% for product in products %}
-  <h3>{{product.title}}</h3>
+  <a href="{{product.get_absolute_url}}"><h3>{{product.title}}</h3></a>
   <h3>{{product.description}}</h3>
 
   <ul>
-    {% for image in product.images.all %}
-    <li><img src="{{image.image.url}}" alt="{{product.title}} image"></li>
-    {% endfor %}
+    <img src="{{product.images.all|first_image}}" alt="{{product.title}} image">
   </ul>
 {% endfor %}
 
