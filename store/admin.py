@@ -1,9 +1,18 @@
 from django.contrib import admin
 from . import models
 
+
+class CommentInline(admin.TabularInline):
+    model = models.Comment
+    fields = ("author", "text", "rate", "status")
+
+
 @admin.register(models.Product)
 class ProductAdmin(admin.ModelAdmin):
     model = models.Product
+    inlines = (
+        CommentInline,
+    )
 
 
 @admin.register(models.Category)
