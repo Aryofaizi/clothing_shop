@@ -1,5 +1,7 @@
 from django.db import models
 from django.shortcuts import reverse
+from django.contrib.auth import get_user_model
+
 class Category(models.Model):
     """Represent category obj in database."""
     title = models.CharField(max_length=255)
@@ -87,3 +89,31 @@ class ProductImage(models.Model):
         return self.product.title + "Image"
     
 
+
+class Comment(models.Model):
+    COMMENT_RATE_FIVE_STAR = 5
+    COMMENT_RATE_FOUR_STAR = 4
+    COMMENT_RATE_THREE_STAR = 3
+    COMMENT_RATE_TWO_STAR = 2
+    COMMENT_RATE_ONE_STAR = 1
+    COMMENT_RATE_CHOICES = [
+        (COMMENT_RATE_FIVE_STAR, "EXCELLENT"),
+        (COMMENT_RATE_FOUR_STAR, "GOOD"),
+        (COMMENT_RATE_THREE_STAR, "NOT BAD"),
+        (COMMENT_RATE_TWO_STAR, "BAD"),
+        (COMMENT_RATE_ONE_STAR, "VERY BAD"),
+    ]
+    COMMENT_STATUS_WAITING = 'w'
+    COMMENT_STATUS_APPROVED = 'a'
+    COMMENT_STATUS_NOT_APPROVED = 'na'
+    COMMENT_STATUS = [
+        (COMMENT_STATUS_WAITING, 'Waiting'),
+        (COMMENT_STATUS_APPROVED, 'Approved'),
+        (COMMENT_STATUS_NOT_APPROVED, 'Not Approved'),
+    ]
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    text = models.TextField()
+    rate = models.IntegerField(choices=COMMENT_RATE_CHOICES)
+    status = models.CharField(max_length=2, choices=COMMENT_STATUS, default=COMMENT_STATUS_WAITING)
+    datetime_created = models.DateTimeField(auto_now_add=True)
+    datetime_modified = models.DateTimeField(auto_now=True)
