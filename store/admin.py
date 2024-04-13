@@ -14,3 +14,8 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(models.ProductImage)
 class ProductImageAdmin(admin.ModelAdmin):
     model = models.ProductImage
+    
+
+@admin.register(models.Comment)
+class Comment(admin.ModelAdmin):
+    model = models.Comment

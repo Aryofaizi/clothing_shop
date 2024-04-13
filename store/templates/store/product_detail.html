@@ -1,5 +1,6 @@
 {% extends "_base.html" %}
 
+{% load store_filters %}
 
 
 {% block page_title %}
@@ -13,6 +14,25 @@
       <h3>{{product.description}}</h3>
       <h3>{{product.price}}</h3>
 
+
+      <h1>comments {{product.comments.count}}</h1>
+      <ul>
+      {% for comment in product.comments.all %}
+                  <li>  <h1>{{comment.author.username}}</h1>
+                        <h3>{{comment.datetime_modified}}</h3>
+                        <h3>{{comment.text}}</h3>
+                        <h3>{{comment.rate}}</h3>
+                  </li>
+      {% endfor %}
+      </ul>
+
+
+      <h1>comment form</h1>
+      <form action="{% url 'comment_create' product.id %}" method="post">
+            {% csrf_token %}
+            {{comment_form.as_p}}
+            <button type="submit">Send</button>
+      </form>
 {% endblock content %}
 
 

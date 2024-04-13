@@ -1,4 +1,5 @@
 from django import template
+from store.models import Comment
 register = template.Library()
 
 @register.filter
