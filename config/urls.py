@@ -25,6 +25,7 @@ urlpatterns = [
     #third-party 
     path('accounts/', include('allauth.urls')),
     path("__debug__/", include("debug_toolbar.urls")),
+    path("rosetta/", include("rosetta.urls")),
     #local
     path("", include("store.urls")),
     #media urls
