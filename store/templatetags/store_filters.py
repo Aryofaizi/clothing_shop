@@ -11,3 +11,10 @@ def first_image(value):
 def last_four(value):
     """Represents the last four products created in database."""
     return value.order_by("-id")[:4]
+
+@register.filter
+def persian_number(value):
+    value = str(value)
+    persian_to_english = value.maketrans("1234567890", "۱۲۳۴۵۶۷۸۹۰")
+    return value.translate(persian_to_english)
+    

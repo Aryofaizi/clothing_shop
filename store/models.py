@@ -2,6 +2,8 @@ from django.db import models
 from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from django_ckeditor_5.fields import CKEditor5Field
+
 
 class Category(models.Model):
     """Represent category obj in database."""
@@ -32,7 +34,7 @@ class Product(models.Model):
     title = models.CharField(max_length=255)
     rate = models.IntegerField(choices=PRODUCT_RATE_CHOICES)
     price = models.PositiveIntegerField()
-    description = models.TextField()
+    description = CKEditor5Field('Text', config_name='extends')
     code = models.PositiveSmallIntegerField()
     category = models.ForeignKey(Category, related_name="products", on_delete=models.PROTECT)
     seller_name = models.CharField(max_length=255)

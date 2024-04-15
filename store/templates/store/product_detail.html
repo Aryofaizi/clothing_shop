@@ -1,7 +1,9 @@
 {% extends "_base.html" %}
 {% load i18n %}
 {% load store_filters %}
+{% load jalali_tags %}
 
+{% load humanize %}
 
 {% block page_title %}
    {% trans "product detail" %}
@@ -11,8 +13,8 @@
 {% block content %}
       <h1>{{product.title}}</h1>
       <h3>{{product.rate}}</h3>
-      <h3>{{product.description}}</h3>
-      <h3>{{product.price}}</h3>
+      <h3>{{product.description|safe}}</h3>
+      <h3>{{product.price|intcomma:False|persian_number}}</h3>
       <h1>add cart form</h1>
       <form action="{% url 'cart_add' product.id %}" method="post">
             {% csrf_token %}
@@ -25,7 +27,7 @@
       <ul>
       {% for comment in product.comments.all %}
                   <li>  <h1>{{comment.author.username}}</h1>
-                        <h3>{{comment.datetime_modified}}</h3>
+                        <h3>{{comment.datetime_created|to_jalali:'%Y/%m/%d '|persian_number }}</h3>
                         <h3>{{comment.text}}</h3>
                         <h3>{{comment.rate}}</h3>
                   </li>

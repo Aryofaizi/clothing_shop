@@ -26,6 +26,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path("__debug__/", include("debug_toolbar.urls")),
     path("rosetta/", include("rosetta.urls")),
+    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
     #local
     path("", include("store.urls")),
     path("cart/", include("cart.urls")),
