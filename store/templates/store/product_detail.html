@@ -13,6 +13,12 @@
       <h3>{{product.rate}}</h3>
       <h3>{{product.description}}</h3>
       <h3>{{product.price}}</h3>
+      <h1>add cart form</h1>
+      <form action="{% url 'cart_add' product.id %}" method="post">
+            {% csrf_token %}
+            <input type="number" name="quantity" value="1" min="1" max="30">
+            <button type="submit">Send</button>
+      </form>
 
 
       <h1>comments {{product.comments.count}}</h1>
@@ -27,12 +33,16 @@
       </ul>
 
 
-      <h1>comment form</h1>
-      <form action="{% url 'comment_create' product.id %}" method="post">
-            {% csrf_token %}
-            {{comment_form.as_p}}
-            <button type="submit">Send</button>
-      </form>
+      {% if user.is_authenticated %}
+            <h1>comment form</h1>
+            <form action="{% url 'comment_create' product.id %}" method="post">
+                  {% csrf_token %}
+                  {{comment_form.as_p}}
+                  <button type="submit">Send</button>
+            </form>
+      {% else %}
+      <p>please login to write comments</p>
+      {% endif %}
 {% endblock content %}
 
 

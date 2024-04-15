@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.db.models import Prefetch
 from . import models, forms
+from cart.forms import AddToCartProductForm
 
 class HomeView(generic.ListView):
     queryset = models.Product.objects.prefetch_related("images")
@@ -21,6 +22,7 @@ class ProductDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["comment_form"] = forms.CommentForm()
+        context["add_to_cart_form"] = AddToCartProductForm()
         return context
     
     

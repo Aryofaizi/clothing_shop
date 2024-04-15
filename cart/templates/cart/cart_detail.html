@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+
+{% block page_title %}
+      cart detail
+{% endblock page_title %}
+
+{% block content %}
+<h1>cart</h1>
+    <ul>
+        {% for item in cart %}
+            <li><h2>{{item.product_obj.title}}</h2></li>
+            <form action="{% url 'cart_add' item.product_obj.id %}" method="post">
+                {% csrf_token %}
+                <input type="number" name="quantity" value="{{item.quantity}}" min="1" max="30">
+                {{item.product_update_quantity_form.inplace}}
+                <button type="submit">Send</button>
+          </form>
+            <li><h2>price:{{item.product_obj.price}}</h2></li>
+            <li><h2>total:{{item.total_price}}</h2></li>
+            <li><a href="{% url 'cart_remove' item.product_obj.id %}"><h2>delete</h2></a></li>
+        {% endfor %}
+    </ul>
+
+    <h1>total cart price : {{cart.get_total_price}}</h1>
+{% endblock content %}

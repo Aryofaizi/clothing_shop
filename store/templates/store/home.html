@@ -7,6 +7,10 @@
 {% endblock page_title %}
 
 {% block content %}
+
+<h1>cart count:{{cart|length}}</h1>
+
+
 <h1>slider</h1>
 {% for product in products|last_four %}
 <h3>{{product.title}}</h3>
@@ -16,7 +20,7 @@
 
 <h1>products</h1>
 
-{% for product in products|last_four %}
+{% for product in products %}
   <a href="{{product.get_absolute_url}}"><h3>{{product.title}}</h3></a>
   <h3>{{product.description}}</h3>
 
