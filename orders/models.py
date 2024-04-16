@@ -9,10 +9,12 @@ class Order(models.Model):
     last_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)
     address = models.CharField(max_length=300)
-    note = models.CharField(max_length=700)
+    note = models.CharField(max_length=700, blank=True)
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
     zarinpal_authority = models.CharField(max_length=255, blank=True)
+    zarinpal_ref_id = models.CharField(max_length=150, blank=True)
+    zarinapl_data = models.TextField(blank=True)
     
     def __str__(self):
         return f"{self.id}"
