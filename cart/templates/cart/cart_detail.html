@@ -25,4 +25,10 @@
     </ul>
 
     <h1>total cart price : {{cart.get_total_price|intcomma:False|persian_number}}</h1>
+
+    <h1>clear cart</h1>
+    <form action="{% url 'cart_clear' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">clear</button>
+    </form>
 {% endblock content %}

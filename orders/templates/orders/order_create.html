@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+
+
+{% block page_title %}
+
+{% endblock page_title %}
+
+
+{% block content %}
+  <h1>order</h1>
+  <ul>
+    {% for item in cart %}
+        <li><h3>{{item.product_obj.title}}</h3></li>
+        <li><h3>{{item.quantity}}</h3></li>
+        <li><h3>price: {{item.product_obj.price}}</h3></li>
+        <li><h3>total price :{{item.total_price}}</h3></li>
+        
+    {% endfor %}
+
+    <h1>order total price : {{cart.get_total_price}}</h1>
+  </ul>
+
+  <h1>order info: </h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">send</button>
+
+  </form>
+{% endblock content %}

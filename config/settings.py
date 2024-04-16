@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "django.contrib.humanize",
-    'jalali_date',
     #third-party
+    'jalali_date',
     "rosetta",
     "debug_toolbar",
     'allauth',
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "accounts",
     "store",
     "cart",
+    "orders",
 ]
 
 MIDDLEWARE = [

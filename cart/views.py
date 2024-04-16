@@ -36,3 +36,10 @@ def remove_from_cart(request, product_id):
     
     cart.remove(product)
     return redirect("cart_detail")
+
+@require_POST
+def clear_cart(request):
+    cart = Cart(request)
+    if len(cart):
+        cart.clear()
+    return redirect("cart_detail")
