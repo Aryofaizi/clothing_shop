@@ -30,6 +30,10 @@ def order_create_view(request):
             request.user.first_name = form_obj.first_name
             request.user.last_name = form_obj.last_name
             request.user.save()
+            
+            #send order id as session
+            request.session["order_id"] = form_obj.id
+            return redirect("payment_process")
         
     return render(request, "orders/order_create.html",
                   context={"form": form})
