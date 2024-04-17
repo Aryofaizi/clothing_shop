@@ -11,6 +11,7 @@ class OrderItemInline(admin.TabularInline):
 @admin.register(models.Order)
 class OrderAdmin(admin.ModelAdmin):
     model = models.Order
+    list_display = ("user", "is_paid", "first_name", "last_name","phone_number","address","note","post_id","has_been_sent")
     inlines = (
         OrderItemInline,
     )

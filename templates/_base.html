@@ -1,13 +1,384 @@
+{% load static %}
+{% load store_filters %}
+{% load i18n %}
+{% load humanize %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    {% block page_title %}{% endblock page_title %}
-  </title>
+  <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content>
+    <meta name="keywords" content>
+
+    <title>
+      {% block page_title %}{% endblock page_title %}
+    </title>
+
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo/favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all-fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flex-slider.min.css' %}">
+
+    
+
 </head>
-<body>
-  {% block content %}{% endblock content %}
+
+
+
+
+
+<body dir="rtl">
+
+  
+  <div class="preloader">
+    <div class="loader-ripple">
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+
+<header class="header">
+
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-wrapper">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-5">
+                        <div class="header-top-left">
+                            <ul class="header-top-list">
+                                
+                                <li><a href=""><i class="far fa-headset"></i> 09181718810</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-7">
+                        <div class="header-top-right">
+                            <ul class="header-top-list">
+                                <li class="account"><a href="#"><i class="far fa-user-vneck"></i> حساب</a></li>
+                                {% if user.is_authenticated %}
+                                <li class="login"><a href="{% url 'account_logout' %}"><i class="far fa-arrow-right-to-arc"></i> {% trans "logout" %}</a></li>
+                                {% else %}
+                                <li class="login"><a href="{% url 'account_login' %}"><i class="far fa-arrow-right-to-arc"></i> {% trans "login" %}</a></li>
+                                |
+                                <li class="login"><a href="{% url 'account_signup' %}"><i class="far fa-arrow-right-to-arc"></i> {% trans "signup" %}</a></li>
+                                {% endif %}
+                                <li>
+                                    
+                                </li>
+                                <li>
+                                    
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-middle">
+        <div class="container">
+            <div class="row align-items-center" dir="rtl">
+                <div class="col-5 col-lg-3 col-xl-3">
+                    <div class="header-middle-logo">
+                        <a class="navbar-brand" href="{% url 'home_page' %}">
+                            <img src="{% static 'assets/img/logo/logo.png' %}" alt="logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-6 col-xl-5">
+                    
+                </div>
+                <div class="col-7 col-lg-3 col-xl-4">
+                    <div class="header-middle-right">
+                        <ul class="header-middle-list">
+                            <li><a href="#" class="list-item"><i class="far fa-user-circle"></i></a></li>
+                            
+                            </li>
+                        
+                            <li class="dropdown-cart">
+                                <a href="#" class="shop-cart list-item"><i class="far fa-shopping-bag"></i>
+                                    <span>{{cart|length}}</span></a>
+                                <div class="dropdown-cart-menu">
+                                    <div class="dropdown-cart-header">
+                                        <span>{{cart|length}} مورد</span>
+                                        <a href="{% url 'cart_detail' %}">مشاهده سبد خرید</a>
+                                    </div>
+                                    <ul class="dropdown-cart-list">
+                                        {% for item in cart %}
+                                        <li>
+                                            <div class="dropdown-cart-item">
+                                                <div class="cart-img">
+                                                    <a href="#"><img src="{{item.product_obj.images.all|first_image}}" alt="#"></a>
+                                                </div>
+                                                <div class="cart-info">
+                                                    <h4><a href="#">{{item.product_obj.title}}</a></h4>
+                                                    <p class="cart-qty">{{item.quantity}}x - <span class="cart-amount">{{item.product_obj.price|intcomma:False|persian_number}} {% trans "$" %}</span>
+                                                    </p>
+                                                </div>
+                                                <a href="{% url 'cart_remove' item.product_obj.id %}" class="cart-remove" title="{% trans "delete this item" %}"><i
+                                                        class="far fa-times-circle"></i></a>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                        
+                                    </ul>
+                                    <div class="dropdown-cart-bottom">
+                                        <div class="dropdown-cart-total">
+                                            <span>{% trans "total" %}</span>
+                                            <span class="total-amount">{{cart.get_total_price|intcomma:False}} {% trans "$" %}</span>
+                                        </div>
+                                        <a href="{% url 'order_create' %}" class="theme-btn">تسویه حساب</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-navigation">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container position-relative">
+                <a class="navbar-brand" href="index.html">
+                    <img src="{% static 'assets/img/logo/logo.png' %}" class="logo-scrolled" alt="logo">
+                </a>
+                
+                <div class="mobile-menu-right">
+                    <div class="search-btn">
+                        <button type="button" class="nav-right-link"><i class="far fa-search"></i></button>
+                        <div class="mobile-search-form">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="در اینجا جستجو کنید...">
+                                <button type="submit"><i class="far fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-mobile-icon"><i class="far fa-bars"></i></span>
+                    </button>
+                </div>
+                
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+
+{% block content %}{% endblock content %}
+
+
+
+
+<footer class="footer-area">
+    <div class="footer-widget">
+        <div class="container">
+            <div class="row footer-widget-wrapper pt-100 pb-70">
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-widget-box about-us">
+                        <a href="#" class="footer-logo">
+                            <img src="{% static 'assets/img/logo/logo-light.png' %}" alt>
+                        </a>
+                        <p class="mb-1">
+                            ما انواع مختلفی از معابر در دسترس داریم، اما عمده آن دچار تغییر شده است
+                            به شکلی با تزریق
+                        </p>
+                        <div class="footer-call">
+                            <div class="footer-call-icon">
+                                <i class="fal fa-headset"></i>
+                            </div>
+                            <div class="footer-call-info">
+                                <p>24 ساعته به کمک نیاز دارید؟</p>
+                                <a href="tel:+21236547898">09555555555</a>
+                            </div>
+                        </div>
+                        <div class="footer-download">
+                            <h5>برنامه موبایل ما را دریافت کنید</h5>
+                            <div class="footer-download-btn">
+                                <a href="#">
+                                    <i class="fab fa-google-play"></i>
+                                    <div class="download-btn-info">
+                                        <span>آن را روشن کنید</span>
+                                        <h6>گوگل پلی</h6>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-app-store"></i>
+                                    <div class="download-btn-info">
+                                        <span>آن را روشن کنید</span>
+                                        <h6>فروشگاه برنامه</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">پیوندهای سریع</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">درباره ما</a></li>
+                            <li><a href="#">فروشنده شوید</a></li>
+                            <li><a href="#">با ما تماس بگیرید</a></li>
+                            <li><a href="#">اخبار به‌روزرسانی</a></li>
+                            <li><a href="#">شاهدات</a></li>
+                            <li><a href="#">شرایط خدمات</a></li>
+                            <li><a href="#">خط مشی رازداری</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">مرور رده</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">لوازم جانبی</a></li>
+                            <li><a href="#">خانه و باغ</a></li>
+                            <li><a href="#">الکترونیک</a></li>
+                            <li><a href="#">سلامت و زیبایی</a></li>
+                            <li><a href="#">مواد غذایی</a></li>
+                            <li><a href="#">اسباب‌بازی‌های کودک</a></li>
+                            <li><a href="#">موسیقی و ویدیو</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">مرکز پشتیبانی</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">سؤالات متداول</a></li>
+                            <li><a href="#">نحوه خرید</a></li>
+                            <li><a href="#">مرکز پشتیبانی</a></li>
+                            <li><a href="#">سفارش خود را پیگیری کنید</a></li>
+                            <li><a href="#">خط مشی بازگشت</a></li>
+                            <li><a href="#">شرکت‌های وابسته ما</a></li>
+                            <li><a href="#">نقشه سایت</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">تماس بگیرید</h4>
+                        <p>از امروز با ما در تماس باشید. ما آماده کمک به شما هستیم.</p>
+                        <ul class="footer-contact">
+                            <li><a href="tel:+21236547898"><i class="far fa-phone"></i>09333333333</a></li>
+                            <li><i class="far fa-map-marker-alt"></i>نیویورک ، خیابان میلفورد </li>
+                            <li><a href="/cdn-cgi/l/email-protection#d9b0b7bfb699bca1b8b4a9b5bcf7bab6b4"><i
+                                    class="far fa-envelope"></i><span class="__cf_email__"
+                                                                      data-cfemail="7e171018113e1b061f130e121b501d1113">ad@info.com</span></a>
+                            </li>
+                            <li><i class="far fa-clock"></i>دوشنبه تا جمعه (9:00 صبح تا 8:00 عصر)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="footer-top-link">
+                        <h5>پیوندهای برتر</h5>
+                        <div class="footer-top-link-info">
+                            <a href="#">فروشندگان برتر</a>
+                            <a href="#">موارد جدید</a>
+                            <a href="#">لوازم جانبی</a>
+                            <a href="#">الکترونیک</a>
+                            <a href="#">مواد غذایی</a>
+                            <a href="#">زیبایی</a>
+                            <a href="#">سلامت</a>
+                            <a href="#">اسباب‌بازی‌های کودک</a>
+                            <a href="#">موسیقی</a>
+                            <a href="#">مبلمان</a>
+                            <a href="#">هدایا</a>
+                            <a href="#">ورزش</a>
+                            <a href="#">خودرو</a>
+                            <a href="#">تماشا کنید</a>
+                            <a href="#">نقشه سایت</a>
+                            <a href="#">شرکت‌های وابسته ما</a>
+                            <a href="#">خط مشی بازگشت</a>
+                            <a href="#">ویدئو</a>
+                            <a href="#">خانه و باغ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="copyright-wrap">
+                <div class="row">
+                    <div class="col-12 col-lg-4 align-self-center">
+                        <div class="footer-payment">
+                            <span>می پذیریم:</span>
+                            <img src="{% static 'assets//img/payment/visa.svg' %}" alt>
+                            <img src="{% static 'assets//img/payment/mastercard.svg' %}" alt>
+                            <img src="{% static 'assets//img/payment/amex.svg' %}" alt>
+                            <img src="{% static 'assets//img/payment/discover.svg' %}" alt>
+                            <img src="{% static 'assets//img/payment/paypal.svg' %}" alt>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 align-self-center">
+                        <p class="copyright-text">
+                            © حق چاپ <span id="date">2024</span> <a href="#"> گومارت </a> کلیه حقوق محفوظ است.
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-4 align-self-center">
+                        <div class="footer-social">
+                            <span>ما را دنبال کنید:</span>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<a href="#" id="scroll-top"><i class="far fa-arrow-up-from-arc"></i></a>
+
+
+
+
+
+<script data-cfasync="false" src="{% static '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'assets/js/modernizr.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.appear.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/counter-up.js' %}"></script>
+<script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'assets/js/countdown.min.js' %}"></script>
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/flex-slider.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+  
+
 </body>
 </html>
+
+
+
+

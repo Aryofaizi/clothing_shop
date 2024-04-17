@@ -10,11 +10,13 @@ class Order(models.Model):
     phone_number = models.CharField(max_length=15)
     address = models.CharField(max_length=300)
     note = models.CharField(max_length=700, blank=True)
+    post_id = models.CharField(max_length=12)
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
     zarinpal_authority = models.CharField(max_length=255, blank=True)
     zarinpal_ref_id = models.CharField(max_length=150, blank=True)
     zarinapl_data = models.TextField(blank=True)
+    has_been_sent  = models.BooleanField(default=False)
     
     def __str__(self):
         return f"{self.id}"

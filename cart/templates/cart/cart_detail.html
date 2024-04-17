@@ -2,27 +2,122 @@
 
 {% load store_filters %}
 {% load humanize %}
+{% load i18n %}
 {% block page_title %}
       cart detail
 {% endblock page_title %}
 
 
 {% block content %}
-<h1>cart</h1>
-    <ul>
-        {% for item in cart %}
-            <li><h2>{{item.product_obj.title}}</h2></li>
-            <form action="{% url 'cart_add' item.product_obj.id %}" method="post">
-                {% csrf_token %}
-                <input type="number" name="quantity" value="{{item.quantity}}" min="1" max="30">
-                {{item.product_update_quantity_form.inplace}}
-                <button type="submit">Send</button>
-          </form>
-            <li><h2>price:{{item.product_obj.price|intcomma:False|persian_number}}</h2></li>
-            <li><h2>total:{{item.total_price|intcomma:False|persian_number}}</h2></li>
-            <li><a href="{% url 'cart_remove' item.product_obj.id %}"><h2>delete</h2></a></li>
-        {% endfor %}
-    </ul>
+
+
+
+<main class="main">
+
+    {% trans "cart" as header %}
+
+    {% include "header.html" with header=header%}
+
+
+    <div class="shop-cart py-100">
+        <div class="container">
+            <div class="shop-cart-wrap">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="cart-table">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>تصویر</th>
+                                            <th>نام محصول</th>
+                                            <th>قیمت</th>
+                                            <th>مقدار</th>
+                                            <th>مجموع فرعی</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in cart %}
+                                        <tr>
+                                            <td>
+                                                <div class="shop-cart-img">
+                                                    <a href="#"><img src="{{item.product_obj.images.all|first_image}}" alt></a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="shop-cart-content">
+                                                    <h5 class="shop-cart-name"><a href="#"> {{item.product_obj.title}}</a></h5>
+                                                    <div class="shop-cart-info">
+                                                        <p><span>{% trans "type:" %}</span>{{item.product_obj.category}}</p>
+                                                        <p><span>{% trans "color:" %}</span>سیاه</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="shop-cart-price">
+                                                    <span>{{item.product_obj.price|intcomma:False|persian_number}} {% trans "$" %}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="shop-cart-qty" dir="ltr">
+                                                    
+                                                    <form action="{% url 'cart_add' item.product_obj.id %}" method="post">
+                                                        {% csrf_token %}
+                                                        <input type="number" name="quantity" value="{{item.quantity}}" min="1" max="30">
+                                                        {{item.product_update_quantity_form.inplace}}
+                                                        <button type="submit">update</button>
+                                                  </form>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="shop-cart-subtotal">
+                                                    <span>{{item.total_price}} {% trans "$" %}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="{% url 'cart_remove' item.product_obj.id %}" class="shop-cart-remove"><i class="far fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                         {% endfor %}
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="shop-cart-footer">
+                            <div class="row">
+                                <div class="col-md-7 col-lg-6">
+                                    <div class="shop-cart-coupon">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="کد کوپن شما">
+                                            <button class="theme-btn" type="submit">اعمال کوپن</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-lg-6">
+                                    <div class="shop-cart-btn text-md-end">
+                                        <form action="{% url 'cart_clear' %}" method="post">
+                                            {% csrf_token %}
+                                        <button type="submit" href="{% url 'cart_clear' %}" class="theme-btn">  {% trans "clear cart" %} <span
+                                                class="fas fa-arrow-left"></span></button>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% include "cart_summary.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+</main>
+
 
     <h1>total cart price : {{cart.get_total_price|intcomma:False|persian_number}}</h1>
 

@@ -17,4 +17,3 @@ def persian_number(value):
     value = str(value)
     persian_to_english = value.maketrans("1234567890", "۱۲۳۴۵۶۷۸۹۰")
     return value.translate(persian_to_english)
-    

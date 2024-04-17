@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_ckeditor_5',
+    'crispy_forms',
+    "crispy_bootstrap5",
     #local 
     "accounts",
     "store",
@@ -144,6 +146,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
+
+# crispy settings
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
 
 # LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'fa-ir'

@@ -2,8 +2,9 @@
 {% load i18n %}
 {% load store_filters %}
 {% load jalali_tags %}
-
+{% load static %}
 {% load humanize %}
+{% load crispy_forms_tags %}
 
 {% block page_title %}
    {% trans "product detail" %}
@@ -11,40 +12,253 @@
 
 
 {% block content %}
-      <h1>{{product.title}}</h1>
-      <h3>{{product.rate}}</h3>
-      <h3>{{product.description|safe}}</h3>
-      <h3>{{product.price|intcomma:False|persian_number}}</h3>
-      <h1>add cart form</h1>
-      <form action="{% url 'cart_add' product.id %}" method="post">
-            {% csrf_token %}
-            <input type="number" name="quantity" value="1" min="1" max="30">
-            <button type="submit">Send</button>
-      </form>
+
+    <div class="site-breadcrumb">
+        <div class="site-breadcrumb-bg" style="background: url(assets/img/breadcrumb/01.jpg)"></div>
+        <div class="container">
+            <div class="site-breadcrumb-wrap">
+                <h4 class="breadcrumb-title">  {% trans "buy product" %} {{product.title}}</h4>
+                
+            </div>
+        </div>
+    </div>
 
 
-      <h1>comments {{product.comments.count}}</h1>
-      <ul>
-      {% for comment in product.comments.all %}
-                  <li>  <h1>{{comment.author.username}}</h1>
-                        <h3>{{comment.datetime_created|to_jalali:'%Y/%m/%d '|persian_number }}</h3>
-                        <h3>{{comment.text}}</h3>
-                        <h3>{{comment.rate}}</h3>
-                  </li>
-      {% endfor %}
-      </ul>
+    <div class="shop-single2 bg py-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-lg-6 col-xxl-5">
+                    <div class="shop-single-gallery" dir="ltr">
+                        <div class="flexslider-thumbnails">
+                            <ul class="slides">
+                                {% for image in product.images.all %}
+                                    <li data-thumb="{{image.image.url}}" rel="adjustX:10, adjustY:">
+                                          <img src="{{image.image.url}}" alt="#">
+                                    </li>
+                                {% endfor %}
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 col-xxl-6">
+                    <div class="shop-single-info">
+                        <h4 class="shop-single-title"> {{product.title}}</h4>
+                        <div class="shop-single-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-count"> ({{product.comments.count}} {% trans "comments" %} )</span>
+                        </div>
+                        <div class="shop-single-price">
+                            <span class="amount">{{product.price|intcomma:False|persian_number}} {% trans "$" %}</span>
+                        </div>
+                        <p class="mb-3">
+                            {{product.description|truncatechars:20|safe}}
+                        </p>
+                        <div class="shop-single-cs">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-4 col-xl-3">
+                                    <div class="shop-single-size">
+                                        <h6>مقدار</h6>
+                                        <div class="shop-cart-qty">
+                                          <form action="{% url 'cart_add' product.id %}" method="post">
+                                                {% csrf_token %}
+                                              <input type="number" name="quantity" value="1" min="1" max="30">
+                                              
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="col-md-3 col-lg-4 col-xl-3">
+                                    <div class="shop-single-size">
+                                          <h6>اندازه</h6>
+                                          <select class="select">
+                                              
+                                            <option value> انتخاب کنید</option>
+                                            <option value="1">بسیار کوچک</option>
+                                            <option value="2">کوچک</option>
+                                            <option value="3">متوسط</option>
+                                            <option value="4">بسیار بزرگ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-12 col-xl-6">
+                                    <div class="shop-single-color">
+                                        <h6>رنگ</h6>
+                                        <ul class="shop-checkbox-list color">
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="color1">
+                                                    <label class="form-check-label" for="color1"><span
+                                                            style="background-color: #606ddd"></span></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="color2">
+                                                    <label class="form-check-label" for="color2"><span
+                                                            style="background-color: #4caf50"></span></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="color3">
+                                                    <label class="form-check-label" for="color3"><span
+                                                            style="background-color: #17a2b8"></span></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="color4">
+                                                    <label class="form-check-label" for="color4"><span
+                                                            style="background-color: #ffc107"></span></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="color5">
+                                                    <label class="form-check-label" for="color5"><span
+                                                            style="background-color: #f44336"></span></label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-single-sortinfo">
+                            <ul>
+                                <li> موجودی: <span>موجود</span></li>
+                                <li>کد محصول: <span>{{product.code}}</span></li>
+                                <li>دسته: <span>{{product.category}}</span></li>
+                                <li>فروش توسط: <a href="#"> {{product.seller_name}}</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="shop-single-action">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 col-lg-12 col-xl-6">
+                                    <div class="shop-single-btn">
+                                        
+                                          <button type="submit" class="theme-btn"><span class="far fa-shopping-bag"></span> 
+                                             {% trans "add to cart" %}    </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-12 col-xl-6">
+                                    <div class="shop-single-share">
+                                        <span> {% trans "share:" %}</span>
+                                        
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shop-single-details">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-tab1" data-bs-toggle="tab" data-bs-target="#tab1"
+                                type="button" role="tab" aria-controls="tab1" aria-selected="true">{% trans "description" %}
+                        </button>
+                        
+                        <button class="nav-link" id="nav-tab3" data-bs-toggle="tab" data-bs-target="#tab3" type="button"
+                                role="tab" aria-controls="tab3" aria-selected="false"> {% trans "comments" %}
+                            ({{product.comments.count}})
+                        </button>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="nav-tab1">
+                        <div class="shop-single-desc">
+                            <p>
+                                {{product.description|safe}}
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="nav-tab3">
+                        <div class="shop-single-review">
+                            <div class="blog-comments mb-0">
+                                <h5>{% trans "comments" %} ({{product.comments.count}})</h5>
+                                
+                                {% for comment in product.comments.all %}
+                                <div class="blog-comments-wrapper">
+                                    <div class="blog-comments-single mt-0">
+                                        <img src="{% static 'assets/img/account/profile.png' %}" alt="thumb">
+                                        <div class="blog-comments-content">
+                                            <h5> {{comment.author.username}}</h5>
+                                            <span><i class="far fa-clock"></i> {{comment.datetime_created|to_jalali:'%Y/%m/%d '|persian_number }}  </span>
+                                            <p>{{comment.text}}</p>
+                                            <div class="review-rating">
+                                                {% if comment.rate == 5 %}
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                {% elif comment.rate == 4 %}
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                {% elif comment.rate == 3 %}
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                {% elif comment.rate == 2 %}
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                {% elif comment.rate == 1 %}
+                                                <i class="fas fa-star"></i>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {% endfor %}
+                                    
+                                <div class="blog-comments-form">
+                                    {% if user.is_authenticated %}
+                                    <h4 class="mb-4"> {% trans "place your comment" %}</h4>
+                                    <form action="{% url 'comment_create' product.id %}" method="post">
+                                        {% if form.errors %}
+                                                        {% for field in form %}
+
+                                                            {% for error in field.errors %}
+                                                                  <div class="alert alert-danger">{{field.label}}: {{ error }}</div>
+                                                            {% endfor %}
+
+                                                        {% endfor %}
+                                                        {% endif %}
+                                                        
+                                        {% csrf_token %}
+                                    {{comment_form|crispy}}
+
+                                        <button type="submit" class="theme-btn"><span
+                                            class="far fa-paper-plane"></span> {% trans "save comment" %}
+                                    </button>
+                                    </form>
+                                    {% else %}
+                                        <p>{% trans "please login to write comments" %}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-      {% if user.is_authenticated %}
-            <h1>comment form</h1>
-            <form action="{% url 'comment_create' product.id %}" method="post">
-                  {% csrf_token %}
-                  {{comment_form.as_p}}
-                  <button type="submit">Send</button>
-            </form>
-      {% else %}
-      <p>please login to write comments</p>
-      {% endif %}
+
+        </div>
+    </div>
+
+
 {% endblock content %}
-
-
