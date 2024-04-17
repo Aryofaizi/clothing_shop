@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-17 19:05+0330\n"
+"PO-Revision-Date: 2024-04-17 19:14+0330\n"
+"Last-Translator: آریو فیضی <admin@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\_base.html:71 .\account\logout.html:11 .\account\logout.html:23
+#: .\account\logout.html:25
+msgid "logout"
+msgstr "خروج"
+
+#: .\_base.html:73 .\account\login.html:15 .\account\login.html:31
+#: .\account\signup.html:31
+msgid "login"
+msgstr "ورود"
+
+#: .\_base.html:75
+msgid "signup"
+msgstr "ثبت نام"
+
+#: .\_base.html:129 .\_base.html:142
+msgid "$"
+msgstr "ریال"
+
+#: .\_base.html:132
+msgid "delete this item"
+msgstr "حذف این مورد"
+
+#: .\_base.html:141
+msgid "total"
+msgstr "مجموع"
+
+#: .\account\login.html:25
+msgid "login with your tounique account"
+msgstr "ورود با حساب تونیک "
+
+#: .\account\login.html:35
+msgid "you don't have account"
+msgstr "حساب ندارید"
+
+#: .\account\login.html:35 .\account\signup.html:11
+msgid "register"
+msgstr "ثبت نام"
+
+#: .\account\login.html:38
+msgid "continue with your social media account"
+msgstr "ادامه با شبکه های اجتماعی"
+
+#: .\account\login.html:40 .\account\signup.html:36
+msgid "facebook"
+msgstr "فیس بوک"
+
+#: .\account\login.html:41 .\account\signup.html:37
+msgid "google"
+msgstr "گوگل"
+
+#: .\account\login.html:42 .\account\signup.html:38
+msgid "twitter"
+msgstr "تویتر"
+
+#: .\account\logout.html:24
+msgid ""
+"for loginout of your current account please click on the button bellow "
+"thanks for using our website"
+msgstr ""
+"برای خروج از حساب حال حاضر لطفا روی دکمه زیر کلیک کنید ممنون از حمایت شما"
+
+#: .\account\password_reset.html:11 .\account\password_reset.html:23
+#: .\account\password_reset_from_key.html:11
+msgid "reset password"
+msgstr "بازیابی رمز عبور"
+
+#: .\account\password_reset.html:25
+msgid ""
+"for resseting your current account password please click on the button "
+"bellow thanks for using our website"
+msgstr "برای بازیابی رمز عبور لطفا روی دکمه زیر کلیک کنید ممنون از حمایت شما"
+
+#: .\account\password_reset.html:26
+msgid "send reset passwrod email"
+msgstr "ارسال ایمیل تغییر رمز عبور"
+
+#: .\account\password_reset_done.html:11
+msgid "password changed succesfully "
+msgstr "رمز عبور با موفقیت تغییر کرد"
+
+#: .\account\password_reset_done.html:23
+#: .\account\password_reset_from_key.html:5
+msgid "password changed succesfully"
+msgstr "رمز عبور با موفقیت تغییر کرد"
+
+#: .\account\password_reset_done.html:24
+msgid ""
+"now on you can use your new password to login in to your account please "
+"click on the button below to login again"
+msgstr ""
+"با کلیک روی دکمه زیر از این پس میتوانید از رمز عبور جدید برای ورود به سایت "
+"استفاده کنید"
+
+#: .\account\password_reset_done.html:25
+#: .\account\password_reset_from_key_done.html:25
+msgid "get back to login"
+msgstr "برگشت به صفحه ورود"
+
+#: .\account\password_reset_from_key.html:24
+msgid ""
+"for saving a new password for you current account through this form please "
+"fill in the fields and click on the button bellow thanks for using our "
+"website"
+msgstr ""
+"برای تغییر گذرواژه برای حساب فعلی باید از طریق پر کردن اطلاعات این فرم اقدام"
+" کنید و بعد روی دکمه زیر کلیک کنید ممنون از حمایت شما"
+
+#: .\account\password_reset_from_key.html:25
+msgid "save"
+msgstr "ذخیره"
+
+#: .\account\password_reset_from_key_done.html:11
+msgid "password email sent "
+msgstr "ایمیل تغییر رمز عبور ارسال شد"
+
+#: .\account\password_reset_from_key_done.html:23
+msgid "email for changin password sent"
+msgstr "ایمیل برای تغییر رمز عبور ارسال شد"
+
+#: .\account\password_reset_from_key_done.html:24
+msgid ""
+"please check your email and your spam box for the email we have sent you to "
+"change your email with specific link"
+msgstr ""
+"لطفا ایمیل خود و صندوق هرزنامه رو هم بررسی کنید ما برای شما یک ایمیل حاوی "
+"لینک تغییر گذرواژه ارسال کرده ایم"
+
+#: .\account\signup.html:21
+msgid "make your tounique account for free"
+msgstr "حساب تونیک خودتون رو رایگان بسازید"
+
+#: .\account\signup.html:31
+msgid "you have account?"
+msgstr "حساب دارید؟"

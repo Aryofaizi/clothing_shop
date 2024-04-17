@@ -154,6 +154,9 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
+LOCALE_PATHS = (
+'templates/locale',
+)
 
 # LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'fa-ir'
