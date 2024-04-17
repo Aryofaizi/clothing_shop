@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-17 18:32+0330\n"
+"PO-Revision-Date: 2024-04-17 18:35+0330\n"
+"Last-Translator: آریو فیضی <admin@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\templates\orders\order_create.html:7
+msgid "order detail"
+msgstr "مشخصات محصول"
+
+#: .\templates\orders\order_create.html:113
+msgid "back to cart"
+msgstr "برگشت به سبد خرید"
+
+#: .\templates\orders\order_create.html:130
+msgid "cart summary"
+msgstr "خلاصه سبد خرید"
+
+#: .\templates\orders\order_create.html:132
+#: .\templates\orders\order_create.html:133
+#: .\templates\orders\order_create.html:134
+#: .\templates\orders\order_create.html:135
+#: .\templates\orders\order_create.html:136
+msgid "$"
+msgstr "ریال"
+
+#: .\templates\orders\order_create.html:134
+msgid "50000"
+msgstr ""
+
+#: .\templates\orders\order_create.html:135
+#, python-format
+msgid "1%%"
+msgstr ""
+
+#: .\templates\orders\order_create.html:139
+msgid "place order"
+msgstr "ثبت سفارش"
