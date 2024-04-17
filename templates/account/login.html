@@ -1,5 +1,7 @@
 {% extends "_base.html" %}
 {% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block page_title %}
     صفحه ورود
@@ -8,9 +10,46 @@
 
 
 {% block content %}
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">login</button>
-</form>
+
+<main class="main">
+    {% trans "login" as header %}
+    {% include "header.html" with header=header %}
+
+
+    <div class="login-area py-100">
+        <div class="container">
+            <div class="col-md-7 col-lg-5 mx-auto">
+                <div class="login-form">
+                    <div class="login-header">
+                        <img src="assets/img/logo/logo.png" alt>
+                        <p>    {% trans "login with your tounique account" %}</p>
+                    </div>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <div class="d-flex align-items-center">
+                            <button type="submit" class="theme-btn"><i class="far fa-sign-in"></i> {% trans "login" %}</button>
+                        </div>
+                    </form>
+                    <div class="login-footer">
+                        <p> {% trans "you don't have account" %} <a href="{% url 'account_signup' %}">{% trans "register" %}</a></p>
+                        <div class="social-login">
+                            <span class="social-divider">یا</span>
+                            <p>    {% trans "continue with your social media account" %}</p>
+                            <div class="social-login-list">
+                                <a href="#" class="fb-auth"><i class="fab fa-facebook-f"></i> {% trans "facebook" %} </a>
+                                <a href="#" class="gl-auth"><i class="fab fa-google"></i> {% trans "google" %}</a>
+                                <a href="#" class="tw-auth"><i class="fab fa-twitter"></i> {% trans "twitter" %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
 {% endblock content %}

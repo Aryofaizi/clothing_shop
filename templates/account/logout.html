@@ -1,4 +1,5 @@
 {% extends "_base.html" %}
+{% load i18n %}
 
 {% block page_title %}
 خروج
@@ -6,9 +7,56 @@
 
 
 {% block content %}
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">logout</button>
-</form>
+<main class="main">
+    {% trans "logout" as header %}
+    {% include "header.html" with header=header %}
+
+
+    <div class="mail-success py-120">
+        <div class="container">
+            <form action="" method="post">
+                {% csrf_token %}
+            <div class="row">
+                <div class="col-md-7 mx-auto">
+                    <div class="mail-success-content">
+                        <div class="mail-success-icon"><i class="fal fa-envelope-circle-check"></i></div>
+                        <h3>  {% trans "logout" %}</h3>
+                        <p> {% trans "for loginout of your current account please click on the button bellow thanks for using our website" %}</p>
+                        <button type="submit" class="theme-btn">{% trans "logout" %}  <i class="far fa-home"></i></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+
+    <div class="newsletter-area pt-60 pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="newsletter-content">
+                        <h3>دریافت کوپن تخفیف <span>20%</span></h3>
+                        <p>با مشترک شدن در خبرنامه ما</p>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="email" class="form-control" placeholder="آدرس ایمیل معتبر شما">
+                                <button class="theme-btn" type="submit">
+                                    اشتراک <i class="far fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="newsletter-img-1">
+            <img src="assets/img/newsletter/01.png" alt>
+        </div>
+        <div class="newsletter-img-2">
+            <img src="assets/img/newsletter/02.png" alt>
+        </div>
+    </div>
+
+</main>
 {% endblock content %}
