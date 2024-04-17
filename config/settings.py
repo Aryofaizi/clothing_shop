@@ -155,12 +155,6 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 
-# i18n local path
-LOCALE_PATHS = [
-    str(BASE_DIR.joinpath("locale"))
-]
-
-
 # LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'fa-ir'
 
