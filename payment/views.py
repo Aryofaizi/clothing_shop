@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from orders.models import Order
 import requests
 import json
+from decouple import config
 from django.http import HttpResponse
-
 
 def payment_process(request):
     order_id =request.session["order_id"]
@@ -17,16 +17,14 @@ def payment_process(request):
     }
     
     data = {
-        "merchant_id" : "",
+        "merchant_id" : config("merchant_id"),
         "amount" :price,
         "description" : f"#{order.id}  {order.user.first_name} {order.user.last_name}" ,
         "callback_url" : "http://127.0.0.1:8000" + reverse("payment_callback"),
     }
     
-    res = requests.post(url=zarinpal_url, data=json.dumps(data), headers=headers)
-    
+    res = requests.post(url=zarinpal_url, data=data, headers=headers)
     res_data = res.json()["data"]
-    print(res_data)
     authority = res_data["authority"]
     order.zarinpal_authority = authority
     order.save()
@@ -39,8 +37,8 @@ def payment_process(request):
 
 
 def payment_callback(request):
-    payment_authority = requests.get.get("Authority")
-    payment_status = requests.get.get("Status")
+    payment_authority = request.GET.get('Authority')
+    payment_status = request.GET.get("Status")
     order_id = request.session["order_id"]
     order = get_object_or_404(Order, id = order_id)
     price = order.get_order_price()
@@ -52,7 +50,7 @@ def payment_callback(request):
     }
         
         data = {
-        "merchant_id" : "",
+        "merchant_id" : config("merchant_id"),
         "amount" :price,
         "authority" : payment_authority,
     }

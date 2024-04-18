@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 18:32+0330\n"
-"PO-Revision-Date: 2024-04-17 18:34+0330\n"
+"POT-Creation-Date: 2024-04-18 14:21+0330\n"
+"PO-Revision-Date: 2024-04-18 14:21+0330\n"
 "Last-Translator: آریو فیضی <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,9 +31,29 @@ msgid "color:"
 msgstr "رنگ"
 
 #: .\templates\cart\cart_detail.html:59 .\templates\cart\cart_detail.html:75
+#: .\templates\cart\cart_detail.html:114 .\templates\cart\cart_detail.html:115
+#: .\templates\cart\cart_detail.html:116 .\templates\cart\cart_detail.html:117
+#: .\templates\cart\cart_detail.html:118
 msgid "$"
 msgstr "ریال"
 
 #: .\templates\cart\cart_detail.html:102
 msgid "clear cart"
 msgstr "خالی کردن سبد خرید"
+
+#: .\templates\cart\cart_detail.html:112
+msgid "cart summary"
+msgstr "خلاصه سبد خرید"
+
+#: .\templates\cart\cart_detail.html:116
+msgid "50000"
+msgstr ""
+
+#: .\templates\cart\cart_detail.html:117
+#, python-format
+msgid "1%%"
+msgstr ""
+
+#: .\templates\cart\cart_detail.html:121
+msgid "order page"
+msgstr "سفارش دادن"

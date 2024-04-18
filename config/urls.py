@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic import TemplateView
 app_name = "config"
 
 urlpatterns = [
@@ -32,5 +33,6 @@ urlpatterns = [
     path("cart/", include("cart.urls")),
     path("order/", include("orders.urls")),
     path("payment/", include("payment.urls")),
+    path('404/', TemplateView.as_view(template_name='404.html'), name='404'),
     #media urls
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
