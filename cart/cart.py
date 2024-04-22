@@ -1,5 +1,5 @@
 """Represents cart class."""
-from store.models import Product
+from store.models import Product, Size, Color
 
 class Cart():
     def __init__(self, request):
@@ -15,23 +15,25 @@ class Cart():
         self.cart = cart 
             
         
-    def add(self, product, quantity=1, replace_quantity=False):
+    def add(self, product, size, color, quantity=1, replace_quantity=False):
         """Add specified product to cart if cart exists."""
         product_id = str(product.id)
-        if product_id not in self.cart:
-            self.cart[product_id] = {"quantity":0}
+        index = f"{product_id}, {size}, {color}"
+        if index not in self.cart:
+            self.cart[index] = {"quantity":0, "color":color, "size": size}
         if replace_quantity:
-            self.cart[product_id]["quantity"] = quantity
+            self.cart[index]["quantity"] = quantity
         else:
-            self.cart[product_id]["quantity"] += quantity
+            self.cart[index]["quantity"] += quantity
             
         self.save()
     
-    def remove(self, product):
+    def remove(self, product,size, color):
         """Remove specified product from cart."""
         product_id = str(product.id)
-        if product_id in self.cart:
-            del self.cart[product_id]
+        index = f"{product_id}, {size}, {color}"
+        if index in self.cart:
+            del self.cart[index]
             self.save()
     
     def save(self):
@@ -41,16 +43,21 @@ class Cart():
         
     
     def __iter__(self):
-        """Makes cart iterable."""
-        product_ids = self.cart.keys()
+        """Makes cart iterable."""    
+        product_ids = [int(key.split(",")[0]) for key in self.cart.keys()]
         
         products = Product.objects.filter(id__in=product_ids)
-        
         cart = self.cart.copy()
-        
-        for product in products:
-            cart[str(product.id)]["product_obj"] = product
-            
+        print(cart)
+        for key in self.cart.keys():
+            splited_key = key.split(",")
+            size = splited_key[1]
+            color = splited_key[2]
+            for product in products:
+                cart[f"{product.id},{size},{color}"]["product_obj"] = product
+                cart[f"{product.id},{size},{color}"]["color"] = Color.objects.get(id=color)
+                cart[f"{product.id},{size},{color}"]["size"] = Size.objects.get(id=size)
+                
         for item in cart.values():
             item["total_price"] = item["quantity"] * item["product_obj"].price
             yield item

@@ -74,9 +74,9 @@ class Color(models.Model):
         return self.title
     
 class ProductVariant(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    size = models.ForeignKey(Size, on_delete=models.CASCADE)
-    color = models.ForeignKey(Color, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_variants")
+    size = models.ForeignKey(Size, on_delete=models.CASCADE, related_name="size_variants")
+    color = models.ForeignKey(Color, on_delete=models.CASCADE, related_name="color_variants")
     quantity = models.PositiveIntegerField(default=0)
     
     def __str__(self):

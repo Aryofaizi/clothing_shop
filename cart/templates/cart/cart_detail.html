@@ -50,7 +50,8 @@
                                                     <h5 class="shop-cart-name"><a href="#"> {{item.product_obj.title}}</a></h5>
                                                     <div class="shop-cart-info">
                                                         <p><span>{% trans "type:" %}</span>{{item.product_obj.category}}</p>
-                                                        <p><span>{% trans "color:" %}</span>سیاه</p>
+                                                        <p><span>{% trans "color:" %}</span>{{item.color.title}}</p>
+                                                        <p><span>{% trans "size:" %}</span>{{item.size.title}}</p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -65,6 +66,8 @@
                                                     <form action="{% url 'cart_add' item.product_obj.id %}" method="post">
                                                         {% csrf_token %}
                                                         <input type="number" name="quantity" value="{{item.quantity}}" min="1" max="30">
+                                                        <input type="hidden" name="size" value="{{item.size.id}}">
+                                                        <input type="hidden" name="color" value="{{item.color.id}}">
                                                         {{item.product_update_quantity_form.inplace}}
                                                         <button type="submit">update</button>
                                                   </form>
@@ -72,11 +75,16 @@
                                             </td>
                                             <td>
                                                 <div class="shop-cart-subtotal">
-                                                    <span>{{item.total_price}} {% trans "$" %}</span>
+                                                    <span>{{item.total_price|intcomma:False|persian_number}} {% trans "$" %}</span>
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="{% url 'cart_remove' item.product_obj.id %}" class="shop-cart-remove"><i class="far fa-times"></i></a>
+                                                <form action="{% url 'cart_remove' item.product_obj.id %}" method="post">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="size" value="{{item.size.id}}">
+                                                    <input type="hidden" name="color" value="{{item.color.id}}">
+                                                   <button type="submit" class="shop-cart-remove"><i class="far fa-times"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                          {% endfor %}

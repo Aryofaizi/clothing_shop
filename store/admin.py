@@ -28,3 +28,7 @@ class ProductImageAdmin(admin.ModelAdmin):
 @admin.register(models.Comment)
 class Comment(admin.ModelAdmin):
     model = models.Comment
+    
+@admin.register(models.ProductVariant)
+class ProductVariant(admin.ModelAdmin):
+    model = models.ProductVariant

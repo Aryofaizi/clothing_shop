@@ -23,6 +23,9 @@ class ProductDetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context["comment_form"] = forms.CommentForm()
         context["add_to_cart_form"] = AddToCartProductForm()
+        context["sizes"] = models.Size.objects.filter(size_variants__product=context["product"]).distinct()
+        context["colors"] = models.Color.objects.filter(color_variants__product=context["product"]).distinct()
+        print(context["sizes"])
         return context
     
     
