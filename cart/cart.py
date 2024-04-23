@@ -43,24 +43,21 @@ class Cart():
         
     
     def __iter__(self):
-        """Makes cart iterable."""    
-        product_ids = [int(key.split(",")[0]) for key in self.cart.keys()]
-        
-        products = Product.objects.filter(id__in=product_ids)
-        cart = self.cart.copy()
-        print(cart)
-        for key in self.cart.keys():
-            splited_key = key.split(",")
-            size = splited_key[1]
-            color = splited_key[2]
-            for product in products:
-                cart[f"{product.id},{size},{color}"]["product_obj"] = product
-                cart[f"{product.id},{size},{color}"]["color"] = Color.objects.get(id=color)
-                cart[f"{product.id},{size},{color}"]["size"] = Size.objects.get(id=size)
-                
-        for item in cart.values():
-            item["total_price"] = item["quantity"] * item["product_obj"].price
-            yield item
+        """Makes cart iterable."""
+        for key, item in self.cart.items():
+            product_id, size, color_id = key.split(",")
+            try:
+                product = Product.objects.get(id=int(product_id))
+                color = Color.objects.get(id=int(color_id))
+                size = Size.objects.get(id=int(size))
+                item["product_obj"] = product
+                item["color"] = color
+                item["size"] = size
+                item["total_price"] = item["quantity"] * product.price
+                yield item
+            except (Product.DoesNotExist, Color.DoesNotExist, Size.DoesNotExist, ValueError) as e:
+                print(f"Error processing item {key}: {e}")
+
             
     def __len__(self):
         """Returns cart items length."""
