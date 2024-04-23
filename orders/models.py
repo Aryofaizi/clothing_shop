@@ -26,7 +26,7 @@ class Order(models.Model):
         return sum(item.quantity * item.price for item in self.items.all())
     
     def get_order_price_with_tax(self):
-        return self.get_order_price + 50_000
+        return self.get_order_price() + 50_000
     
     
 class OrderItem(models.Model):

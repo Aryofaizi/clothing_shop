@@ -10,7 +10,8 @@ from django.db import transaction
 def payment_process(request):
     order_id =request.session["order_id"]
     order = get_object_or_404(Order, id=order_id)
-    price = order.get_order_price()
+    price = order.get_order_price_with_tax()
+    price_in_rial = price * 10
     
     zarinpal_url ="https://api.zarinpal.com/pg/v4/payment/request.json"
     headers = {
@@ -20,7 +21,7 @@ def payment_process(request):
     
     data = {
         "merchant_id" : config("merchant_id"),
-        "amount" :price,
+        "amount" :price_in_rial,
         "description" : f"#{order.id}  {order.user.first_name} {order.user.last_name}" ,
         "callback_url" : "http://127.0.0.1:8000" + reverse("payment_callback"),
     }
@@ -43,7 +44,8 @@ def payment_callback(request):
     payment_status = request.GET.get("Status")
     order_id = request.session["order_id"]
     order = get_object_or_404(Order, id = order_id)
-    price = order.get_order_price()
+    price = order.get_order_price_with_tax() * 10
+    price_in_rial = price * 10
     
     if payment_status == "OK": 
         headers = {
@@ -53,15 +55,14 @@ def payment_callback(request):
         
         data = {
         "merchant_id" : config("merchant_id"),
-        "amount" :price,
+        "amount" :price_in_rial,
         "authority" : payment_authority,
     }
         res_data = requests.post(
             url="https://api.zarinpal.com/pg/v4/payment/verify.json",
-            data = json.dumps(data),
+            data = data,
             headers=headers,
             )
-        
         if "errors" not in res_data or len(res_data["errors"]) == 0:
             data = res_data.json()["data"]
             payment_code = data["code"]
