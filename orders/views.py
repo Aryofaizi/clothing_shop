@@ -20,9 +20,13 @@ def order_create_view(request):
             
             for item in cart:
                 product = item["product_obj"]
+                size = item["size"]
+                color = item["color"]
                 OrderItem.objects.create(
                     order = form_obj,
                     product = product,
+                    size = size,
+                    color = color,
                     quantity = item["quantity"],
                     price = item["product_obj"].price,
                 )
