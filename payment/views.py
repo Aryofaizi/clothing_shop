@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-from orders.models import Order
+from orders.models import Order,OrderItem
+from store.models import ProductVariant
 import requests
 import json
 from decouple import config
 from django.http import HttpResponse
+from django.db import transaction
 
 def payment_process(request):
     order_id =request.session["order_id"]
@@ -35,7 +37,7 @@ def payment_process(request):
          return HttpResponse("error from zarinpal")
 
 
-
+@transaction.atomic
 def payment_callback(request):
     payment_authority = request.GET.get('Authority')
     payment_status = request.GET.get("Status")
@@ -68,6 +70,16 @@ def payment_callback(request):
                 order.zarinpal_ref_id = data["ref_id"]
                 order.zarinapl_data = data
                 order.save()
+                
+                #update product variant quantities
+                order_items = OrderItem.objects.filter(order=order)
+                for order_item in order_items:
+                    product = order_item.product
+                    size = order_item.size
+                    color = order_item.color
+                    variant = ProductVariant.objects.get(product=product,size=size,color=color)
+                    variant.quantity -= order_item.quantity
+                    variant.save()
                 
                 return HttpResponse("order payed successfully")
             elif payment_code == 101:
