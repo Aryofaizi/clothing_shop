@@ -8,15 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 19:05+0330\n"
-"PO-Revision-Date: 2024-04-23 11:16+0330\n"
-"Last-Translator: sdfsfd sdfsdf <admin@gmail.com>\n"
+"POT-Creation-Date: 2024-04-23 21:18+0330\n"
+"PO-Revision-Date: 2024-04-23 21:19+0330\n"
+"Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\404.html:12
+msgid "404"
+msgstr ""
 
 #: .\_base.html:71 .\account\logout.html:11 .\account\logout.html:23
 #: .\account\logout.html:25
@@ -32,15 +36,11 @@ msgstr "ورود"
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\_base.html:129 .\_base.html:142
+#: .\_base.html:129 .\_base.html:146
 msgid "$"
 msgstr "تومان"
 
-#: .\_base.html:132
-msgid "delete this item"
-msgstr "حذف این مورد"
-
-#: .\_base.html:141
+#: .\_base.html:145
 msgid "total"
 msgstr "مجموع"
 
@@ -152,3 +152,14 @@ msgstr "حساب تونیک خودتون رو رایگان بسازید"
 #: .\account\signup.html:31
 msgid "you have account?"
 msgstr "حساب دارید؟"
+
+#: .\back_to_site.html:4
+msgid "response"
+msgstr "پاسخ"
+
+#: .\back_to_site.html:22
+msgid "home"
+msgstr "صفحه اصلی"
+
+#~ msgid "delete this item"
+#~ msgstr "حذف این مورد"
