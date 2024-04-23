@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from orders.models import Order,OrderItem
 from store.models import ProductVariant
+from django.utils.translation import gettext as _
 import requests
 import json
 from decouple import config
@@ -23,7 +24,7 @@ def payment_process(request):
         "merchant_id" : config("merchant_id"),
         "amount" :price_in_rial,
         "description" : f"#{order.id}  {order.user.first_name} {order.user.last_name}" ,
-        "callback_url" : "http://127.0.0.1:8000" + reverse("payment_callback"),
+        "callback_url" : "http://tounique.ir" + reverse("payment_callback"),
     }
     
     res = requests.post(url=zarinpal_url, data=data, headers=headers)
@@ -35,7 +36,10 @@ def payment_process(request):
     if "errors" not in res_data or len(res_data["errors"]) == 0:
         return redirect(f"https://www.zarinpal.com/pg/StartPay/{authority}")
     else:
-         return HttpResponse("error from zarinpal")
+        return render(request, "back_to_site.html", context={
+            "header":_("error from zarinpal"),
+            "body": _("error from zarinpal order is not saved if the payment took money from your account it will withdraw automatically after72 hours")
+            })
 
 
 @transaction.atomic
@@ -82,15 +86,30 @@ def payment_callback(request):
                     variant.quantity -= order_item.quantity
                     variant.save()
                 
-                return HttpResponse("order payed successfully")
+                return render(request, "back_to_site.html", context={
+            "header":_("order payed successfully"),
+            "body": _("order payed succesffully thanks for you attention your order will be sent soon")
+            })
             elif payment_code == 101:
-                return HttpResponse("order payed successfully, but this order has already saved in database")
+                return render(request, "back_to_site.html", context={
+            "header":_("order is repeated"),
+            "body": _("order payed successfully but this order was repeated its saved in the database long time ago")
+            })
             else:
-                return HttpResponse("order unsuccessfull")
+                return render(request, "back_to_site.html", context={
+            "header":_("unsuccessfull order"),
+            "body": _("there was a problem in your order order is not successfull")
+            })
         else:
-            return HttpResponse("error from zarinpal")
+            return render(request, "back_to_site.html", context={
+            "header":_("unsuccessfull order"),
+            "body": _("error from zarinpal try again later")
+            })
         
     else:
-        return HttpResponse("error from zarinpal")
+        return render(request, "back_to_site.html", context={
+            "header":_("unsuccessfull order"),
+            "body": _("error from zarinpal try again later")
+            })
     
     

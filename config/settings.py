@@ -29,10 +29,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1"
-]
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast= lambda value: [s.strip() for s in value.split(',')])
 
 
 # Application definition
@@ -78,9 +75,7 @@ MIDDLEWARE = [
 ]
 
 # debug toolbar settings
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+
 
 ROOT_URLCONF = 'config.urls'
 
