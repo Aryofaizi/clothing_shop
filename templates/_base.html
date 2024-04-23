@@ -129,8 +129,12 @@
                                                     <p class="cart-qty">{{item.quantity}}x - <span class="cart-amount">{{item.product_obj.price|intcomma:False|persian_number}} {% trans "$" %}</span>
                                                     </p>
                                                 </div>
-                                                <a href="{% url 'cart_remove' item.product_obj.id %}" class="cart-remove" title="{% trans "delete this item" %}"><i
-                                                        class="far fa-times-circle"></i></a>
+                                                        <form action="{% url 'cart_remove' item.product_obj.id %}" method="post">
+                                                            {% csrf_token %}
+                                                            <input type="hidden" name="size" value="{{item.size.id}}">
+                                                            <input type="hidden" name="color" value="{{item.color.id}}">
+                                                           <button type="submit" class="shop-cart-remove"><i class="far fa-times"></i></button>
+                                                        </form>
                                             </div>
                                         </li>
                                         {% endfor %}

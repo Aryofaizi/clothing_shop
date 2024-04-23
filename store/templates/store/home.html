@@ -1,6 +1,7 @@
 {% extends "_base.html" %}
 {% load store_filters %}
 {% load i18n %}
+{% load humanize %}
 
 {% block page_title %}
   home
@@ -12,38 +13,42 @@
 
 
 
-  <div class="product-area py-100">
-      <div class="container">
+
+
+</main>
+
+
+
+<div class="product-area py-100">
+    <div class="container">
+        
         <div class="row">
             {% for product in products %}
-              <div class="col-12">
-                  <div class="site-heading-inline">
-                      <h2 class="site-title"><img src="assets/img/icon/more.svg" alt></h2>
-                  </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-md-6 col-lg-4 col-xl-3">
-                  <div class="product-item" dir="rtl">
-                      <div class="product-img">
-                          <span class="type new">{% trans "new" %}</span>
-                          <a href="{{product.get_absolute_url}}"><img src="{{product.images.all|first_image}}" alt></a>
-                          
-                      </div>
-                      <div class="product-content">
-                          <h3 class="product-title"><a href="{{product.get_absolute_url}}">{{product.title}} </a></h3>
-                          <div class="product-rate">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                          </div>
-                          <div class="product-bottom">
-                              <div class="product-price">
-                                  <span>{{product.price}} {% trans "$" %}</span>
-                              </div>
-                              <form action="{% url 'cart_add' product.id%}" method="post">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="product-item" dir="rtl">
+                    <div class="product-img">
+                        <span class="type new">{% trans "new" %}</span>
+                        <a href="{{product.get_absolute_url}}"><img src="{{product.images.all|first_image}}" alt></a>
+                        <div class="product-action-wrap">
+                            <div class="product-action">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title"><a href="{{product.get_absolute_url}}"> {{product.title}}</a></h3>
+                        <div class="product-rate">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">
+                                <span>{{product.price|intcomma:False}} {% trans "$" %} </span>
+                            </div>
+                            <form action="{% url 'cart_add' product.id%}" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" name="quantity" value="1" >
                                 <input type="hidden" name="size" value="1" >
@@ -53,19 +58,17 @@
                                   <i class="far fa-shopping-bag"></i>
                               </button>
                               </form>
-                          </div>
-                      </div>
-                  </div>
+                            
+                        </div>
+                    </div>
                 </div>
-                
-                {% endfor %}
-              </div>
-      </div>
-  </div>
-
-</main>
-
-
+            </div>
+            {% endfor %}
+            
+       
+        </div>
+    </div>
+</div>
 
 
 

@@ -121,7 +121,7 @@ class Comment(models.Model):
     status = models.CharField(max_length=2, choices=COMMENT_STATUS, default=COMMENT_STATUS_WAITING)
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
-    
+    checked = models.BooleanField(default=False)
     
     def __str__(self):
         return f"{self.author} : {self.text[:20]} ..."

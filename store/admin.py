@@ -28,7 +28,7 @@ class ProductImageAdmin(admin.ModelAdmin):
 @admin.register(models.Comment)
 class Comment(admin.ModelAdmin):
     model = models.Comment
-    
+    list_display = ("status","checked","rate","text","datetime_created","author")
 @admin.register(models.ProductVariant)
 class ProductVariant(admin.ModelAdmin):
     model = models.ProductVariant
