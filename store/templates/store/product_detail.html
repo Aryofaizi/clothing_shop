@@ -83,6 +83,7 @@
                                 <div class="col-md-6 col-lg-12 col-xl-6">
                                     <div class="shop-single-color">
                                         <select class="" name="color" id="select_color">
+                                            <option value="" selected disabled>{% trans "Select Color" %}</option>
                                             {% comment %} {% for color in colors %} {% endcomment %}
                                             {% comment %} <option value="{{color.id}}">{{color.title}}</option> {% endcomment %}
                                             {% comment %} {% endfor %} {% endcomment %}
@@ -106,7 +107,7 @@
                                 <div class="col-md-6 col-lg-12 col-xl-6">
                                     <div class="shop-single-btn">
                                         
-                                          <button type="submit" class="theme-btn"><span class="far fa-shopping-bag"></span> 
+                                          <button type="submit" id="add_to_cart_btn" class="theme-btn"><span class="far fa-shopping-bag"></span> 
                                              {% trans "add to cart" %}    </button>
                                         </form>
                                     </div>
@@ -233,22 +234,43 @@
 
     function updateColorOptions(selectedSize) {
         var selectColor = document.getElementById('select_color');
-        
+        var selectSize = document.getElementById('select_size');
+        var addToCartBtn = document.getElementById('add_to_cart_btn');
+
         // Clear the current options
         selectColor.innerHTML = "";
-        
+
         // Get the list of colors for the selected size
         var colors = sizeAndColor[selectedSize];
 
-        // Create an option for each color
+        // Create an option for each color if quantity is available
+        var quantityAvailable = false;
         colors.forEach(function(color) {
-            var option = document.createElement('option');
-            option.value = color.id; // Set the value to the color id
-            option.text = color.title; // Set the text to the color title
-            selectColor.appendChild(option);
+            // Check if quantity is available
+            if (color.quantity > 0) {
+                var option = document.createElement('option');
+                option.value = color.id; // Set the value to the color id
+                option.text = color.title; // Set the text to the color title
+                selectColor.appendChild(option);
+                quantityAvailable = true;
+            }
         });
+
+        // Show or hide the add to cart button based on quantity availability
+        if (quantityAvailable) {
+            addToCartBtn.style.display = 'block';
+        } else {
+            addToCartBtn.style.display = 'none';
+        }
     }
+    // Initially hide the "Add to Cart" button
+    window.addEventListener('DOMContentLoaded', function() {
+        var addToCartBtn = document.getElementById('add_to_cart_btn');
+        addToCartBtn.style.display = 'none';
+    });
 </script>
+
+
 
 
 

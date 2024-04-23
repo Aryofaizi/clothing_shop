@@ -30,9 +30,9 @@ class ProductDetailView(generic.DetailView):
         size_and_color = {}
         for item in variants:
             if item.size.id in size_and_color:
-                size_and_color[item.size.id].append({'id': item.color.id, 'title': item.color.title})
+                size_and_color[item.size.id].append({'id': item.color.id, 'title': item.color.title, "quantity":item.quantity})
             else:
-                size_and_color[item.size.id] = [{'id': item.color.id, 'title': item.color.title}]
+                size_and_color[item.size.id] = [{'id': item.color.id, 'title': item.color.title, "quantity":item.quantity}]
             
         context["size_and_color_json"] = json.dumps(size_and_color)
             
