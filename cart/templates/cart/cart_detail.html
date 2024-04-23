@@ -119,11 +119,11 @@
                         <div class="shop-cart-summary">
                             <h5>  {% trans "cart summary" %}</h5>
                             <ul>
-                                <li><strong>مجموع فرعی:</strong> <span>{{cart.get_total_price|intcomma:False}} {% trans "$" %}</span></li>
-                                <li><strong>تخفیف:</strong> <span>0 {% trans "$" %}</span></li>
-                                <li><strong>ارسال:</strong> <span> {% trans "50000"|intcomma:False %} {% trans "$" %}</span></li>
-                                <li><strong>مالیات:</strong> <span>{% trans "1%"|intcomma:False %} {% trans "$" %}</span></li>
-                                <li class="shop-cart-total"><strong>مجموع:</strong> <span>{{cart.get_total_price|intcomma:False}} {% trans "$" %}</span></li>
+                                <li><strong> {% trans "item total" %}</strong> <span>{{cart.get_total_price|intcomma:False}} {% trans "$" %}</span></li>
+                                <li><strong>{% trans "discount" %}</strong> <span>0 {% trans "$" %}</span></li>
+                                <li><strong>{% trans "send price" %}</strong> <span> {% trans "50000"|intcomma:False %} {% trans "$" %}</span></li>
+                                <li><strong>{% trans "tax" %}</strong> <span>{% trans "no tax"|intcomma:False %} </span></li>
+                                <li class="shop-cart-total"><strong>{% trans "cart total" %}</strong> <span>{{cart.get_total_price_with_tax|intcomma:False}} {% trans "$" %}</span></li>
                             </ul>
                             <div class="text-end mt-40">
                                 <a href="{% url 'order_create' %}" type="submit" class="theme-btn">   {% trans "order page" %}<i

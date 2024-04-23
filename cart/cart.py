@@ -74,7 +74,10 @@ class Cart():
         """Returns cart total price."""
         return sum(item["quantity"]*item["product_obj"].price for item in self.cart.values())
             
-            
+    def get_total_price_with_tax(self):
+        """Returns cart total price with tax."""
+        total = self.get_total_price()
+        return total + 50_000
             
         
             
