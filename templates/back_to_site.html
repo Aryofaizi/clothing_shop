@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+{% load i18n %}
+{% block page_title %}
+  {% trans "response" %}
+{% endblock page_title %}
+
+
+{% block content %}
+<main class="main">
+  {% include "header.html" with header={{header}} %}
+
+
+  <div class="mail-success py-120">
+      <div class="container">
+          
+          <div class="row">
+              <div class="col-md-7 mx-auto">
+                  <div class="mail-success-content">
+                      <div class="mail-success-icon"><i class="fal fa-envelope-circle-check"></i></div>
+                      <h3> {{header}}</h3>
+                      <p> {{body}}</p>
+                      <a href="{% url 'home' %}" type="submit" class="theme-btn">{% trans "home" %}  <i class="far fa-home"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  
+
+</main>
+{% endblock content %}
