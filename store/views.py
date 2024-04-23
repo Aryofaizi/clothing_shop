@@ -5,6 +5,7 @@ from django.views import generic
 from django.db.models import Prefetch
 from . import models, forms
 from cart.forms import AddToCartProductForm
+import json
 
 class HomeView(generic.ListView):
     queryset = models.Product.objects.prefetch_related("images")
@@ -25,7 +26,16 @@ class ProductDetailView(generic.DetailView):
         context["add_to_cart_form"] = AddToCartProductForm()
         context["sizes"] = models.Size.objects.filter(size_variants__product=context["product"]).distinct()
         context["colors"] = models.Color.objects.filter(color_variants__product=context["product"]).distinct()
-        print(context["sizes"])
+        variants = models.ProductVariant.objects.filter(product = context["product"])
+        size_and_color = {}
+        for item in variants:
+            if item.size.id in size_and_color:
+                size_and_color[item.size.id].append({'id': item.color.id, 'title': item.color.title})
+            else:
+                size_and_color[item.size.id] = [{'id': item.color.id, 'title': item.color.title}]
+            
+        context["size_and_color_json"] = json.dumps(size_and_color)
+            
         return context
     
     

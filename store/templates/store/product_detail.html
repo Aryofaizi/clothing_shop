@@ -14,7 +14,7 @@
 {% block content %}
 
     <div class="site-breadcrumb">
-        <div class="site-breadcrumb-bg" style="background: url(assets/img/breadcrumb/01.jpg)"></div>
+        <div class="site-breadcrumb-bg" style=""></div>
         <div class="container">
             <div class="site-breadcrumb-wrap">
                 <h4 class="breadcrumb-title">  {% trans "buy product" %} {{product.title}}</h4>
@@ -73,7 +73,7 @@
                               </div>
                               <div class="col-md-3 col-lg-4 col-xl-3">
                                     <div class="shop-single-size">
-                                        <select class="select" name="size">
+                                        <select class="select" name="size" onchange="updateColorOptions(this.value)"  id="select_size">
                                             {% for size in sizes %}
                                                 <option value="{{ size.id }}">{{ size.title }}</option>
                                             {% endfor %}
@@ -82,10 +82,10 @@
                                 </div>
                                 <div class="col-md-6 col-lg-12 col-xl-6">
                                     <div class="shop-single-color">
-                                        <select class="select" name="color" >
-                                            {% for color in colors %}
-                                            <option value="{{color.id}}">{{color.title}}</option>
-                                            {% endfor %}
+                                        <select class="" name="color" id="select_color">
+                                            {% comment %} {% for color in colors %} {% endcomment %}
+                                            {% comment %} <option value="{{color.id}}">{{color.title}}</option> {% endcomment %}
+                                            {% comment %} {% endfor %} {% endcomment %}
                                         </select>
                                        
                                     </div>
@@ -223,6 +223,38 @@
 
         </div>
     </div>
+
+
+    
+{% block javascript %}
+
+<script>
+    var sizeAndColor = JSON.parse('{{ size_and_color_json|escapejs }}');
+
+    function updateColorOptions(selectedSize) {
+        var selectColor = document.getElementById('select_color');
+        
+        // Clear the current options
+        selectColor.innerHTML = "";
+        
+        // Get the list of colors for the selected size
+        var colors = sizeAndColor[selectedSize];
+
+        // Create an option for each color
+        colors.forEach(function(color) {
+            var option = document.createElement('option');
+            option.value = color.id; // Set the value to the color id
+            option.text = color.title; // Set the text to the color title
+            selectColor.appendChild(option);
+        });
+    }
+</script>
+
+
+
+
+
+{% endblock javascript %}
 
 
 {% endblock content %}
