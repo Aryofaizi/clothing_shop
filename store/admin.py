@@ -32,3 +32,12 @@ class Comment(admin.ModelAdmin):
 @admin.register(models.ProductVariant)
 class ProductVariant(admin.ModelAdmin):
     model = models.ProductVariant
+    
+@admin.register(models.Color)
+class Color(admin.ModelAdmin):
+    model = models.Color
+    
+    
+@admin.register(models.Size)
+class Size(admin.ModelAdmin):
+    model = models.Size
