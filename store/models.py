@@ -24,11 +24,11 @@ class Product(models.Model):
     PRODUCT_RATE_TWO_STAR = 2
     PRODUCT_RATE_ONE_STAR = 1
     PRODUCT_RATE_CHOICES = [
-        (PRODUCT_RATE_FIVE_STAR, "EXCELLENT"),
-        (PRODUCT_RATE_FOUR_STAR, "GOOD"),
-        (PRODUCT_RATE_THREE_STAR, "NOT BAD"),
-        (PRODUCT_RATE_TWO_STAR, "BAD"),
-        (PRODUCT_RATE_ONE_STAR, "VERY BAD"),
+        (PRODUCT_RATE_FIVE_STAR, _("EXCELLENT")),
+        (PRODUCT_RATE_FOUR_STAR, _("GOOD")),
+        (PRODUCT_RATE_THREE_STAR, _("NOT BAD")),
+        (PRODUCT_RATE_TWO_STAR, _("BAD")),
+        (PRODUCT_RATE_ONE_STAR, _("VERY BAD")),
     ]
     """Represent product obj in database."""
     title = models.CharField(max_length=255)
@@ -100,11 +100,11 @@ class Comment(models.Model):
     COMMENT_RATE_TWO_STAR = 2
     COMMENT_RATE_ONE_STAR = 1
     COMMENT_RATE_CHOICES = [
-        (COMMENT_RATE_FIVE_STAR, "EXCELLENT"),
-        (COMMENT_RATE_FOUR_STAR, "GOOD"),
-        (COMMENT_RATE_THREE_STAR, "NOT BAD"),
-        (COMMENT_RATE_TWO_STAR, "BAD"),
-        (COMMENT_RATE_ONE_STAR, "VERY BAD"),
+        (COMMENT_RATE_FIVE_STAR, _("EXCELLENT")),
+        (COMMENT_RATE_FOUR_STAR, _("GOOD")),
+        (COMMENT_RATE_THREE_STAR, _("NOT BAD")),
+        (COMMENT_RATE_TWO_STAR, _("BAD")),
+        (COMMENT_RATE_ONE_STAR, _("VERY BAD")),
     ]
     COMMENT_STATUS_WAITING = 'w'
     COMMENT_STATUS_APPROVED = 'a'

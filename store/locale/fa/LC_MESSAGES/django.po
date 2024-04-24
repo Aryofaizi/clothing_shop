@@ -8,15 +8,35 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 11:17+0330\n"
-"PO-Revision-Date: 2024-04-23 11:18+0330\n"
-"Last-Translator: sdfsfd sdfsdf <admin@gmail.com>\n"
+"POT-Creation-Date: 2024-04-24 12:35+0330\n"
+"PO-Revision-Date: 2024-04-24 12:39+0330\n"
+"Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\models.py:27 .\models.py:103
+msgid "EXCELLENT"
+msgstr "خیلی عالی"
+
+#: .\models.py:28 .\models.py:104
+msgid "GOOD"
+msgstr "عالی"
+
+#: .\models.py:29 .\models.py:105
+msgid "NOT BAD"
+msgstr "خوب"
+
+#: .\models.py:30 .\models.py:106
+msgid "BAD"
+msgstr "بد"
+
+#: .\models.py:31 .\models.py:107
+msgid "VERY BAD"
+msgstr "خیلی بد"
 
 #: .\models.py:119
 msgid "rate"
@@ -26,15 +46,15 @@ msgstr "امتیاز"
 msgid "comment text"
 msgstr "متن دیدگاه"
 
-#: .\templates\store\home.html:30
+#: .\templates\store\home.html:24
 msgid "new"
 msgstr "جدید"
 
-#: .\templates\store\home.html:49 .\templates\store\product_detail.html:56
+#: .\templates\store\home.html:43 .\templates\store\product_detail.html:56
 msgid "$"
 msgstr "تومان"
 
-#: .\templates\store\home.html:57 .\templates\store\product_detail.html:110
+#: .\templates\store\home.html:52 .\templates\store\product_detail.html:114
 msgid "add to cart"
 msgstr "اضافه به سبد خرید"
 
@@ -47,29 +67,32 @@ msgid "buy product"
 msgstr "خرید محصول"
 
 #: .\templates\store\product_detail.html:53
-#: .\templates\store\product_detail.html:135
-#: .\templates\store\product_detail.html:153
-#, fuzzy
+#: .\templates\store\product_detail.html:139
+#: .\templates\store\product_detail.html:157
 #| msgid "comment text"
 msgid "comments"
-msgstr "متن دیدگاه"
+msgstr "نظر"
 
-#: .\templates\store\product_detail.html:116
+#: .\templates\store\product_detail.html:86
+msgid "Select Color"
+msgstr "انتخاب رنگ"
+
+#: .\templates\store\product_detail.html:120
 msgid "share:"
 msgstr "اشتراک گذاری"
 
-#: .\templates\store\product_detail.html:131
+#: .\templates\store\product_detail.html:135
 msgid "description"
 msgstr "توضیحات"
 
-#: .\templates\store\product_detail.html:193
+#: .\templates\store\product_detail.html:197
 msgid "place your comment"
 msgstr "ثبت نظر"
 
-#: .\templates\store\product_detail.html:209
+#: .\templates\store\product_detail.html:213
 msgid "save comment"
 msgstr "ذخیره"
 
-#: .\templates\store\product_detail.html:213
+#: .\templates\store\product_detail.html:217
 msgid "please login to write comments"
 msgstr "لطفا برای ثبت نظر به حساب کاربری خود وارد شوید"

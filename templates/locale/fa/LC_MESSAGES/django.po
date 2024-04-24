@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 21:18+0330\n"
-"PO-Revision-Date: 2024-04-23 21:19+0330\n"
+"POT-Creation-Date: 2024-04-24 12:48+0330\n"
+"PO-Revision-Date: 2024-04-24 12:52+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,27 +22,92 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: .\_base.html:71 .\account\logout.html:11 .\account\logout.html:23
+#: .\_base.html:62 .\account\logout.html:11 .\account\logout.html:23
 #: .\account\logout.html:25
 msgid "logout"
 msgstr "خروج"
 
-#: .\_base.html:73 .\account\login.html:15 .\account\login.html:31
+#: .\_base.html:64 .\account\login.html:15 .\account\login.html:31
 #: .\account\signup.html:31
 msgid "login"
 msgstr "ورود"
 
-#: .\_base.html:75
+#: .\_base.html:66
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\_base.html:129 .\_base.html:146
+#: .\_base.html:82 .\_base.html:213 .\_base.html:284
+msgid "09181718810"
+msgstr "09181718810"
+
+#: .\_base.html:130 .\_base.html:147
 msgid "$"
 msgstr "تومان"
 
-#: .\_base.html:145
+#: .\_base.html:146
 msgid "total"
 msgstr "مجموع"
+
+#: .\_base.html:205
+msgid "buy the newest cloth with trend fashion from tounique"
+msgstr "جدید ترین مد روز رو در فروشگاه ما با استایلیست های ما تجربه کنید"
+
+#: .\_base.html:217
+msgid "get our mobile app"
+msgstr "برنامه موبایل"
+
+#: .\_base.html:222 .\_base.html:229
+msgid "install"
+msgstr "نصب"
+
+#: .\_base.html:223
+#| msgid "google"
+msgid "google play"
+msgstr "گوگل پلی"
+
+#: .\_base.html:230
+msgid "apple store"
+msgstr "اپل استور"
+
+#: .\_base.html:255
+msgid "cloth"
+msgstr "پوشاک"
+
+#: .\_base.html:256
+msgid "t-shirt"
+msgstr "تی شرت"
+
+#: .\_base.html:257
+msgid "trouser"
+msgstr "پیراهن"
+
+#: .\_base.html:258
+msgid "jeans"
+msgstr "جنس لی"
+
+#: .\_base.html:259
+msgid "caps"
+msgstr "کلاه"
+
+#: .\_base.html:260
+msgid "pants"
+msgstr "شلوار"
+
+#: .\_base.html:261
+msgid "coats"
+msgstr "کت"
+
+#: .\_base.html:285
+msgid "tehran grand bazar"
+msgstr "تهران بازار بزرگ"
+
+#: .\_base.html:290
+msgid "saturday till friday"
+msgstr "شنبه تا جمعه"
+
+#: .\_base.html:339
+msgid "tounique"
+msgstr "تونیک"
 
 #: .\account\login.html:25
 msgid "login with your tounique account"
@@ -95,26 +160,30 @@ msgid "send reset passwrod email"
 msgstr "ارسال ایمیل تغییر رمز عبور"
 
 #: .\account\password_reset_done.html:11
-msgid "password changed succesfully "
-msgstr "رمز عبور با موفقیت تغییر کرد"
+msgid "password email sent "
+msgstr "ایمیل تغییر رمز عبور ارسال شد"
 
 #: .\account\password_reset_done.html:23
-#: .\account\password_reset_from_key.html:5
-msgid "password changed succesfully"
-msgstr "رمز عبور با موفقیت تغییر کرد"
+msgid "email for changin password sent"
+msgstr "ایمیل برای تغییر رمز عبور ارسال شد"
 
 #: .\account\password_reset_done.html:24
 msgid ""
-"now on you can use your new password to login in to your account please "
-"click on the button below to login again"
+"please check your email and your spam box for the email we have sent you to "
+"change your email with specific link"
 msgstr ""
-"با کلیک روی دکمه زیر از این پس میتوانید از رمز عبور جدید برای ورود به سایت "
-"استفاده کنید"
+"لطفا ایمیل خود و صندوق هرزنامه رو هم بررسی کنید ما برای شما یک ایمیل حاوی "
+"لینک تغییر گذرواژه ارسال کرده ایم"
 
 #: .\account\password_reset_done.html:25
 #: .\account\password_reset_from_key_done.html:25
 msgid "get back to login"
 msgstr "برگشت به صفحه ورود"
+
+#: .\account\password_reset_from_key.html:5
+#: .\account\password_reset_from_key_done.html:23
+msgid "password changed succesfully"
+msgstr "رمز عبور با موفقیت تغییر کرد"
 
 #: .\account\password_reset_from_key.html:24
 msgid ""
@@ -130,20 +199,16 @@ msgid "save"
 msgstr "ذخیره"
 
 #: .\account\password_reset_from_key_done.html:11
-msgid "password email sent "
-msgstr "ایمیل تغییر رمز عبور ارسال شد"
-
-#: .\account\password_reset_from_key_done.html:23
-msgid "email for changin password sent"
-msgstr "ایمیل برای تغییر رمز عبور ارسال شد"
+msgid "password changed succesfully "
+msgstr "رمز عبور با موفقیت تغییر کرد"
 
 #: .\account\password_reset_from_key_done.html:24
 msgid ""
-"please check your email and your spam box for the email we have sent you to "
-"change your email with specific link"
+"now on you can use your new password to login in to your account please "
+"click on the button below to login again"
 msgstr ""
-"لطفا ایمیل خود و صندوق هرزنامه رو هم بررسی کنید ما برای شما یک ایمیل حاوی "
-"لینک تغییر گذرواژه ارسال کرده ایم"
+"با کلیک روی دکمه زیر از این پس میتوانید از رمز عبور جدید برای ورود به سایت "
+"استفاده کنید"
 
 #: .\account\signup.html:21
 msgid "make your tounique account for free"
