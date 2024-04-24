@@ -57,15 +57,6 @@
                     <div class="col-12 col-md-6 col-lg-6 col-xl-5">
                         <div class="header-top-left">
                             <ul class="header-top-list">
-                                
-                                <li><a href=""><i class="far fa-headset"></i> 09181718810</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6 col-xl-7">
-                        <div class="header-top-right">
-                            <ul class="header-top-list">
                                 <li class="account"><a href="#"><i class="far fa-user-vneck"></i> حساب</a></li>
                                 {% if user.is_authenticated %}
                                 <li class="login"><a href="{% url 'account_logout' %}"><i class="far fa-arrow-right-to-arc"></i> {% trans "logout" %}</a></li>
@@ -82,6 +73,16 @@
                                 </li>
                                 
                             </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-7">
+                        <div class="header-top-right">
+                            <ul class="header-top-list">
+                                
+                                <li><a href=""><i class="far fa-headset"></i> 09181718810</a></li>
+                                
+                            </ul>
+                            
                         </div>
                     </div>
                 </div>
