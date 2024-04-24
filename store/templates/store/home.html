@@ -13,62 +13,104 @@
 
 
 
+    <div class="product-area py-100">
+        <div class="container">
+            
+            <div class="row">
+                {% for product in products %}
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="product-item" dir="rtl">
+                        <div class="product-img">
+                            <span class="type new">{% trans "new" %}</span>
+                            <a href="{{product.get_absolute_url}}"><img src="{{product.images.all|first_image}}" alt></a>
+                            <div class="product-action-wrap">
+                                <div class="product-action">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="{{product.get_absolute_url}}"> {{product.title}}</a></h3>
+                            <div class="product-rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">
+                                    <span>{{product.price|intcomma:False}} {% trans "$" %} </span>
+                                </div>
+                                {% comment %} <form action="{% url 'cart_add' product.id%}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="quantity" value="1" >
+                                    <input type="hidden" name="size" value="1" >
+                                    <input type="hidden" name="color" value="1" > {% endcomment %}
+                                    <a href="{{product.get_absolute_url}}" type="submit" class="product-cart-btn" data-bs-placement="right"
+                                          data-tooltip="tooltip" title="{% trans "add to cart" %}">
+                                      <i class="far fa-shopping-bag"></i>
+                                    </a>
+                                  {% comment %} </form> {% endcomment %}
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+           
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="pagination-area mb-20">
+        <div aria-label="نمونه پیمایش صفحه">
+            <ul class="pagination">
+                <li class="page-item">
+                 
+                {% if page_obj.has_previous %}
+                    <a class="page-link" href="?page={{page_obj.previous_page_number}}" aria-label="Previous">
+                        <span aria-hidden="true"><i class="far fa-arrow-right"></i></span>
+                    </a>
+                {% endif %}
+                    {% get_proper_elided_page_range paginator page_obj.number as page_range %} <!-- here -->
+                    {% for i in page_range %}
+                        {% if page_obj.number == i %}
+                            <li class="active page-item">
+                                <span class="page-link">{{ i }}</span>
+                            </li>
+                        {% else %}
+                            {% if i == paginator.ELLIPSIS %}
+                                <li class="page-item">
+                                    <span class="page-link">{{ paginator.ELLIPSIS }}</span>
+                                </li>
+                            {% else %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    
+                <li class="page-item">
+                    {% if page_obj.has_next %}
+                        <a class="page-link" href="?page={{page_obj.next_page_number}}" aria-label="Next">
+                            <span aria-hidden="true"><i class="far fa-arrow-left"></i></span>
+                        </a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
 
 
 </main>
 
 
 
-<div class="product-area py-100">
-    <div class="container">
-        
-        <div class="row">
-            {% for product in products %}
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div class="product-item" dir="rtl">
-                    <div class="product-img">
-                        <span class="type new">{% trans "new" %}</span>
-                        <a href="{{product.get_absolute_url}}"><img src="{{product.images.all|first_image}}" alt></a>
-                        <div class="product-action-wrap">
-                            <div class="product-action">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title"><a href="{{product.get_absolute_url}}"> {{product.title}}</a></h3>
-                        <div class="product-rate">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="product-bottom">
-                            <div class="product-price">
-                                <span>{{product.price|intcomma:False}} {% trans "$" %} </span>
-                            </div>
-                            <form action="{% url 'cart_add' product.id%}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="quantity" value="1" >
-                                <input type="hidden" name="size" value="1" >
-                                <input type="hidden" name="color" value="1" >
-                                <button type="submit" class="product-cart-btn" data-bs-placement="right"
-                                      data-tooltip="tooltip" title="{% trans "add to cart" %}">
-                                  <i class="far fa-shopping-bag"></i>
-                              </button>
-                              </form>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            
-       
-        </div>
-    </div>
-</div>
 
 
 

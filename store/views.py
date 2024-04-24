@@ -11,6 +11,7 @@ class HomeView(generic.ListView):
     queryset = models.Product.objects.prefetch_related("images")
     template_name = "store/home.html"
     context_object_name = "products"
+    paginate_by = 12
     
     
 class ProductDetailView(generic.DetailView):
