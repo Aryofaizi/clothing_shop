@@ -10,6 +10,13 @@
    {% trans "product detail" %}
 {% endblock page_title %}
 
+{% block meta_tags %}
+<meta name="product_id" content="{{product.id}}">
+<meta name="product_name" content="{{product.title}}">
+<meta name="product_price" content="{{product.price}}">
+
+
+{% endblock meta_tags %}
 
 {% block content %}
 
