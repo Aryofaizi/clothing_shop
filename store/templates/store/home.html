@@ -26,7 +26,44 @@
 
 <main class="main">
 
-
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-slider owl-carousel owl-theme" dir="ltr">
+               {% for product in last_four_products|last_four %}
+               <div class="hero-single">
+                <div class="container">
+                    <div class="row align-items-center" dir="rtl">
+                        <div class="col-md-12 col-lg-6 col-xl-5 offset-xl-3">
+                            <div class="hero-content">
+                                <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">
+                                    {{product.category}}</h6>
+                                <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                      {% trans "newest" %} <br><span>{{product.title}}</span>
+                                </h1>
+                                <p data-animation="fadeInLeft" data-delay=".75s">
+                                    {{product.description|safe|truncatechars:1}}
+                                </p>
+                                <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
+                                    <a href="{{product.get_absolute_url}}" class="theme-btn">  {% trans "add to cart" %}<i class="fas fa-arrow-left"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-4">
+                            <div class="hero-right">
+                                <div class="hero-img">
+                                    <img src="{{product.images.all|first_image}}" alt data-animation="fadeInRight"
+                                         data-delay=".25s">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               {% endfor %}
+                
+            </div>
+        </div>
+    </div>
 
     <div class="product-area py-100">
         <div class="container">

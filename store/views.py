@@ -19,6 +19,12 @@ class HomeView(generic.ListView):
         if search:
             queryset = models.Product.objects.filter(title__icontains=search).prefetch_related("images")
         return queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        last_four_products = models.Product.objects.order_by("-id").select_related("category").prefetch_related("images")
+        context['last_four_products'] = last_four_products
+        return context
             
     
     

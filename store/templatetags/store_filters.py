@@ -6,7 +6,7 @@ register = template.Library()
 @register.filter
 def first_image(value):
     """Gets onely the first image for the products that have multiple images."""
-    return value[1].image.url
+    return value[0].image.url
 
 @register.filter
 def last_four(value):
