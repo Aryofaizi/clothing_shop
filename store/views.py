@@ -13,6 +13,14 @@ class HomeView(generic.ListView):
     context_object_name = "products"
     paginate_by = 12
     
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        search = self.request.GET.get("search")
+        if search:
+            queryset = models.Product.objects.filter(title__icontains=search).prefetch_related("images")
+        return queryset
+            
+    
     
 class ProductDetailView(generic.DetailView):
     queryset = models.Product.objects.prefetch_related(
