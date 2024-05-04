@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-24 12:35+0330\n"
+"POT-Creation-Date: 2024-05-04 23:19+0330\n"
 "PO-Revision-Date: 2024-04-24 12:39+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,53 +46,59 @@ msgstr "امتیاز"
 msgid "comment text"
 msgstr "متن دیدگاه"
 
-#: .\templates\store\home.html:24
+#: .\templates\store\home.html:41
+#, fuzzy
+#| msgid "new"
+msgid "newest"
+msgstr "جدید"
+
+#: .\templates\store\home.html:47 .\templates\store\home.html:104
+#: .\templates\store\product_detail.html:121
+msgid "add to cart"
+msgstr "اضافه به سبد خرید"
+
+#: .\templates\store\home.html:76
 msgid "new"
 msgstr "جدید"
 
-#: .\templates\store\home.html:43 .\templates\store\product_detail.html:56
+#: .\templates\store\home.html:95 .\templates\store\product_detail.html:63
 msgid "$"
 msgstr "تومان"
-
-#: .\templates\store\home.html:52 .\templates\store\product_detail.html:114
-msgid "add to cart"
-msgstr "اضافه به سبد خرید"
 
 #: .\templates\store\product_detail.html:10
 msgid "product detail"
 msgstr "مشخصات محصول"
 
-#: .\templates\store\product_detail.html:20
+#: .\templates\store\product_detail.html:27
 msgid "buy product"
 msgstr "خرید محصول"
 
-#: .\templates\store\product_detail.html:53
-#: .\templates\store\product_detail.html:139
-#: .\templates\store\product_detail.html:157
-#| msgid "comment text"
+#: .\templates\store\product_detail.html:60
+#: .\templates\store\product_detail.html:146
+#: .\templates\store\product_detail.html:164
 msgid "comments"
 msgstr "نظر"
 
-#: .\templates\store\product_detail.html:86
+#: .\templates\store\product_detail.html:93
 msgid "Select Color"
 msgstr "انتخاب رنگ"
 
-#: .\templates\store\product_detail.html:120
+#: .\templates\store\product_detail.html:127
 msgid "share:"
 msgstr "اشتراک گذاری"
 
-#: .\templates\store\product_detail.html:135
+#: .\templates\store\product_detail.html:142
 msgid "description"
 msgstr "توضیحات"
 
-#: .\templates\store\product_detail.html:197
+#: .\templates\store\product_detail.html:204
 msgid "place your comment"
 msgstr "ثبت نظر"
 
-#: .\templates\store\product_detail.html:213
+#: .\templates\store\product_detail.html:220
 msgid "save comment"
 msgstr "ذخیره"
 
-#: .\templates\store\product_detail.html:217
+#: .\templates\store\product_detail.html:224
 msgid "please login to write comments"
 msgstr "لطفا برای ثبت نظر به حساب کاربری خود وارد شوید"

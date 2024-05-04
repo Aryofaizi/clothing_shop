@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-24 12:48+0330\n"
+"POT-Creation-Date: 2024-05-04 23:09+0330\n"
 "PO-Revision-Date: 2024-04-24 12:52+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,90 +22,89 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: .\_base.html:62 .\account\logout.html:11 .\account\logout.html:23
+#: .\_base.html:66 .\account\logout.html:11 .\account\logout.html:23
 #: .\account\logout.html:25
 msgid "logout"
 msgstr "خروج"
 
-#: .\_base.html:64 .\account\login.html:15 .\account\login.html:31
+#: .\_base.html:68 .\account\login.html:15 .\account\login.html:31
 #: .\account\signup.html:31
 msgid "login"
 msgstr "ورود"
 
-#: .\_base.html:66
+#: .\_base.html:70
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\_base.html:82 .\_base.html:213 .\_base.html:284
+#: .\_base.html:86 .\_base.html:217 .\_base.html:288
 msgid "09181718810"
 msgstr "09181718810"
 
-#: .\_base.html:130 .\_base.html:147
+#: .\_base.html:134 .\_base.html:151
 msgid "$"
 msgstr "تومان"
 
-#: .\_base.html:146
+#: .\_base.html:150
 msgid "total"
 msgstr "مجموع"
 
-#: .\_base.html:205
+#: .\_base.html:209
 msgid "buy the newest cloth with trend fashion from tounique"
 msgstr "جدید ترین مد روز رو در فروشگاه ما با استایلیست های ما تجربه کنید"
 
-#: .\_base.html:217
+#: .\_base.html:221
 msgid "get our mobile app"
 msgstr "برنامه موبایل"
 
-#: .\_base.html:222 .\_base.html:229
+#: .\_base.html:226 .\_base.html:233
 msgid "install"
 msgstr "نصب"
 
-#: .\_base.html:223
-#| msgid "google"
+#: .\_base.html:227
 msgid "google play"
 msgstr "گوگل پلی"
 
-#: .\_base.html:230
+#: .\_base.html:234
 msgid "apple store"
 msgstr "اپل استور"
 
-#: .\_base.html:255
+#: .\_base.html:259
 msgid "cloth"
 msgstr "پوشاک"
 
-#: .\_base.html:256
+#: .\_base.html:260
 msgid "t-shirt"
 msgstr "تی شرت"
 
-#: .\_base.html:257
+#: .\_base.html:261
 msgid "trouser"
 msgstr "پیراهن"
 
-#: .\_base.html:258
+#: .\_base.html:262
 msgid "jeans"
 msgstr "جنس لی"
 
-#: .\_base.html:259
+#: .\_base.html:263
 msgid "caps"
 msgstr "کلاه"
 
-#: .\_base.html:260
+#: .\_base.html:264
 msgid "pants"
 msgstr "شلوار"
 
-#: .\_base.html:261
+#: .\_base.html:265
 msgid "coats"
 msgstr "کت"
 
-#: .\_base.html:285
+#: .\_base.html:289
 msgid "tehran grand bazar"
 msgstr "تهران بازار بزرگ"
 
-#: .\_base.html:290
+#: .\_base.html:294
 msgid "saturday till friday"
 msgstr "شنبه تا جمعه"
 
-#: .\_base.html:339
+#: .\_base.html:343
 msgid "tounique"
 msgstr "تونیک"
 
@@ -191,8 +190,8 @@ msgid ""
 "fill in the fields and click on the button bellow thanks for using our "
 "website"
 msgstr ""
-"برای تغییر گذرواژه برای حساب فعلی باید از طریق پر کردن اطلاعات این فرم اقدام"
-" کنید و بعد روی دکمه زیر کلیک کنید ممنون از حمایت شما"
+"برای تغییر گذرواژه برای حساب فعلی باید از طریق پر کردن اطلاعات این فرم اقدام "
+"کنید و بعد روی دکمه زیر کلیک کنید ممنون از حمایت شما"
 
 #: .\account\password_reset_from_key.html:25
 msgid "save"

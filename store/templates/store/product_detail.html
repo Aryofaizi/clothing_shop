@@ -62,7 +62,7 @@
                         <div class="shop-single-price">
                             <span class="amount">{{product.price|intcomma:False|persian_number}} {% trans "$" %}</span>
                         </div>
-                        <p class="mb-3">
+                        <p class="mb-3" id="description_element">
                             {{product.description|truncatechars:20|safe}}
                         </p>
                         <div class="shop-single-cs">
@@ -70,10 +70,10 @@
                                 <div class="col-md-3 col-lg-4 col-xl-3">
                                     <div class="shop-single-size">
                                         <h6>مقدار</h6>
-                                        <div class="shop-cart-qty">
+                                        <div class="">
                                           <form action="{% url 'cart_add' product.id %}" method="post">
                                                 {% csrf_token %}
-                                              <input type="number" name="quantity" value="1" min="1" max="30">
+                                              <input type="number"  id="quantity_input" name="quantity" value="1" min="1" max="30">
                                               
                                           </div>
                                     </div>
@@ -240,9 +240,22 @@
     var sizeAndColor = JSON.parse('{{ size_and_color_json|escapejs }}');
 
     function updateColorOptions(selectedSize) {
+        var quantity_input = document.getElementById('quantity_input');
         var selectColor = document.getElementById('select_color');
-        var selectSize = document.getElementById('select_size');
         var addToCartBtn = document.getElementById('add_to_cart_btn');
+        var description_element = document.getElementById("description_element");
+
+        // Remove any previous "not available" message
+        var previousMessage = description_element.querySelector(".not-available-message");
+        if (previousMessage) {
+            description_element.removeChild(previousMessage);
+        }
+
+        // Create a new "not available" message element
+        var notAvailableMessage = document.createElement("p");
+        notAvailableMessage.classList.add("not-available-message");
+        notAvailableMessage.textContent = "این تعداد یا این رنگ با این سایز موجود نیست ";
+        notAvailableMessage.style.color = "red";
 
         // Clear the current options
         selectColor.innerHTML = "";
@@ -254,7 +267,7 @@
         var quantityAvailable = false;
         colors.forEach(function(color) {
             // Check if quantity is available
-            if (color.quantity > 0) {
+            if (color.quantity >= quantity_input.value) {
                 var option = document.createElement('option');
                 option.value = color.id; // Set the value to the color id
                 option.text = color.title; // Set the text to the color title
@@ -264,18 +277,34 @@
         });
 
         // Show or hide the add to cart button based on quantity availability
-        if (quantityAvailable) {
+        if (quantityAvailable && quantity_input.value > 0) {
             addToCartBtn.style.display = 'block';
         } else {
             addToCartBtn.style.display = 'none';
+            description_element.appendChild(notAvailableMessage);
         }
     }
-    // Initially hide the "Add to Cart" button
+
+    // Add event listeners to quantity input and select size
     window.addEventListener('DOMContentLoaded', function() {
+        var quantity_input = document.getElementById('quantity_input');
+        var select_size = document.getElementById('select_size');
+
+        quantity_input.addEventListener('change', function() {
+            updateColorOptions(select_size.value);
+        });
+
+        select_size.addEventListener('change', function() {
+            updateColorOptions(this.value);
+        });
+
+        // Initially hide the "Add to Cart" button
         var addToCartBtn = document.getElementById('add_to_cart_btn');
         addToCartBtn.style.display = 'none';
     });
 </script>
+
+
 
 
 
