@@ -279,6 +279,7 @@
 
         // Show or hide the add to cart button based on quantity availability
         if (quantityAvailable && quantity_input.value > 0) {
+            availability_status.style.color = "green"
             availability_status.textContent = "موجود"
             addToCartBtn.style.display = 'block';
         } else {
