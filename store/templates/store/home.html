@@ -2,6 +2,7 @@
 {% load store_filters %}
 {% load i18n %}
 {% load humanize %}
+{% load static %}
 
 {% block page_title %}
   home
@@ -61,6 +62,43 @@
             </div>
                {% endfor %}
                 
+            </div>
+        </div>
+    </div>
+
+    <div class="small-banner pt-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="banner-item">
+                        <img src="{% static 'assets/img/banner/mini-banner-1.jpg' %}" alt>
+                        <div class="banner-content">
+                            <p> ست ها </p>
+                            <h3> مجموعه <br>ست&zwnj;های پیشنهادی </h3>
+                            {% comment %} <a href="#"> اکنون خرید کنید</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="banner-item">
+                        <img src="{% static 'assets/img/banner/mini-banner-2.jpg' %}" alt>
+                        <div class="banner-content">
+                            <p>مجموعه‌های  اکسسوری</p>
+                            <h3> کالکشن  <br> ساعت ها</h3>
+                            {% comment %} <a href="#">اکنون خرید کنید</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="banner-item">
+                        <img src="{% static 'assets/img/banner/mini-banner-3.jpg' %}" alt>
+                        <div class="banner-content">
+                            <p>مجموعه‌های کفش</p>
+                            <h3>انواع کفش  <br> تمامی  <span>محصولات</span> با کیفیت</h3>
+                            {% comment %} <a href="#">اکنون خرید کنید</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
