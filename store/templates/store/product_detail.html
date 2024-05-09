@@ -102,7 +102,7 @@
                         </div>
                         <div class="shop-single-sortinfo">
                             <ul>
-                                <li> موجودی: <span>موجود</span></li>
+                                <li> موجودی: <span id="availability_status">موجود</span></li>
                                 <li>کد محصول: <span>{{product.code}}</span></li>
                                 <li>دسته: <span>{{product.category}}</span></li>
                                 <li>فروش توسط: <a href="#"> {{product.seller_name}}</a></li>
@@ -240,6 +240,7 @@
     var sizeAndColor = JSON.parse('{{ size_and_color_json|escapejs }}');
 
     function updateColorOptions(selectedSize) {
+        var availability_status = document.getElementById("availability_status")
         var quantity_input = document.getElementById('quantity_input');
         var selectColor = document.getElementById('select_color');
         var addToCartBtn = document.getElementById('add_to_cart_btn');
@@ -278,8 +279,11 @@
 
         // Show or hide the add to cart button based on quantity availability
         if (quantityAvailable && quantity_input.value > 0) {
+            availability_status.textContent = "موجود"
             addToCartBtn.style.display = 'block';
         } else {
+            availability_status.style.color = "red";
+            availability_status.textContent = "ناموجود";
             addToCartBtn.style.display = 'none';
             description_element.appendChild(notAvailableMessage);
         }
