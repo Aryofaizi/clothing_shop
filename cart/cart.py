@@ -77,7 +77,10 @@ class Cart():
     def get_total_price_with_tax(self):
         """Returns cart total price with tax."""
         total = self.get_total_price()
-        return total + 50_000
+        if len(self.cart) == 0:
+            return 0 
+        else:
+            return total + 50_000
             
         
             
