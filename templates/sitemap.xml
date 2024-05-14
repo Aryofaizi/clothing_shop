@@ -9,47 +9,77 @@
 
 <url>
   <loc>https://tounique.ir/</loc>
-  <lastmod>2024-04-29T09:49:35+00:00</lastmod>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://tounique.ir/accounts/login/</loc>
-  <lastmod>2024-04-29T09:49:35+00:00</lastmod>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tounique.ir/accounts/signup/</loc>
-  <lastmod>2024-04-29T09:49:35+00:00</lastmod>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tounique.ir/cart/</loc>
-  <lastmod>2024-04-29T09:49:35+00:00</lastmod>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tounique.ir/accounts/login/?next=/order/create/</loc>
-  <lastmod>2024-04-29T09:49:35+00:00</lastmod>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tounique.ir/products/9/</loc>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tounique.ir/products/8/</loc>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tounique.ir/products/7/</loc>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tounique.ir/products/6/</loc>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tounique.ir/products/1/</loc>
-  <lastmod>2024-04-29T09:49:35+00:00</lastmod>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tounique.ir/products/2/</loc>
-  <lastmod>2024-04-29T09:49:35+00:00</lastmod>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tounique.ir/products/3/</loc>
-  <lastmod>2024-04-29T09:49:35+00:00</lastmod>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tounique.ir/products/4/</loc>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tounique.ir/products/5/</loc>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tounique.ir/accounts/password/reset/</loc>
-  <lastmod>2024-04-29T09:49:35+00:00</lastmod>
+  <lastmod>2024-05-14T08:45:46+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 

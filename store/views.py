@@ -22,7 +22,8 @@ class HomeView(generic.ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        last_four_products = models.Product.objects.order_by("-id").select_related("category").prefetch_related("images")
+        context["underwear_products"] = models.Product.objects.filter(category__title__icontains="زیر پوش").prefetch_related("images")
+        last_four_products = models.Product.objects.order_by("-id").select_related("category").prefetch_related("images")[:4]
         context['last_four_products'] = last_four_products
         return context
             
