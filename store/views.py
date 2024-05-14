@@ -5,6 +5,7 @@ from django.views import generic
 from django.db.models import Prefetch
 from . import models, forms
 from cart.forms import AddToCartProductForm
+from django.utils.translation import gettext_lazy as _
 import json
 
 class HomeView(generic.ListView):
@@ -22,7 +23,7 @@ class HomeView(generic.ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["underwear_products"] = models.Product.objects.filter(category__title__icontains="زیر پوش").prefetch_related("images")
+        context["underwear_products"] = models.Product.objects.filter(category__title__icontains=_("underwear")).prefetch_related("images")
         last_four_products = models.Product.objects.order_by("-id").select_related("category").prefetch_related("images")[:4]
         context['last_four_products'] = last_four_products
         return context

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 23:19+0330\n"
-"PO-Revision-Date: 2024-04-24 12:39+0330\n"
+"POT-Creation-Date: 2024-05-14 12:54+0330\n"
+"PO-Revision-Date: 2024-05-14 12:56+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,22 +46,23 @@ msgstr "امتیاز"
 msgid "comment text"
 msgstr "متن دیدگاه"
 
-#: .\templates\store\home.html:41
+#: .\templates\store\home.html:42
 #, fuzzy
 #| msgid "new"
 msgid "newest"
 msgstr "جدید"
 
-#: .\templates\store\home.html:47 .\templates\store\home.html:104
-#: .\templates\store\product_detail.html:121
+#: .\templates\store\home.html:48 .\templates\store\home.html:156
+#: .\templates\store\home.html:228 .\templates\store\product_detail.html:121
 msgid "add to cart"
 msgstr "اضافه به سبد خرید"
 
-#: .\templates\store\home.html:76
+#: .\templates\store\home.html:128 .\templates\store\home.html:200
 msgid "new"
 msgstr "جدید"
 
-#: .\templates\store\home.html:95 .\templates\store\product_detail.html:63
+#: .\templates\store\home.html:147 .\templates\store\home.html:219
+#: .\templates\store\product_detail.html:63
 msgid "$"
 msgstr "تومان"
 
@@ -102,3 +103,7 @@ msgstr "ذخیره"
 #: .\templates\store\product_detail.html:224
 msgid "please login to write comments"
 msgstr "لطفا برای ثبت نظر به حساب کاربری خود وارد شوید"
+
+#: .\views.py:26
+msgid "underwear"
+msgstr "زیر پوش"
