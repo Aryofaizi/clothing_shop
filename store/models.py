@@ -16,6 +16,10 @@ class Category(models.Model):
     def __str__(self):
         """Return category title."""
         return self.title
+    
+    
+    def get_absolute_url(self):
+        return reverse("category_list", kwargs={"pk": self.pk})
 
 class Product(models.Model):
     PRODUCT_RATE_FIVE_STAR = 5

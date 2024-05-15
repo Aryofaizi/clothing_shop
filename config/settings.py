@@ -92,6 +92,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 #custom context_processors
                 "cart.context_processors.cart",
+                "store.context_processors.categories" 
             ],
         },
     },

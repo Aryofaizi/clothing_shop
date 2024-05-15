@@ -1,12 +1,15 @@
 from typing import Any
 from django.db.models.query import QuerySet
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.db.models import Prefetch
 from . import models, forms
 from cart.forms import AddToCartProductForm
 from django.utils.translation import gettext_lazy as _
 import json
+from django.views import View
+from django.http import HttpResponseRedirect
+
 
 class HomeView(generic.ListView):
     queryset = models.Product.objects.prefetch_related("images")
@@ -70,3 +73,27 @@ class CommentCreateView(generic.CreateView):
         obj.product = product
         return super().form_valid(form)
     
+    
+    
+    
+class CategroyList(generic.DetailView):
+    queryset = models.Category.objects.prefetch_related("products")
+    template_name = "store/category_list.html"
+    
+    
+    
+class CategorySearchList(View):
+    def get(self, request, *args, **kwargs):
+        search = request.GET.get("search")
+        if search:
+            try:
+                category = models.Category.objects.get(title__icontains=search)
+                return redirect(reverse('category_list', kwargs={'pk': category.pk}))
+            except Exception:
+                # Optionally handle the case where no category is found
+                # Replace with appropriate fallback
+                previous_page = request.META.get('HTTP_REFERER', '/')
+                return HttpResponseRedirect(previous_page)
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+            
+       
