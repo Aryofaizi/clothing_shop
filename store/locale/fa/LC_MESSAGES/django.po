@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-14 12:54+0330\n"
-"PO-Revision-Date: 2024-05-14 12:56+0330\n"
+"POT-Creation-Date: 2024-05-16 11:35+0330\n"
+"PO-Revision-Date: 2024-05-16 11:39+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,53 +18,69 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\models.py:27 .\models.py:103
+#: .\models.py:31 .\models.py:107
 msgid "EXCELLENT"
 msgstr "خیلی عالی"
 
-#: .\models.py:28 .\models.py:104
+#: .\models.py:32 .\models.py:108
 msgid "GOOD"
 msgstr "عالی"
 
-#: .\models.py:29 .\models.py:105
+#: .\models.py:33 .\models.py:109
 msgid "NOT BAD"
 msgstr "خوب"
 
-#: .\models.py:30 .\models.py:106
+#: .\models.py:34 .\models.py:110
 msgid "BAD"
 msgstr "بد"
 
-#: .\models.py:31 .\models.py:107
+#: .\models.py:35 .\models.py:111
 msgid "VERY BAD"
 msgstr "خیلی بد"
 
-#: .\models.py:119
+#: .\models.py:123
 msgid "rate"
 msgstr "امتیاز"
 
-#: .\models.py:120
+#: .\models.py:124
 msgid "comment text"
 msgstr "متن دیدگاه"
 
+#: .\templates\store\category_list.html:22
+msgid "search"
+msgstr "جستجو"
+
+#: .\templates\store\category_list.html:25
+msgid "type to search"
+msgstr "جستجو کنید"
+
+#: .\templates\store\category_list.html:32
+msgid "category"
+msgstr "دسته بندی"
+
+#: .\templates\store\category_list.html:344
+msgid "popular"
+msgstr "پر طرفدار"
+
+#: .\templates\store\category_list.html:364 .\templates\store\home.html:147
+#: .\templates\store\home.html:219 .\templates\store\product_detail.html:63
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\store\category_list.html:367 .\templates\store\home.html:48
+#: .\templates\store\home.html:156 .\templates\store\home.html:228
+#: .\templates\store\product_detail.html:121
+msgid "add to cart"
+msgstr "اضافه به سبد خرید"
+
 #: .\templates\store\home.html:42
-#, fuzzy
 #| msgid "new"
 msgid "newest"
 msgstr "جدید"
 
-#: .\templates\store\home.html:48 .\templates\store\home.html:156
-#: .\templates\store\home.html:228 .\templates\store\product_detail.html:121
-msgid "add to cart"
-msgstr "اضافه به سبد خرید"
-
 #: .\templates\store\home.html:128 .\templates\store\home.html:200
 msgid "new"
 msgstr "جدید"
-
-#: .\templates\store\home.html:147 .\templates\store\home.html:219
-#: .\templates\store\product_detail.html:63
-msgid "$"
-msgstr "تومان"
 
 #: .\templates\store\product_detail.html:10
 msgid "product detail"
@@ -104,6 +120,6 @@ msgstr "ذخیره"
 msgid "please login to write comments"
 msgstr "لطفا برای ثبت نظر به حساب کاربری خود وارد شوید"
 
-#: .\views.py:26
+#: .\views.py:29
 msgid "underwear"
 msgstr "زیر پوش"

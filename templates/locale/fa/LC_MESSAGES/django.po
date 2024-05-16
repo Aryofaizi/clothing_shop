@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 23:09+0330\n"
-"PO-Revision-Date: 2024-04-24 12:52+0330\n"
+"POT-Creation-Date: 2024-05-16 11:38+0330\n"
+"PO-Revision-Date: 2024-05-16 11:38+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr "ورود"
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\_base.html:86 .\_base.html:217 .\_base.html:288
+#: .\_base.html:86 .\_base.html:228 .\_base.html:299
 msgid "09181718810"
 msgstr "09181718810"
 
@@ -48,63 +48,67 @@ msgstr "تومان"
 msgid "total"
 msgstr "مجموع"
 
-#: .\_base.html:209
+#: .\_base.html:169
+msgid "all categories"
+msgstr "دسته بندی ها"
+
+#: .\_base.html:220
 msgid "buy the newest cloth with trend fashion from tounique"
 msgstr "جدید ترین مد روز رو در فروشگاه ما با استایلیست های ما تجربه کنید"
 
-#: .\_base.html:221
+#: .\_base.html:232
 msgid "get our mobile app"
 msgstr "برنامه موبایل"
 
-#: .\_base.html:226 .\_base.html:233
+#: .\_base.html:237 .\_base.html:244
 msgid "install"
 msgstr "نصب"
 
-#: .\_base.html:227
+#: .\_base.html:238
 msgid "google play"
 msgstr "گوگل پلی"
 
-#: .\_base.html:234
+#: .\_base.html:245
 msgid "apple store"
 msgstr "اپل استور"
 
-#: .\_base.html:259
+#: .\_base.html:270
 msgid "cloth"
 msgstr "پوشاک"
 
-#: .\_base.html:260
+#: .\_base.html:271
 msgid "t-shirt"
 msgstr "تی شرت"
 
-#: .\_base.html:261
+#: .\_base.html:272
 msgid "trouser"
 msgstr "پیراهن"
 
-#: .\_base.html:262
+#: .\_base.html:273
 msgid "jeans"
 msgstr "جنس لی"
 
-#: .\_base.html:263
+#: .\_base.html:274
 msgid "caps"
 msgstr "کلاه"
 
-#: .\_base.html:264
+#: .\_base.html:275
 msgid "pants"
 msgstr "شلوار"
 
-#: .\_base.html:265
+#: .\_base.html:276
 msgid "coats"
 msgstr "کت"
 
-#: .\_base.html:289
+#: .\_base.html:300
 msgid "tehran grand bazar"
 msgstr "تهران بازار بزرگ"
 
-#: .\_base.html:294
+#: .\_base.html:305
 msgid "saturday till friday"
 msgstr "شنبه تا جمعه"
 
-#: .\_base.html:343
+#: .\_base.html:354
 msgid "tounique"
 msgstr "تونیک"
 
@@ -190,8 +194,8 @@ msgid ""
 "fill in the fields and click on the button bellow thanks for using our "
 "website"
 msgstr ""
-"برای تغییر گذرواژه برای حساب فعلی باید از طریق پر کردن اطلاعات این فرم اقدام "
-"کنید و بعد روی دکمه زیر کلیک کنید ممنون از حمایت شما"
+"برای تغییر گذرواژه برای حساب فعلی باید از طریق پر کردن اطلاعات این فرم اقدام"
+" کنید و بعد روی دکمه زیر کلیک کنید ممنون از حمایت شما"
 
 #: .\account\password_reset_from_key.html:25
 msgid "save"
