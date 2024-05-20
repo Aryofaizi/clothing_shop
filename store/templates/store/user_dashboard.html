@@ -99,33 +99,39 @@
                                       </tr>
                                       </thead>
                                       <tbody>
-                                     {% for order in sliced_orders %}
-                                        {% if order.is_paid == True %}
-                                        <tr>
-                                            <td><span class="table-list-code">{{order.id}}</span></td>
-                                            <td>{{order.datetime_modified|to_jalali:'%Y/%m/%d '|persian_number }} </td>
-                                            <td>{{order|sum_order_items}} {% trans "$" %}</td>
-                                            <td><span class="badge badge-success">تکمیل شد</span></td>
-                                            <td>
-                                                <a href="order-detail.html"
-                                                   class="btn btn-outline-secondary btn-sm rounded-2"
-                                                   data-tooltip="tooltip" title="جزئیات"><i class="far fa-eye"></i></a>
-                                            </td>
-                                        </tr>
+                                        {% if sliced_orders|length > 0 %}
+                                        {% for order in sliced_orders %}
+                                           {% if order.is_paid == True %}
+                                           <tr>
+                                               <td><span class="table-list-code">{{order.id}}</span></td>
+                                               <td>{{order.datetime_modified|to_jalali:'%Y/%m/%d '|persian_number }} </td>
+                                               <td>{{order|sum_order_items}} {% trans "$" %}</td>
+                                               <td><span class="badge badge-success">تکمیل شد</span></td>
+                                               <td>
+                                                   <a href="order-detail.html"
+                                                      class="btn btn-outline-secondary btn-sm rounded-2"
+                                                      data-tooltip="tooltip" title="جزئیات"><i class="far fa-eye"></i></a>
+                                               </td>
+                                           </tr>
+                                           {% else %}
+                                           <tr>
+                                               <td><span class="table-list-code">{{order.id}}</span></td>
+                                               <td>{{order.datetime_modified|to_jalali:'%Y/%m/%d '|persian_number }} </td>
+                                               <td>{{order|sum_order_items}} {% trans "$" %}</td>
+                                               <td><span class="badge badge-danger">لغو شد</span></td>
+                                               <td>
+                                                   <a href="#"
+                                                      class="btn btn-outline-secondary btn-sm rounded-2"
+                                                      data-tooltip="tooltip" title="{% trans 'details' %}"><i class="far fa-eye"></i></a>
+                                               </td>
+                                           </tr>
+                                           {% endif %}
+                                        {% endfor %}
                                         {% else %}
                                         <tr>
-                                            <td><span class="table-list-code">{{order.id}}</span></td>
-                                            <td>{{order.datetime_modified|to_jalali:'%Y/%m/%d '|persian_number }} </td>
-                                            <td>{{order|sum_order_items}} {% trans "$" %}</td>
-                                            <td><span class="badge badge-danger">لغو شد</span></td>
-                                            <td>
-                                                <a href="#"
-                                                   class="btn btn-outline-secondary btn-sm rounded-2"
-                                                   data-tooltip="tooltip" title="{% trans 'details' %}"><i class="far fa-eye"></i></a>
-                                            </td>
+                                            <td><span class="table-list-code">{% trans "no order yet" %}</span></td>
                                         </tr>
                                         {% endif %}
-                                     {% endfor %}
                                       </tbody>
                                   </table>
                               </div>

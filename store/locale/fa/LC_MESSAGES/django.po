@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-20 12:51+0330\n"
-"PO-Revision-Date: 2024-05-20 12:57+0330\n"
+"POT-Creation-Date: 2024-05-20 13:14+0330\n"
+"PO-Revision-Date: 2024-05-20 13:15+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -64,9 +64,9 @@ msgstr "پر طرفدار"
 
 #: .\templates\store\category_list.html:364 .\templates\store\home.html:147
 #: .\templates\store\home.html:219 .\templates\store\product_detail.html:63
-#: .\templates\store\user_dashboard.html:71
-#: .\templates\store\user_dashboard.html:107
-#: .\templates\store\user_dashboard.html:119
+#: .\templates\store\user_dashboard.html:73
+#: .\templates\store\user_dashboard.html:110
+#: .\templates\store\user_dashboard.html:122
 msgid "$"
 msgstr "تومان"
 
@@ -127,62 +127,66 @@ msgid "user dashboard"
 msgstr "داشبورد کاربر"
 
 #: .\templates\store\user_dashboard.html:15
-#: .\templates\store\user_dashboard.html:35
+#: .\templates\store\user_dashboard.html:37
 msgid "dashboard"
 msgstr "داشبورد"
 
-#: .\templates\store\user_dashboard.html:37
+#: .\templates\store\user_dashboard.html:39
 msgid "logout"
 msgstr "خروج"
 
-#: .\templates\store\user_dashboard.html:44
+#: .\templates\store\user_dashboard.html:46
 msgid "summary"
 msgstr "خلاصه"
 
-#: .\templates\store\user_dashboard.html:50
+#: .\templates\store\user_dashboard.html:52
 msgid "orders in service"
 msgstr "سفارشات معلق"
 
-#: .\templates\store\user_dashboard.html:61
+#: .\templates\store\user_dashboard.html:63
 msgid "paid orders"
 msgstr "سفارشات تکمیل شده"
 
-#: .\templates\store\user_dashboard.html:72
+#: .\templates\store\user_dashboard.html:74
 msgid "my balance"
 msgstr "موجودی من"
 
-#: .\templates\store\user_dashboard.html:85
+#: .\templates\store\user_dashboard.html:87
 msgid "recent orders"
 msgstr "سفارشات اخیر"
 
-#: .\templates\store\user_dashboard.html:87
+#: .\templates\store\user_dashboard.html:89
 msgid "see all orders"
 msgstr "مشاهده همه سفارشات"
 
-#: .\templates\store\user_dashboard.html:94
+#: .\templates\store\user_dashboard.html:96
 msgid "order number"
 msgstr "شماره سفارش"
 
-#: .\templates\store\user_dashboard.html:95
+#: .\templates\store\user_dashboard.html:97
 msgid "order datetime"
 msgstr "تاریخ"
 
-#: .\templates\store\user_dashboard.html:96
+#: .\templates\store\user_dashboard.html:98
 msgid "order total"
 msgstr "مجموع"
 
-#: .\templates\store\user_dashboard.html:97
+#: .\templates\store\user_dashboard.html:99
 msgid "order is_paid"
 msgstr "وضعیت"
 
-#: .\templates\store\user_dashboard.html:98
-#| msgid "description"
+#: .\templates\store\user_dashboard.html:100
 msgid "operation"
 msgstr "عمل"
 
-#: .\templates\store\user_dashboard.html:124
+#: .\templates\store\user_dashboard.html:127
 msgid "details"
 msgstr "جزئیات"
+
+#: .\templates\store\user_dashboard.html:134
+#| msgid "order datetime"
+msgid "no order yet"
+msgstr "سفارشی موجود نیست"
 
 #: .\views.py:31
 msgid "underwear"
