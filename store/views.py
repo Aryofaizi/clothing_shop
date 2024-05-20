@@ -9,6 +9,8 @@ from django.utils.translation import gettext_lazy as _
 import json
 from django.views import View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from orders.models import Order
 
 
 class HomeView(generic.ListView):
@@ -97,3 +99,17 @@ class CategorySearchList(View):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
             
        
+class UserDashboard(LoginRequiredMixin, generic.ListView):
+    template_name = "store/user_dashboard.html"
+    context_object_name = "orders"
+    
+    def get_queryset(self):
+        self.queryset = Order.objects.filter(user = self.request.user)
+        return self.queryset
+    
+    def get_context_data(self, **kwargs: Any):
+        context = super().get_context_data(**kwargs)
+        context["not_paid_orders"] = self.queryset.filter(is_paid=False)
+        context["paid_orders"] = self.queryset.filter(is_paid=True)
+        context["sliced_orders"] = Order.objects.filter(user = self.request.user).prefetch_related("items")[:6]
+        return context

@@ -1,0 +1,141 @@
+{% extends "_base.html" %}
+
+{% load static %}
+{% load i18n %}
+{% load jalali_tags %}
+{% load store_filters %}
+
+{% block page_title %}
+  {% trans "user dashboard" %}
+{% endblock page_title %}
+
+
+{% block content %}
+
+{% trans "dashboard" as header %}
+{% include "header.html" with header=header %}
+
+
+<div class="user-area bg py-100">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3">
+              <div class="sidebar">
+                  <div class="sidebar-top">
+                      <div class="sidebar-profile-img">
+                          <img src="{% static 'assets/img/account/images.png' %}" alt>
+                          <button type="button" class="profile-img-btn"><i class="far fa-camera"></i></button>
+                          {% comment %} <input type="file" class="profile-img-file"> {% endcomment %}
+                      </div>
+                      <h5> {{user.username}}</h5>
+                      {% comment %} <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="d9b8b7adb6b7b099bca1b8b4a9b5bcf7bab6b4">{{user.email}}</a></p> {% endcomment %}
+                  </div>
+                  <ul class="sidebar-list">
+                      <li><a class="active" href="{% url 'user_dashboard' %}"><i class="far fa-gauge-high"></i> {% trans "dashboard" %}</a>
+                      </li>                      
+                      <li><a href="{% url 'account_logout' %}"><i class="far fa-sign-out"></i> {% trans "logout" %}</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-9">
+              <div class="user-wrapper">
+                  <div class="user-card">
+                      <h4 class="user-card-title">{% trans "summary" %}</h4>
+                      <div class="row">
+                          <div class="col-md-6 col-lg-4">
+                              <div class="dashboard-widget color-1">
+                                  <div class="dashboard-widget-info">
+                                      <h1>{{not_paid_orders|length}}</h1>
+                                      <span> {% trans "orders in service" %}</span>
+                                  </div>
+                                  <div class="dashboard-widget-icon">
+                                      <i class="fal fa-list"></i>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-lg-4">
+                              <div class="dashboard-widget color-2">
+                                  <div class="dashboard-widget-info">
+                                      <h1>{{paid_orders|length}}</h1>
+                                      <span>  {% trans "paid orders" %}</span>
+                                  </div>
+                                  <div class="dashboard-widget-icon">
+                                      <i class="fal fa-layer-group"></i>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-lg-4">
+                              <div class="dashboard-widget color-3">
+                                  <div class="dashboard-widget-info">
+                                      <h1>0  {% trans "$" %}</h1>
+                                      <span> {% trans "my balance" %}</span>
+                                  </div>
+                                  <div class="dashboard-widget-icon">
+                                      <i class="fal fa-wallet"></i>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="user-card">
+                              <div class="user-card-header">
+                                  <h4 class="user-card-title"> {% trans "recent orders" %}</h4>
+                                  <div class="user-card-header-right">
+                                      <a href="" class="theme-btn">  {% trans "see all orders" %}</a>
+                                  </div>
+                              </div>
+                              <div class="table-responsive">
+                                  <table class="table table-borderless text-nowrap">
+                                      <thead>
+                                      <tr>
+                                          <th>{% trans "order number" %}</th>
+                                          <th> {% trans "order datetime" %}</th>
+                                          <th>{% trans "order total" %}</th>
+                                          <th>{% trans "order is_paid" %}</th>
+                                          <th>{% trans "operation" %}</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                     {% for order in sliced_orders %}
+                                        {% if order.is_paid == True %}
+                                        <tr>
+                                            <td><span class="table-list-code">{{order.id}}</span></td>
+                                            <td>{{order.datetime_modified|to_jalali:'%Y/%m/%d '|persian_number }} </td>
+                                            <td>{{order|sum_order_items}} {% trans "$" %}</td>
+                                            <td><span class="badge badge-success">تکمیل شد</span></td>
+                                            <td>
+                                                <a href="order-detail.html"
+                                                   class="btn btn-outline-secondary btn-sm rounded-2"
+                                                   data-tooltip="tooltip" title="جزئیات"><i class="far fa-eye"></i></a>
+                                            </td>
+                                        </tr>
+                                        {% else %}
+                                        <tr>
+                                            <td><span class="table-list-code">{{order.id}}</span></td>
+                                            <td>{{order.datetime_modified|to_jalali:'%Y/%m/%d '|persian_number }} </td>
+                                            <td>{{order|sum_order_items}} {% trans "$" %}</td>
+                                            <td><span class="badge badge-danger">لغو شد</span></td>
+                                            <td>
+                                                <a href="#"
+                                                   class="btn btn-outline-secondary btn-sm rounded-2"
+                                                   data-tooltip="tooltip" title="{% trans 'details' %}"><i class="far fa-eye"></i></a>
+                                            </td>
+                                        </tr>
+                                        {% endif %}
+                                     {% endfor %}
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+{% endblock content %}
