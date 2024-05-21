@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-16 14:12+0330\n"
-"PO-Revision-Date: 2024-05-16 14:14+0330\n"
+"POT-Creation-Date: 2024-05-21 12:07+0330\n"
+"PO-Revision-Date: 2024-05-21 11:50+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr "ثبت نام"
 msgid "09181718810"
 msgstr "09181718810"
 
-#: .\_base.html:134 .\_base.html:151
+#: .\_base.html:134 .\_base.html:151 .\about.html:241
 msgid "$"
 msgstr "تومان"
 
@@ -56,17 +56,15 @@ msgstr "دسته بندی ها"
 msgid "main page"
 msgstr "صفحه اصلی"
 
-#: .\_base.html:209
+#: .\_base.html:209 .\about.html:12 .\about.html:36
 msgid "about us"
 msgstr "درباره ما"
 
 #: .\_base.html:211 .\_base.html:213
-#| msgid "pants"
 msgid "pages"
 msgstr "صفحات"
 
 #: .\_base.html:220
-#| msgid "trouser"
 msgid "user"
 msgstr "کاربر"
 
@@ -99,7 +97,6 @@ msgid "weblog"
 msgstr "وبلاگ"
 
 #: .\_base.html:259
-#| msgid "coats"
 msgid "contact us"
 msgstr "تماس با ما"
 
@@ -166,6 +163,150 @@ msgstr "شنبه تا جمعه"
 #: .\_base.html:424
 msgid "tounique"
 msgstr "تونیک"
+
+#: .\about.html:11
+msgid "thousand +"
+msgstr "هزار +"
+
+#: .\about.html:28
+msgid "30 years of experience"
+msgstr "30 سال تجربه"
+
+#: .\about.html:39
+msgid "biggest"
+msgstr "بزرگترین"
+
+#: .\about.html:39
+msgid "bazaar"
+msgstr "بازار"
+
+#: .\about.html:39
+msgid "for you"
+msgstr "برای شما"
+
+#: .\about.html:43
+msgid ""
+"tounique is one of the newest and biggest producers in the fashion and cloth "
+"industry and it has experience in other fields in the bazaar but we made a "
+"decision to start this field to make the best quality with the best price "
+"for you"
+msgstr ""
+"تونیک یکی از جدیدترین و بزرگترین تولیدی های پوشاک در کشور است که با سابقه "
+"چندیدن ساله در حوضه های مختلف هم فعالیت داشته و به تازگی در حوضه پوشاک شروع "
+"به فعالیت کرده است"
+
+#: .\about.html:46
+msgid ""
+"welcome to tounique explore the website to get famalier with our products "
+"and the way we hanlde our business"
+msgstr ""
+"به تونیک خوش آمدید برای آشنایی بیشتر با محصولات و نحوه خدمات تونیک سایت را "
+"بررسی کنید"
+
+#: .\about.html:48
+msgid "explore more"
+msgstr "جستجوی بیشتر"
+
+#: .\about.html:70
+msgid "total sell"
+msgstr "فروش کل"
+
+#: .\about.html:84
+msgid "happy customers"
+msgstr "مشتریان خوشحال"
+
+#: .\about.html:96
+msgid "people"
+msgstr ""
+
+#: .\about.html:98
+msgid "team workers"
+msgstr "کارگران تیم"
+
+#: .\about.html:112
+msgid "gift discounts to others"
+msgstr "کد تخفیف هدیه بدهید"
+
+#: .\about.html:126
+msgid "our team"
+msgstr "تیم ما"
+
+#: .\about.html:127
+msgid "with"
+msgstr "با"
+
+#: .\about.html:127
+msgid " experts"
+msgstr "تیم"
+
+#: .\about.html:127
+msgid "get famalier with our expert"
+msgstr "متخصص ما آشنا شوید"
+
+#: .\about.html:140
+msgid "aryo faizi"
+msgstr "آریو فیضی"
+
+#: .\about.html:141
+msgid "technical team"
+msgstr "تیم فنی و برنامه نویسی"
+
+#: .\about.html:159
+msgid "hooman niyazmand"
+msgstr "هومن نیازمند"
+
+#: .\about.html:160
+msgid "sales expert"
+msgstr "متخصص فروش"
+
+#: .\about.html:178
+msgid "arash faizi"
+msgstr "آرش فیضی"
+
+#: .\about.html:179
+msgid "content producer and photography"
+msgstr "تولید محتوا و عکاسی"
+
+#: .\about.html:197
+msgid "kavan"
+msgstr "کاوان"
+
+#: .\about.html:198
+msgid "photography assistant"
+msgstr "دستیار و مشاوره عکاسی"
+
+#: .\about.html:240
+msgid "free delivery"
+msgstr "ارسال ریگان"
+
+#: .\about.html:241
+msgid "orders more than 1 million"
+msgstr "سفارش های بیشتر از 1 میلیون"
+
+#: .\about.html:251
+msgid "refund"
+msgstr "بازپرداخت"
+
+#: .\about.html:252
+msgid "refund within 30 days"
+msgstr "بازگرداندن ظرف 30 روز"
+
+#: .\about.html:262
+msgid "secure payment"
+msgstr "پرداخت مطمئن"
+
+#: .\about.html:263
+#, python-format
+msgid "payment 100 %% secure"
+msgstr "پرداخت 100% ایمن"
+
+#: .\about.html:273
+msgid "support 24/7"
+msgstr "پشتیبانی 24/7"
+
+#: .\about.html:274
+msgid "get in touch with us"
+msgstr "با ما تماس بگیرید"
 
 #: .\account\login.html:25
 msgid "login with your tounique account"
@@ -249,8 +390,8 @@ msgid ""
 "fill in the fields and click on the button bellow thanks for using our "
 "website"
 msgstr ""
-"برای تغییر گذرواژه برای حساب فعلی باید از طریق پر کردن اطلاعات این فرم اقدام"
-" کنید و بعد روی دکمه زیر کلیک کنید ممنون از حمایت شما"
+"برای تغییر گذرواژه برای حساب فعلی باید از طریق پر کردن اطلاعات این فرم اقدام "
+"کنید و بعد روی دکمه زیر کلیک کنید ممنون از حمایت شما"
 
 #: .\account\password_reset_from_key.html:25
 msgid "save"
