@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-21 12:07+0330\n"
-"PO-Revision-Date: 2024-05-21 11:50+0330\n"
+"PO-Revision-Date: 2024-05-21 12:17+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -186,8 +186,8 @@ msgstr "برای شما"
 
 #: .\about.html:43
 msgid ""
-"tounique is one of the newest and biggest producers in the fashion and cloth "
-"industry and it has experience in other fields in the bazaar but we made a "
+"tounique is one of the newest and biggest producers in the fashion and cloth"
+" industry and it has experience in other fields in the bazaar but we made a "
 "decision to start this field to make the best quality with the best price "
 "for you"
 msgstr ""
@@ -217,7 +217,7 @@ msgstr "مشتریان خوشحال"
 
 #: .\about.html:96
 msgid "people"
-msgstr ""
+msgstr "نفر"
 
 #: .\about.html:98
 msgid "team workers"
@@ -245,7 +245,7 @@ msgstr "متخصص ما آشنا شوید"
 
 #: .\about.html:140
 msgid "aryo faizi"
-msgstr "آریو فیضی"
+msgstr "آریو"
 
 #: .\about.html:141
 msgid "technical team"
@@ -253,7 +253,7 @@ msgstr "تیم فنی و برنامه نویسی"
 
 #: .\about.html:159
 msgid "hooman niyazmand"
-msgstr "هومن نیازمند"
+msgstr "هومن"
 
 #: .\about.html:160
 msgid "sales expert"
@@ -261,7 +261,7 @@ msgstr "متخصص فروش"
 
 #: .\about.html:178
 msgid "arash faizi"
-msgstr "آرش فیضی"
+msgstr "آرش"
 
 #: .\about.html:179
 msgid "content producer and photography"
@@ -390,8 +390,8 @@ msgid ""
 "fill in the fields and click on the button bellow thanks for using our "
 "website"
 msgstr ""
-"برای تغییر گذرواژه برای حساب فعلی باید از طریق پر کردن اطلاعات این فرم اقدام "
-"کنید و بعد روی دکمه زیر کلیک کنید ممنون از حمایت شما"
+"برای تغییر گذرواژه برای حساب فعلی باید از طریق پر کردن اطلاعات این فرم اقدام"
+" کنید و بعد روی دکمه زیر کلیک کنید ممنون از حمایت شما"
 
 #: .\account\password_reset_from_key.html:25
 msgid "save"
