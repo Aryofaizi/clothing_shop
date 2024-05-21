@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-21 12:07+0330\n"
-"PO-Revision-Date: 2024-05-21 21:17+0330\n"
+"POT-Creation-Date: 2024-05-21 21:54+0330\n"
+"PO-Revision-Date: 2024-05-21 22:00+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr "ورود"
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\_base.html:86 .\_base.html:298 .\_base.html:369
+#: .\_base.html:86 .\_base.html:298 .\_base.html:369 .\contact.html:41
 msgid "09181718810"
 msgstr "09181718810"
 
@@ -96,7 +96,7 @@ msgstr "خرید"
 msgid "weblog"
 msgstr "وبلاگ"
 
-#: .\_base.html:259
+#: .\_base.html:259 .\contact.html:12 .\contact.html:40 .\contact.html:80
 msgid "contact us"
 msgstr "تماس با ما"
 
@@ -424,6 +424,79 @@ msgstr "پاسخ"
 #: .\back_to_site.html:22
 msgid "home"
 msgstr "صفحه اصلی"
+
+#: .\contact.html:6
+#| msgid "contact us"
+msgid "contact"
+msgstr "تماس با ما"
+
+#: .\contact.html:29
+msgid "office address"
+msgstr "آدرس دفتر"
+
+#: .\contact.html:30
+msgid "kurdestan sanandaj industrial town"
+msgstr "شهرک صنعتی خیابان تعاون"
+
+#: .\contact.html:42
+msgid "09182841454"
+msgstr "09182841454"
+
+#: .\contact.html:52
+msgid "email us"
+msgstr "ایمیل شما"
+
+#: .\contact.html:54 .\contact.html:57
+msgid "not available"
+msgstr "خارج از دسترس"
+
+#: .\contact.html:68
+#| msgid "response"
+msgid "response time"
+msgstr "زمان پاسخ گویی"
+
+#: .\contact.html:69
+msgid "monday - friday (24/7)"
+msgstr "شنبه تا جمعه"
+
+#: .\contact.html:70
+msgid "with no day"
+msgstr "بدون هیچ روز"
+
+#: .\contact.html:70
+#| msgid "cloth"
+msgid "close"
+msgstr "تعطیلی"
+
+#: .\contact.html:81
+msgid ""
+"you can ask all your questions thorough this box down bellow you can enter "
+"an email you want us to answer your question to"
+msgstr ""
+"شما میتوانید تمامی سوالات خود را مانند خرید عمده تا همکاری در فروش و همینطور"
+" تبلیغات و ملحق شدن به تیم ما در کادر زیر بپرسید همینطور میتوانید ایمیل "
+"دلخواه خود را برای ما قرار دهید تا پاسخ را به ایمیل مورد نظر ارسال کنیم"
+
+#: .\contact.html:88
+msgid "name"
+msgstr "نام"
+
+#: .\contact.html:95
+#| msgid "our team"
+msgid "your email"
+msgstr "ایمیل شما"
+
+#: .\contact.html:100
+msgid "subject"
+msgstr "موضوع پرسش"
+
+#: .\contact.html:105
+msgid "enter your message"
+msgstr "پیام خود را بنویسید"
+
+#: .\contact.html:108
+msgid "send message"
+msgstr "ارسال پیام"
 
 #~ msgid "delete this item"
 #~ msgstr "حذف این مورد"

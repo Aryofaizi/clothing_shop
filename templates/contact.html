@@ -1,0 +1,151 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+
+{% block page_title %}
+  {% trans "contact" %}
+{% endblock page_title %}
+
+
+
+{% block content %}
+{% trans "contact us" as header %}
+{% include "header.html" with header=header %}
+
+
+<div class="contact-area py-100">
+  <div class="container">
+      <div class="contact-wrapper">
+          <div class="row">
+              <div class="col-lg-5">
+                  <div class="contact-content">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="contact-info">
+                                  <div class="contact-info-icon">
+                                      <i class="fal fa-map-location-dot"></i>
+                                  </div>
+                                  <div class="contact-info-content">
+                                      <h5> {% trans "office address" %}</h5>
+                                      <p> {% trans "kurdestan sanandaj industrial town" %}</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="contact-info">
+                                  <div class="contact-info-icon">
+                                      <i class="fal fa-headset"></i>
+                                  </div>
+                                  <div class="contact-info-content">
+                                      <h5>{% trans "contact us" %}</h5>
+                                      <p>{% trans "09181718810" %}</p>
+                                      <p>{% trans "09182841454" %}</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="contact-info">
+                                  <div class="contact-info-icon">
+                                      <i class="fal fa-envelopes"></i>
+                                  </div>
+                                  <div class="contact-info-content">
+                                      <h5> {% trans "email us" %}</h5>
+                                      <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                            data-cfemail="3d54535b527d58455c504d5158135e5250">{% trans "not available" %}</a>
+                                      </p>
+                                      <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                            data-cfemail="a2d1d7d2d2cdd0d6e2c7dac3cfd2cec78cc1cdcf">{% trans "not available" %}</a>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="contact-info">
+                                  <div class="contact-info-icon">
+                                      <i class="fal fa-alarm-clock"></i>
+                                  </div>
+                                  <div class="contact-info-content">
+                                      <h5> {% trans "response time" %}</h5>
+                                      <p>{% trans "monday - friday (24/7)" %}</p>
+                                      <p> {% trans "with no day" %}- <span class="text-danger">{% trans "close" %}</span></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-7">
+                  <div class="contact-form">
+                      <div class="contact-form-header">
+                          <h2>  {% trans "contact us" %}</h2>
+                          <p>{% trans "you can ask all your questions thorough this box down bellow you can enter an email you want us to answer your question to" %}</p>
+                      </div>
+                      <form method="post" action="#" id="contact-form">
+                        {% csrf_token %}
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" name="name" placeholder="{% trans 'name' %}"
+                                             required>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <input type="email" class="form-control" name="email"
+                                             placeholder=" {% trans 'your email' %}" required>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" name="subject" placeholder=" {% trans 'subject' %}"
+                                     required>
+                          </div>
+                          <div class="form-group">
+                              <textarea name="message" cols="30" rows="4" class="form-control"
+                                        placeholder="  {% trans 'enter your message' %} "></textarea>
+                          </div>
+                          <button type="submit" class="theme-btn">
+                              {% trans "send message" %} <i class="far fa-paper-plane"></i></button>
+                          <div class="col-md-12 my-3">
+                              <div class="form-messege text-success"></div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="contact-map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.8726975154736!2d47.041864877233714!3d35.308523513336056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ff9975353c1b911%3A0xf49dd19d251dfe9d!2z2LTZh9ix2qkg2LXZhti52KrbjCDbsQ!5e0!3m2!1sen!2s!4v1716315563101!5m2!1sen!2s" style="border:0;" allowfullscreen loading="lazy"></iframe>
+</div>
+
+<div class="newsletter-area pt-60 pb-60">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6 mx-auto">
+              <div class="newsletter-content">
+                  <h3>دریافت کوپن تخفیف <span>20%</span></h3>
+                  <p>با مشترک شدن در خبرنامه ما</p>
+                  <div class="subscribe-form">
+                      <form action="#">
+                          <input type="email" class="form-control" placeholder="آدرس ایمیل معتبر شما">
+                          <button class="theme-btn" type="submit">
+                              اشتراک <i class="far fa-paper-plane"></i>
+                          </button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="newsletter-img-1">
+      <img src="assets/img/newsletter/01.png" alt>
+  </div>
+  <div class="newsletter-img-2">
+      <img src="assets/img/newsletter/02.png" alt>
+  </div>
+</div>
+{% endblock content %}
