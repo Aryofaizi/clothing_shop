@@ -1,0 +1,310 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block page_title %}{% endblock page_title %}
+
+
+
+{% block content %}
+{% trans "thousand +" as thousand %}
+{% trans "about us" as header %}
+{% include "header.html" with header=header %}
+
+
+<div class="about-area py-100">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-6">
+              <div class="about-left wow fadeInLeft" data-wow-delay=".25s">
+                  <div class="about-img">
+                      <img src="{% static 'assets/img/about/01.jpg' %}" alt>
+                  </div>
+                  <div class="about-experience">
+                      <div class="about-experience-icon">
+                          <img src="{% static 'assets/img/icon/experience.svg' %}" alt>
+                      </div>
+                      <b>{% trans "30 years of experience" %}   <br></b>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="about-right wow fadeInRight" data-wow-delay=".25s">
+                  <div class="site-heading mb-3">
+<span class="site-title-tagline justify-content-start">
+<i class="flaticon-drive"></i>  {% trans "about us" %}
+</span>
+                      <h2 class="site-title">
+                          {% trans "biggest" %} <span> {% trans "bazaar" %}</span>   {% trans "for you" %}
+                      </h2>
+                  </div>
+                  <p>
+                    {% trans "tounique is one of the newest and biggest producers in the fashion and cloth industry and it has experience in other fields in the bazaar but we made a decision to start this field to make the best quality with the best price for you" %}
+                  </p>
+                  <p class="mt-10">
+                    {% trans "welcome to tounique explore the website to get famalier with our products and the way we hanlde our business" %}
+                  </p>
+                  <a href="{% url 'home_page' %}" class="theme-btn mt-4"> {% trans "explore more" %}  <i
+                          class="fas fa-arrow-left-long"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="counter-area pt-50 pb-50">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-sm-6">
+              <div class="counter-box">
+                  <div class="icon">
+                      <img src="{% static 'assets/img/icon/shopping.svg' %}" alt>
+                  </div>
+                  <div class="counter-info">
+                      <div class="counter-amount">
+                          <span class="counter" data-count="+" data-to="50" data-speed="3000">50</span>
+                          <span class="counter-sign">{{thousand}}</span>
+                      </div>
+                      <h6 class="title"> {% trans "total sell" %} </h6>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="counter-box">
+                  <div class="icon">
+                      <img src="{% static 'assets/img/icon/happy-customer.svg' %}" alt>
+                  </div>
+                  <div class="counter-info">
+                      <div class="counter-amount">
+                          <span class="counter" data-count="+" data-to="90" data-speed="3000">90</span>
+                          <span class="counter-sign">{{thousand}}</span>
+                      </div>
+                      <h6 class="title"> {% trans "happy customers" %}</h6>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="counter-box">
+                  <div class="icon">
+                      <img src="{% static 'assets/img/icon/employee.svg' %}" alt>
+                  </div>
+                  <div class="counter-info">
+                      <div class="counter-amount">
+                          <span class="counter" data-count="+" data-to="150" data-speed="3000">150</span>
+                          <span class="counter-sign">{{thousand}}</span>
+                      </div>
+                      <h6 class="title"> {% trans "team workers" %}</h6>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="counter-box">
+                  <div class="icon">
+                      <img src="{% static 'assets/img/icon/award.svg' %}" alt>
+                  </div>
+                  <div class="counter-info">
+                      <div class="counter-amount">
+                          <span class="counter" data-count="+" data-to="30" data-speed="3000">30</span>
+                          <span class="counter-sign">{{thousand}}</span>
+                      </div>
+                      <h6 class="title">  {% trans "gift discounts to others" %}</h6>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="team-area pt-100 pb-50">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6 mx-auto">
+              <div class="site-heading text-center">
+                  <span class="site-title-tagline"> {% trans "our team" %}</span>
+                  <h2 class="site-title">{% trans "with" %} <span>{% trans " experts" %}</span></h2>    {% trans "get famalier with our expert" %}
+                  <div class="heading-divider"></div>
+              </div>
+          </div>
+      </div>
+      <div class="row mt-5">
+          <div class="col-md-6 col-lg-3">
+              <div class="team-item wow fadeInUp" data-wow-delay=".25s">
+                  <div class="team-img">
+                      <img src="{% static 'assets/img/team/01.jpg' %}" alt="thumb">
+                  </div>
+                  <div class="team-content">
+                      <div class="team-bio">
+                          <h5><a href="#">چاد اسمیت</a></h5>
+                          <span>مدیر ارشد</span>
+                      </div>
+                  </div>
+                  <div class="team-social">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+              <div class="team-item wow fadeInUp" data-wow-delay=".50s">
+                  <div class="team-img">
+                      <img src="{% static 'assets/img/team/02.jpg' %}" alt="thumb">
+                  </div>
+                  <div class="team-content">
+                      <div class="team-bio">
+                          <h5><a href="#">مالیسا فی</a></h5>
+                          <span>کارشناس سئو</span>
+                      </div>
+                  </div>
+                  <div class="team-social">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+              <div class="team-item wow fadeInUp" data-wow-delay=".75s">
+                  <div class="team-img">
+                      <img src="{% static 'assets/img/team/03.jpg' %}" alt="thumb">
+                  </div>
+                  <div class="team-content">
+                      <div class="team-bio">
+                          <h5><a href="#">آرون رودری</a></h5>
+                          <span>مدیر عامل و بنیانگذار</span>
+                      </div>
+                  </div>
+                  <div class="team-social">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+              <div class="team-item wow fadeInUp" data-wow-delay="1s">
+                  <div class="team-img">
+                      <img src="{% static 'assets/img/team/04.jpg' %}" alt="thumb">
+                  </div>
+                  <div class="team-content">
+                      <div class="team-bio">
+                          <h5><a href="#">تونی پیناکو</a></h5>
+                          <span> بازاریاب دیجیتال</span>
+                      </div>
+                  </div>
+                  <div class="team-social">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="video-area pb-120">
+  <div class="container-fluid px-0">
+      <div class="video-content" style="background-image: url({% static 'assets/img/video/01.jpg' %});">
+          <div class="row align-items-center">
+              <div class="col-lg-12">
+                  <div class="video-wrapper">
+                      <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=ckHzmP1evNU">
+                          <i class="fas fa-play"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="feature-area bg-white pt-50 pb-50">
+  <div class="container">
+      <div class="row">
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="feature-item">
+                  <div class="feature-icon">
+                      <i class="fal fa-truck"></i>
+                  </div>
+                  <div class="feature-content">
+                      <h4> {% trans "free delivery" %}</h4>
+                      <p>   {% trans "orders more than 1 million"%} {% trans "$" %} </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="feature-item">
+                  <div class="feature-icon">
+                      <i class="fal fa-sync"></i>
+                  </div>
+                  <div class="feature-content">
+                      <h4>{% trans "refund" %}</h4>
+                      <p>  {% trans "refund within 30 days" %}</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="feature-item">
+                  <div class="feature-icon">
+                      <i class="fal fa-wallet"></i>
+                  </div>
+                  <div class="feature-content">
+                      <h4> {% trans "secure payment" %}</h4>
+                      <p> {% trans "payment 100 % secure" %}</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="feature-item">
+                  <div class="feature-icon">
+                      <i class="fal fa-headset"></i>
+                  </div>
+                  <div class="feature-content">
+                      <h4> {% trans "support 24/7" %}</h4>
+                      <p> {% trans "get in touch with us" %}  </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="newsletter-area pt-60 pb-60">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6 mx-auto">
+              <div class="newsletter-content">
+                  <h3>دریافت کوپن تخفیف <span>20%</span></h3>
+                  <p>با مشترک شدن در خبرنامه ما</p>
+                  <div class="subscribe-form">
+                      <form action="#">
+                          <input type="email" class="form-control" placeholder="آدرس ایمیل معتبر شما">
+                          <button class="theme-btn" type="submit">
+                              اشتراک <i class="far fa-paper-plane"></i>
+                          </button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="newsletter-img-1">
+      <img src="{% static 'assets/img/newsletter/01.png' %}" alt>
+  </div>
+  <div class="newsletter-img-2">
+      <img src="{% static 'assets/img/newsletter/02.png' %}" alt>
+  </div>
+</div>
+
+{% endblock content %}

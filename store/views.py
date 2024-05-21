@@ -113,3 +113,7 @@ class UserDashboard(LoginRequiredMixin, generic.ListView):
         context["paid_orders"] = self.queryset.filter(is_paid=True)
         context["sliced_orders"] = Order.objects.filter(user = self.request.user).prefetch_related("items")[:6]
         return context
+
+
+def about(request):
+    return render(request, "about.html")
