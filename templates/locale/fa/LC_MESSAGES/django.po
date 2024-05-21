@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-21 12:07+0330\n"
-"PO-Revision-Date: 2024-05-21 12:17+0330\n"
+"PO-Revision-Date: 2024-05-21 21:17+0330\n"
 "Last-Translator: sdf sdf <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -245,7 +245,7 @@ msgstr "متخصص ما آشنا شوید"
 
 #: .\about.html:140
 msgid "aryo faizi"
-msgstr "آریو"
+msgstr "آریو فیضی"
 
 #: .\about.html:141
 msgid "technical team"
@@ -253,7 +253,7 @@ msgstr "تیم فنی و برنامه نویسی"
 
 #: .\about.html:159
 msgid "hooman niyazmand"
-msgstr "هومن"
+msgstr "هومن نیازمند"
 
 #: .\about.html:160
 msgid "sales expert"
@@ -261,7 +261,7 @@ msgstr "متخصص فروش"
 
 #: .\about.html:178
 msgid "arash faizi"
-msgstr "آرش"
+msgstr "آرش فیضی"
 
 #: .\about.html:179
 msgid "content producer and photography"
@@ -269,7 +269,7 @@ msgstr "تولید محتوا و عکاسی"
 
 #: .\about.html:197
 msgid "kavan"
-msgstr "کاوان"
+msgstr "کاوان عباسی"
 
 #: .\about.html:198
 msgid "photography assistant"
