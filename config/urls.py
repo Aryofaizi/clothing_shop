@@ -35,5 +35,6 @@ urlpatterns = [
     path("payment/", include("payment.urls")),
     path('404/', TemplateView.as_view(template_name='404.html'), name='404'),
     path("sitemap/", TemplateView.as_view(template_name="sitemap.xml"), name="sitemap"),
+    path("pages/", include("pages.urls")),
     #media urls
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
