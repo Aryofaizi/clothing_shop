@@ -33,7 +33,9 @@
                   </div>
                   <ul class="sidebar-list">
                       <li><a class="active" href="{% url 'user_dashboard' %}"><i class="far fa-gauge-high"></i> {% trans "dashboard" %}</a>
-                      </li>                      
+                      </li>       
+                      <li><a  href="{% url 'user_profile_page'%}"><i class="far fa-user"></i> نمایه من</a>
+                      </li>               
                       <li><a href="{% url 'account_logout' %}"><i class="far fa-sign-out"></i> {% trans "logout" %}</a></li>
                   </ul>
               </div>
