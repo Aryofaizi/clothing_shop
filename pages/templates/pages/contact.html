@@ -1,5 +1,6 @@
 {% extends "_base.html" %}
 
+{% load static %}
 {% load i18n %}
 
 {% block page_title %}
@@ -151,10 +152,10 @@
       </div>
   </div>
   <div class="newsletter-img-1">
-      <img src="assets/img/newsletter/01.png" alt>
+      <img src="{% static 'assets/img/newsletter/01.png' %}" alt>
   </div>
   <div class="newsletter-img-2">
-      <img src="assets/img/newsletter/02.png" alt>
+      <img src="{% static 'assets/img/newsletter/02.png' %}" alt>
   </div>
 </div>
 {% endblock content %}
