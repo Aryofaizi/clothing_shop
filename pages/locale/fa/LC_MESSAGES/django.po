@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 16:02+0330\n"
-"PO-Revision-Date: 2024-05-22 16:02+0330\n"
-"Last-Translator: aryo tt <admin@gmail.com>\n"
+"POT-Creation-Date: 2024-05-23 12:19+0330\n"
+"PO-Revision-Date: 2024-05-23 12:21+0330\n"
+"Last-Translator: aryo tt2 <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,15 +18,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\models.py:6 .\templates\pages\contact.html:97
+#: .\models.py:6 .\templates\pages\contact.html:98
 msgid "name"
 msgstr "نام"
 
-#: .\models.py:7
+#: .\models.py:7 .\templates\pages\user_profile.html:74
+#: .\templates\pages\user_profile.html:76
 msgid "email"
 msgstr "ایمیل"
 
-#: .\models.py:8 .\templates\pages\contact.html:109
+#: .\models.py:8 .\templates\pages\contact.html:110
 msgid "subject"
 msgstr "موضوع"
 
@@ -42,56 +43,56 @@ msgstr "ساخته شده"
 msgid "modified"
 msgstr "بروزرسانی"
 
-#: .\templates\pages\contact.html:6
+#: .\templates\pages\contact.html:7
 msgid "contact"
 msgstr "تماس با ما"
 
-#: .\templates\pages\contact.html:12 .\templates\pages\contact.html:40
-#: .\templates\pages\contact.html:80
+#: .\templates\pages\contact.html:13 .\templates\pages\contact.html:41
+#: .\templates\pages\contact.html:81
 msgid "contact us"
 msgstr "تماس با ما"
 
-#: .\templates\pages\contact.html:29
+#: .\templates\pages\contact.html:30
 msgid "office address"
 msgstr "آدرس دفتر"
 
-#: .\templates\pages\contact.html:30
+#: .\templates\pages\contact.html:31 .\templates\pages\vendor_store.html:42
 msgid "kurdestan sanandaj industrial town"
 msgstr "شهرک صنعتی خیابان تعاون خیابان 15 متری "
 
-#: .\templates\pages\contact.html:41
+#: .\templates\pages\contact.html:42
 msgid "09181718810"
 msgstr "09181718810"
 
-#: .\templates\pages\contact.html:42
+#: .\templates\pages\contact.html:43
 msgid "09182841454"
 msgstr "09182841454"
 
-#: .\templates\pages\contact.html:52
+#: .\templates\pages\contact.html:53
 msgid "email us"
 msgstr "ایمیل شما"
 
-#: .\templates\pages\contact.html:54 .\templates\pages\contact.html:57
+#: .\templates\pages\contact.html:55 .\templates\pages\contact.html:58
 msgid "not available"
 msgstr "خارج از دسترس"
 
-#: .\templates\pages\contact.html:68
+#: .\templates\pages\contact.html:69
 msgid "response time"
 msgstr "زمان پاسخ گویی"
 
-#: .\templates\pages\contact.html:69
+#: .\templates\pages\contact.html:70
 msgid "monday - friday (24/7)"
 msgstr "شنبه تا جمعه"
 
-#: .\templates\pages\contact.html:70
+#: .\templates\pages\contact.html:71
 msgid "with no day"
 msgstr "بدون روز"
 
-#: .\templates\pages\contact.html:70
+#: .\templates\pages\contact.html:71
 msgid "close"
 msgstr "تعطیل"
 
-#: .\templates\pages\contact.html:81
+#: .\templates\pages\contact.html:82
 msgid ""
 "you can ask all your questions thorough this box down bellow you can enter "
 "an email you want us to answer your question to"
@@ -99,15 +100,15 @@ msgstr ""
 "شما میتوانید سوال خود را از طریق کادر زیر از ما بپرسید همینطور با وارد کردن "
 "ایمیل دلخواه ما پاسخ شما را به آن ایمیل ارسال میکنیم"
 
-#: .\templates\pages\contact.html:104
+#: .\templates\pages\contact.html:105
 msgid "your email"
 msgstr "ایمیل شما"
 
-#: .\templates\pages\contact.html:114
+#: .\templates\pages\contact.html:115
 msgid "enter your message"
 msgstr "پیام خود را بنویسید"
 
-#: .\templates\pages\contact.html:117
+#: .\templates\pages\contact.html:118
 msgid "send message"
 msgstr "ارسال پیام"
 
@@ -119,23 +120,23 @@ msgstr "نمایه من"
 msgid "my profile"
 msgstr "نمایه من"
 
-#: .\templates\pages\user_profile.html:43
+#: .\templates\pages\user_profile.html:44
 msgid "profile info"
 msgstr "اطالاعات کاربر"
 
-#: .\templates\pages\user_profile.html:59
+#: .\templates\pages\user_profile.html:60
 msgid "first name"
 msgstr "نام"
 
-#: .\templates\pages\user_profile.html:61
+#: .\templates\pages\user_profile.html:62
 msgid "first_name"
 msgstr "نام"
 
-#: .\templates\pages\user_profile.html:66
+#: .\templates\pages\user_profile.html:67
 msgid "last name"
 msgstr "نام خانوداگی"
 
-#: .\templates\pages\user_profile.html:68
+#: .\templates\pages\user_profile.html:69
 msgid "last_name"
 msgstr "نام خانوادگی"
 
@@ -144,6 +145,30 @@ msgstr "نام خانوادگی"
 msgid "username"
 msgstr "نام کاربری"
 
-#: .\templates\pages\user_profile.html:97
+#: .\templates\pages\user_profile.html:96
 msgid "save changes"
 msgstr "ذخیره تغییرات"
+
+#: .\templates\pages\vendor_store.html:6
+msgid "vendor"
+msgstr "فروشنده"
+
+#: .\templates\pages\vendor_store.html:11
+msgid "vendor store"
+msgstr "فروشگاه فروشنده"
+
+#: .\templates\pages\vendor_store.html:27
+msgid "tounique"
+msgstr "تونیک"
+
+#: .\templates\pages\vendor_store.html:34
+msgid "comment(+25 thousand)"
+msgstr "(2.5 هزار نظر)"
+
+#: .\templates\pages\vendor_store.html:37
+msgid " 9182841454 (98+)"
+msgstr "9182841454 (98+)"
+
+#: .\templates\pages\vendor_store.html:46
+msgid "sell 250"
+msgstr "فروش 100+"

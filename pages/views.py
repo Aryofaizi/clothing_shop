@@ -20,3 +20,8 @@ class UserProfile(LoginRequiredMixin, generic.UpdateView):
     
     def get_object(self, queryset=None):
         return self.request.user
+    
+    
+    
+def vendor_store(request):
+    return render(request, "pages/vendor_store.html")

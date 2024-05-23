@@ -61,7 +61,7 @@
                     <div class="col-12 col-md-6 col-lg-6 col-xl-5">
                         <div class="header-top-left">
                             <ul class="header-top-list">
-                                <li class="account"><a href="#"><i class="far fa-user-vneck"></i> حساب</a></li>
+                                <li class="account"><a href="{% url 'user_profile_page' %}"><i class="far fa-user-vneck"></i> {% trans "account" %}</a></li>
                                 {% if user.is_authenticated %}
                                 <li class="login"><a href="{% url 'account_logout' %}"><i class="far fa-arrow-right-to-arc"></i> {% trans "logout" %}</a></li>
                                 {% else %}
@@ -224,7 +224,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">{% trans "seller" %}</a>
                             <ul class="dropdown-menu fade-down">
-                                <li><a class="dropdown-item" href="#">{% trans "dashboard" %}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'vendor_store_page' %}">{% trans "vendor store" %}</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
