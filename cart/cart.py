@@ -1,5 +1,6 @@
 """Represents cart class."""
-from store.models import Product, Size, Color
+from store.models import Product, Size, Color, Discount
+from django.db.models import Prefetch
 
 class Cart():
     def __init__(self, request):
@@ -47,13 +48,17 @@ class Cart():
         for key, item in self.cart.items():
             product_id, size, color_id = key.split(",")
             try:
-                product = Product.objects.get(id=int(product_id))
+                product = Product.objects.select_related("category").prefetch_related("images", "discount").get(id=int(product_id))
+                discount = Discount.objects.get(product=product)
                 color = Color.objects.get(id=int(color_id))
                 size = Size.objects.get(id=int(size))
                 item["product_obj"] = product
                 item["color"] = color
                 item["size"] = size
-                item["total_price"] = item["quantity"] * product.price
+                if discount:
+                    item["total_price"] = item["quantity"] * discount.calculate_discount()
+                else:
+                    item["total_price"] = item["quantity"] * product.price
                 yield item
             except (Product.DoesNotExist, Color.DoesNotExist, Size.DoesNotExist, ValueError) as e:
                 print(f"Error processing item {key}: {e}")
@@ -72,7 +77,7 @@ class Cart():
         
     def get_total_price(self):
         """Returns cart total price."""
-        return sum(item["quantity"]*item["product_obj"].price for item in self.cart.values())
+        return sum(item["total_price"] for item in self.cart.values())
             
     def get_total_price_with_tax(self):
         """Returns cart total price with tax."""

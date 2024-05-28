@@ -4,7 +4,7 @@
 {% load humanize %}
 {% load i18n %}
 {% block page_title %}
-      cart detail
+      {% trans "cart detail" %}
 {% endblock page_title %}
 
 
@@ -57,7 +57,11 @@
                                             </td>
                                             <td>
                                                 <div class="shop-cart-price">
+                                                    {% for discount in item.product_obj.discount.all %}
+                                                    <span>{{discount.calculate_discount|intcomma:False|persian_number}} {% trans "$" %}</span>
+                                                    {%empty%}
                                                     <span>{{item.product_obj.price|intcomma:False|persian_number}} {% trans "$" %}</span>
+                                                    {% endfor %}
                                                 </div>
                                             </td>
                                             <td>

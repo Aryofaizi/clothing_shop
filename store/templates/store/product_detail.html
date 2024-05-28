@@ -60,7 +60,13 @@
                             <span class="rating-count"> ({{product.comments.count}} {% trans "comments" %} )</span>
                         </div>
                         <div class="shop-single-price">
+                            {% for discount in product.discount.all %}
+                            <del>{{product.price|intcomma:False|persian_number}} {% trans "$" %} </del>
+                            <span class="amount">{{discount.calculate_discount|intcomma:False|persian_number}} {% trans "$" %}</span>
+                            <span class="discount-percentage">{{discount.percent}}% {% trans "تخفیف" %}</span>
+                            {%empty%}
                             <span class="amount">{{product.price|intcomma:False|persian_number}} {% trans "$" %}</span>
+                            {% endfor %}
                         </div>
                         <p class="mb-3" id="description_element">
                             {{product.description|truncatechars:20|safe}}

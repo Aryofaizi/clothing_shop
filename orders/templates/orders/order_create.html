@@ -11,19 +11,8 @@
 {% block content %}
 
 <main class="main">
-
-  <div class="site-breadcrumb">
-      <div class="site-breadcrumb-bg" style="background: url(assets/img/breadcrumb/01.jpg)"></div>
-      <div class="container">
-          <div class="site-breadcrumb-wrap">
-              <h4 class="breadcrumb-title">خرید پرداخت یک</h4>
-              <ul class="breadcrumb-menu">
-                  <li><a href="index.html"><i class="far fa-home"></i> صفحه اصلی</a></li>
-                  <li class="active">خرید پرداخت یک</li>
-              </ul>
-          </div>
-      </div>
-  </div>
+{% trans "order" as header %}
+{% include "header.html" with header=header %}
 
 
   <div class="shop-checkout py-100">

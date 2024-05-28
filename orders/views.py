@@ -28,7 +28,7 @@ def order_create_view(request):
                     size = size,
                     color = color,
                     quantity = item["quantity"],
-                    price = item["product_obj"].price,
+                    price = int(item["total_price"]),
                 )
             cart.clear()
             request.user.first_name = form_obj.first_name

@@ -133,3 +133,17 @@ class Comment(models.Model):
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"pk": self.product.id})
     
+    
+    
+class Discount(models.Model):
+    product = models.ForeignKey(Product, verbose_name=_("product"), on_delete=models.CASCADE, related_name="discount")
+    percent = models.IntegerField(_("percent"))
+    cost = models.IntegerField(_("cost"))
+    
+    def __str__(self):
+        return f"{self.product}  {self.percent}%"
+    
+    def calculate_discount(self):
+        profit = self.product.price - self.cost
+        return int((self.cost + (profit - ((self.percent / 100) * profit))))
+        

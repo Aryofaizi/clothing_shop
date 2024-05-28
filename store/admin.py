@@ -41,3 +41,8 @@ class Color(admin.ModelAdmin):
 @admin.register(models.Size)
 class Size(admin.ModelAdmin):
     model = models.Size
+    
+
+@admin.register(models.Discount)
+class Discount(admin.ModelAdmin):
+    model = models.Discount
