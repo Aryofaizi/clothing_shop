@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-20 13:14+0330\n"
-"PO-Revision-Date: 2024-05-20 13:15+0330\n"
-"Last-Translator: sdf sdf <admin@gmail.com>\n"
+"POT-Creation-Date: 2024-05-29 22:17+0330\n"
+"PO-Revision-Date: 2024-05-29 22:18+0330\n"
+"Last-Translator: آرش فیضی <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,42 +46,67 @@ msgstr "امتیاز"
 msgid "comment text"
 msgstr "متن دیدگاه"
 
-#: .\templates\store\category_list.html:22
+#: .\models.py:139
+#| msgid "buy product"
+msgid "product"
+msgstr "محصول"
+
+#: .\models.py:140
+msgid "percent"
+msgstr "درصد"
+
+#: .\models.py:141
+msgid "cost"
+msgstr "قیمت خرید"
+
+#: .\templates\store\category_list.html:23
 msgid "search"
 msgstr "جستجو"
 
-#: .\templates\store\category_list.html:25
+#: .\templates\store\category_list.html:26
 msgid "type to search"
 msgstr "جستجو کنید"
 
-#: .\templates\store\category_list.html:32
+#: .\templates\store\category_list.html:33
 msgid "category"
 msgstr "دسته بندی"
 
-#: .\templates\store\category_list.html:344
-msgid "popular"
-msgstr "پر طرفدار"
+#: .\templates\store\category_list.html:346 .\templates\store\home.html:201
+#: .\templates\store\product_detail.html:66
+msgid "تخفیف"
+msgstr "تخفیف"
 
-#: .\templates\store\category_list.html:364 .\templates\store\home.html:147
-#: .\templates\store\home.html:219 .\templates\store\product_detail.html:63
-#: .\templates\store\user_dashboard.html:73
-#: .\templates\store\user_dashboard.html:110
-#: .\templates\store\user_dashboard.html:122
+#: .\templates\store\category_list.html:365
+#: .\templates\store\category_list.html:367
+#: .\templates\store\category_list.html:408 .\templates\store\home.html:147
+#: .\templates\store\home.html:220 .\templates\store\home.html:222
+#: .\templates\store\home.html:263 .\templates\store\product_detail.html:64
+#: .\templates\store\product_detail.html:65
+#: .\templates\store\product_detail.html:68
+#: .\templates\store\user_dashboard.html:75
+#: .\templates\store\user_dashboard.html:112
+#: .\templates\store\user_dashboard.html:124
 msgid "$"
 msgstr "تومان"
 
-#: .\templates\store\category_list.html:367 .\templates\store\home.html:48
-#: .\templates\store\home.html:156 .\templates\store\home.html:228
-#: .\templates\store\product_detail.html:121
+#: .\templates\store\category_list.html:377
+#: .\templates\store\category_list.html:418 .\templates\store\home.html:48
+#: .\templates\store\home.html:156 .\templates\store\home.html:232
+#: .\templates\store\home.html:273 .\templates\store\product_detail.html:127
 msgid "add to cart"
 msgstr "اضافه به سبد خرید"
 
-#: .\templates\store\home.html:42
-msgid "newest"
+#: .\templates\store\category_list.html:389 .\templates\store\home.html:128
+#: .\templates\store\home.html:244
+msgid "new"
 msgstr "جدید"
 
-#: .\templates\store\home.html:128 .\templates\store\home.html:200
-msgid "new"
+#: .\templates\store\home.html:8
+msgid "tounique"
+msgstr "تونیک"
+
+#: .\templates\store\home.html:42
+msgid "newest"
 msgstr "جدید"
 
 #: .\templates\store\product_detail.html:10
@@ -93,32 +118,32 @@ msgid "buy product"
 msgstr "خرید محصول"
 
 #: .\templates\store\product_detail.html:60
-#: .\templates\store\product_detail.html:146
-#: .\templates\store\product_detail.html:164
+#: .\templates\store\product_detail.html:152
+#: .\templates\store\product_detail.html:170
 msgid "comments"
 msgstr "نظر"
 
-#: .\templates\store\product_detail.html:93
+#: .\templates\store\product_detail.html:99
 msgid "Select Color"
 msgstr "انتخاب رنگ"
 
-#: .\templates\store\product_detail.html:127
+#: .\templates\store\product_detail.html:133
 msgid "share:"
 msgstr "اشتراک گذاری"
 
-#: .\templates\store\product_detail.html:142
+#: .\templates\store\product_detail.html:148
 msgid "description"
 msgstr "توضیحات"
 
-#: .\templates\store\product_detail.html:204
+#: .\templates\store\product_detail.html:210
 msgid "place your comment"
 msgstr "ثبت نظر"
 
-#: .\templates\store\product_detail.html:220
+#: .\templates\store\product_detail.html:226
 msgid "save comment"
 msgstr "ذخیره"
 
-#: .\templates\store\product_detail.html:224
+#: .\templates\store\product_detail.html:230
 msgid "please login to write comments"
 msgstr "لطفا برای ثبت نظر به حساب کاربری خود وارد شوید"
 
@@ -131,63 +156,65 @@ msgstr "داشبورد کاربر"
 msgid "dashboard"
 msgstr "داشبورد"
 
-#: .\templates\store\user_dashboard.html:39
+#: .\templates\store\user_dashboard.html:41
 msgid "logout"
 msgstr "خروج"
 
-#: .\templates\store\user_dashboard.html:46
+#: .\templates\store\user_dashboard.html:48
 msgid "summary"
 msgstr "خلاصه"
 
-#: .\templates\store\user_dashboard.html:52
+#: .\templates\store\user_dashboard.html:54
 msgid "orders in service"
 msgstr "سفارشات معلق"
 
-#: .\templates\store\user_dashboard.html:63
+#: .\templates\store\user_dashboard.html:65
 msgid "paid orders"
 msgstr "سفارشات تکمیل شده"
 
-#: .\templates\store\user_dashboard.html:74
+#: .\templates\store\user_dashboard.html:76
 msgid "my balance"
 msgstr "موجودی من"
 
-#: .\templates\store\user_dashboard.html:87
+#: .\templates\store\user_dashboard.html:89
 msgid "recent orders"
 msgstr "سفارشات اخیر"
 
-#: .\templates\store\user_dashboard.html:89
+#: .\templates\store\user_dashboard.html:91
 msgid "see all orders"
 msgstr "مشاهده همه سفارشات"
 
-#: .\templates\store\user_dashboard.html:96
+#: .\templates\store\user_dashboard.html:98
 msgid "order number"
 msgstr "شماره سفارش"
 
-#: .\templates\store\user_dashboard.html:97
+#: .\templates\store\user_dashboard.html:99
 msgid "order datetime"
 msgstr "تاریخ"
 
-#: .\templates\store\user_dashboard.html:98
+#: .\templates\store\user_dashboard.html:100
 msgid "order total"
 msgstr "مجموع"
 
-#: .\templates\store\user_dashboard.html:99
+#: .\templates\store\user_dashboard.html:101
 msgid "order is_paid"
 msgstr "وضعیت"
 
-#: .\templates\store\user_dashboard.html:100
+#: .\templates\store\user_dashboard.html:102
 msgid "operation"
 msgstr "عمل"
 
-#: .\templates\store\user_dashboard.html:127
+#: .\templates\store\user_dashboard.html:129
 msgid "details"
 msgstr "جزئیات"
 
-#: .\templates\store\user_dashboard.html:134
-#| msgid "order datetime"
+#: .\templates\store\user_dashboard.html:136
 msgid "no order yet"
 msgstr "سفارشی موجود نیست"
 
-#: .\views.py:31
+#: .\views.py:30
 msgid "underwear"
 msgstr "زیر پوش"
+
+#~ msgid "popular"
+#~ msgstr "پر طرفدار"

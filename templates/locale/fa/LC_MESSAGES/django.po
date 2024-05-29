@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-21 21:54+0330\n"
-"PO-Revision-Date: 2024-05-21 22:00+0330\n"
-"Last-Translator: sdf sdf <admin@gmail.com>\n"
+"POT-Creation-Date: 2024-05-29 22:23+0330\n"
+"PO-Revision-Date: 2024-05-29 22:24+0330\n"
+"Last-Translator: آرش فیضی <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,21 +22,25 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: .\_base.html:66 .\account\logout.html:11 .\account\logout.html:23
-#: .\account\logout.html:25
+#: .\_base.html:65
+msgid "account"
+msgstr "حساب"
+
+#: .\_base.html:67 .\account\logout.html:11 .\account\logout.html:23
+#: .\account\logout.html:25 .\user_dashboard_sidebar.html:7
 msgid "logout"
 msgstr "خروج"
 
-#: .\_base.html:68 .\account\login.html:15 .\account\login.html:31
+#: .\_base.html:69 .\account\login.html:15 .\account\login.html:31
 #: .\account\signup.html:31
 msgid "login"
 msgstr "ورود"
 
-#: .\_base.html:70
+#: .\_base.html:71
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\_base.html:86 .\_base.html:298 .\_base.html:369 .\contact.html:41
+#: .\_base.html:87 .\_base.html:298 .\_base.html:369
 msgid "09181718810"
 msgstr "09181718810"
 
@@ -68,13 +72,18 @@ msgstr "صفحات"
 msgid "user"
 msgstr "کاربر"
 
-#: .\_base.html:222 .\_base.html:228
+#: .\_base.html:222 .\user_dashboard_sidebar.html:3
 msgid "dashboard"
 msgstr "داشبورد"
 
 #: .\_base.html:226
 msgid "seller"
 msgstr "فروشنده"
+
+#: .\_base.html:228
+#| msgid "apple store"
+msgid "vendor store"
+msgstr "فروشگاه فروشنده"
 
 #: .\_base.html:232
 msgid "menu"
@@ -96,7 +105,7 @@ msgstr "خرید"
 msgid "weblog"
 msgstr "وبلاگ"
 
-#: .\_base.html:259 .\contact.html:12 .\contact.html:40 .\contact.html:80
+#: .\_base.html:259
 msgid "contact us"
 msgstr "تماس با ما"
 
@@ -425,78 +434,58 @@ msgstr "پاسخ"
 msgid "home"
 msgstr "صفحه اصلی"
 
-#: .\contact.html:6
-#| msgid "contact us"
-msgid "contact"
-msgstr "تماس با ما"
+#~ msgid "contact"
+#~ msgstr "تماس با ما"
 
-#: .\contact.html:29
-msgid "office address"
-msgstr "آدرس دفتر"
+#~ msgid "office address"
+#~ msgstr "آدرس دفتر"
 
-#: .\contact.html:30
-msgid "kurdestan sanandaj industrial town"
-msgstr "شهرک صنعتی خیابان تعاون"
+#~ msgid "kurdestan sanandaj industrial town"
+#~ msgstr "شهرک صنعتی خیابان تعاون"
 
-#: .\contact.html:42
-msgid "09182841454"
-msgstr "09182841454"
+#~ msgid "09182841454"
+#~ msgstr "09182841454"
 
-#: .\contact.html:52
-msgid "email us"
-msgstr "ایمیل شما"
+#~ msgid "email us"
+#~ msgstr "ایمیل شما"
 
-#: .\contact.html:54 .\contact.html:57
-msgid "not available"
-msgstr "خارج از دسترس"
+#~ msgid "not available"
+#~ msgstr "خارج از دسترس"
 
-#: .\contact.html:68
-#| msgid "response"
-msgid "response time"
-msgstr "زمان پاسخ گویی"
+#~ msgid "response time"
+#~ msgstr "زمان پاسخ گویی"
 
-#: .\contact.html:69
-msgid "monday - friday (24/7)"
-msgstr "شنبه تا جمعه"
+#~ msgid "monday - friday (24/7)"
+#~ msgstr "شنبه تا جمعه"
 
-#: .\contact.html:70
-msgid "with no day"
-msgstr "بدون هیچ روز"
+#~ msgid "with no day"
+#~ msgstr "بدون هیچ روز"
 
-#: .\contact.html:70
-#| msgid "cloth"
-msgid "close"
-msgstr "تعطیلی"
+#~ msgid "close"
+#~ msgstr "تعطیلی"
 
-#: .\contact.html:81
-msgid ""
-"you can ask all your questions thorough this box down bellow you can enter "
-"an email you want us to answer your question to"
-msgstr ""
-"شما میتوانید تمامی سوالات خود را مانند خرید عمده تا همکاری در فروش و همینطور"
-" تبلیغات و ملحق شدن به تیم ما در کادر زیر بپرسید همینطور میتوانید ایمیل "
-"دلخواه خود را برای ما قرار دهید تا پاسخ را به ایمیل مورد نظر ارسال کنیم"
+#~ msgid ""
+#~ "you can ask all your questions thorough this box down bellow you can enter "
+#~ "an email you want us to answer your question to"
+#~ msgstr ""
+#~ "شما میتوانید تمامی سوالات خود را مانند خرید عمده تا همکاری در فروش و همینطور"
+#~ " تبلیغات و ملحق شدن به تیم ما در کادر زیر بپرسید همینطور میتوانید ایمیل "
+#~ "دلخواه خود را برای ما قرار دهید تا پاسخ را به ایمیل مورد نظر ارسال کنیم"
 
-#: .\contact.html:88
-msgid "name"
-msgstr "نام"
+#~ msgid "name"
+#~ msgstr "نام"
 
-#: .\contact.html:95
-#| msgid "our team"
-msgid "your email"
-msgstr "ایمیل شما"
+#~ msgid "your email"
+#~ msgstr "ایمیل شما"
 
-#: .\contact.html:100
-msgid "subject"
-msgstr "موضوع پرسش"
+#~ msgid "subject"
+#~ msgstr "موضوع پرسش"
 
-#: .\contact.html:105
-msgid "enter your message"
-msgstr "پیام خود را بنویسید"
+#~ msgid "enter your message"
+#~ msgstr "پیام خود را بنویسید"
 
-#: .\contact.html:108
-msgid "send message"
-msgstr "ارسال پیام"
+#~ msgid "send message"
+#~ msgstr "ارسال پیام"
 
 #~ msgid "delete this item"
 #~ msgstr "حذف این مورد"

@@ -19,7 +19,7 @@ class HomeView(generic.ListView):
     paginate_by = 12
     
     def get_queryset(self):
-        queryset = models.Product.objects.prefetch_related("images", "discount")
+        queryset = models.Product.objects.prefetch_related("images", "discount").exclude(category__title__icontains=_("underwear"))
         search = self.request.GET.get("search")
         if search:
             queryset = models.Product.objects.filter(title__icontains=search).prefetch_related("images", "discount")
