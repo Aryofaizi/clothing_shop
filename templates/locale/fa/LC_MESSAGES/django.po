@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-29 22:23+0330\n"
-"PO-Revision-Date: 2024-05-29 22:24+0330\n"
+"PO-Revision-Date: 2024-05-29 22:37+0330\n"
 "Last-Translator: آرش فیضی <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "ثبت نام"
 
 #: .\_base.html:87 .\_base.html:298 .\_base.html:369
 msgid "09181718810"
-msgstr "09181718810"
+msgstr "09182841454"
 
 #: .\_base.html:134 .\_base.html:151 .\about.html:241
 msgid "$"
