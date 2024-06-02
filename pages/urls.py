@@ -6,4 +6,5 @@ urlpatterns = [
     path("user_profile/", views.UserProfile.as_view(), name="user_profile_page"),
     path("vendor_store/", views.vendor_store, name="vendor_store_page"),
     path("blog_page/", views.BlogListView.as_view(), name="blog_page"),
+    path("blog_detail/<int:pk>/", views.BlogDetailView.as_view(), name="blog_detail"),
 ]

@@ -19,12 +19,21 @@ class Message(models.Model):
 class Blog(models.Model):
     title = models.CharField(_("title"), max_length=255)
     text = models.TextField(_("text"))
+    quote = models.TextField(_("quote"), null=True, blank=True)
+    quote_author = models.CharField(_("quote author"), max_length=255, null=True, blank=True)
     author = models.ForeignKey(get_user_model(), verbose_name=_("author"), on_delete=models.CASCADE)
+    author_bio = models.TextField(_("author bio"))
     datetime_created = models.DateTimeField(_("created"), auto_now_add=True)
     datetime_modified = models.DateTimeField(_("modified"), auto_now=True)
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse("blog_detail", kwargs={"pk":self.id})
+    
+    
+    
     
     
 class BlogImage(models.Model):

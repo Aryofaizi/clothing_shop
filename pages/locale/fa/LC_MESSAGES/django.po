@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-02 12:05+0330\n"
-"PO-Revision-Date: 2024-06-02 12:06+0330\n"
+"POT-Creation-Date: 2024-06-02 17:02+0330\n"
+"PO-Revision-Date: 2024-06-02 17:04+0330\n"
 "Last-Translator: آرش فیضی <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,11 +35,11 @@ msgstr "موضوع"
 msgid "message text"
 msgstr "پیام"
 
-#: .\models.py:11 .\models.py:23
+#: .\models.py:11 .\models.py:26
 msgid "created"
 msgstr "ساخته شده"
 
-#: .\models.py:12 .\models.py:24
+#: .\models.py:12 .\models.py:27
 msgid "modified"
 msgstr "بروزرسانی"
 
@@ -52,14 +52,28 @@ msgid "text"
 msgstr "متن"
 
 #: .\models.py:22
+msgid "quote"
+msgstr "نقل قول"
+
+#: .\models.py:23
+#| msgid "author"
+msgid "quote author"
+msgstr "نقل قول از"
+
+#: .\models.py:24
 msgid "author"
 msgstr "نویسنده"
 
-#: .\models.py:31
+#: .\models.py:25
+#| msgid "author"
+msgid "author bio"
+msgstr "بایوگرافی نویسنده"
+
+#: .\models.py:40
 msgid "blog"
 msgstr "وبلاگ"
 
-#: .\models.py:32
+#: .\models.py:41
 msgid "image"
 msgstr "عکس"
 
@@ -69,17 +83,37 @@ msgid "weblog"
 msgstr "وبلاگ"
 
 #: .\templates\pages\blog.html:23
-#| msgid "your email"
 msgid "our weblog"
 msgstr "وبلاگ ما"
 
 #: .\templates\pages\blog.html:24
-#| msgid "last name"
 msgid "last news and "
 msgstr "آخرین اخبار و "
 
 #: .\templates\pages\blog.html:38
 msgid "written by "
+msgstr "توسط"
+
+#: .\templates\pages\blog.html:48
+msgid "read more"
+msgstr "بیشتر بخوانید"
+
+#: .\templates\pages\blog.html:56
+msgid "no blogs yet"
+msgstr "هنوز وبلاگی نیست"
+
+#: .\templates\pages\blog_detail.html:9 .\templates\pages\blog_detail.html:15
+#| msgid "weblog"
+msgid "weblog detail"
+msgstr "جزئیات وبلاگ"
+
+#: .\templates\pages\blog_detail.html:38
+msgid "share"
+msgstr "اشتراک گذاری"
+
+#: .\templates\pages\blog_detail.html:90
+#| msgid "written by "
+msgid "written by"
 msgstr "توسط"
 
 #: .\templates\pages\contact.html:7

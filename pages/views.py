@@ -33,3 +33,8 @@ class BlogListView(generic.ListView):
     template_name = "pages/blog.html"
     context_object_name = "blogs"
     
+    
+    
+class BlogDetailView(generic.DetailView):
+    model = models.Blog
+    template_name = "pages/blog_detail.html"
