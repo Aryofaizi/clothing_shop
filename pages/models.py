@@ -1,6 +1,7 @@
 from django.db import models
 from django.shortcuts import reverse
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth import get_user_model
 
 class Message(models.Model):
     name = models.CharField(_("name"), max_length=100)
@@ -12,4 +13,27 @@ class Message(models.Model):
     
     def get_absolute_url(self):
         return reverse("contact_page")
+    
+    
+    
+class Blog(models.Model):
+    title = models.CharField(_("title"), max_length=255)
+    text = models.TextField(_("text"))
+    author = models.ForeignKey(get_user_model(), verbose_name=_("author"), on_delete=models.CASCADE)
+    datetime_created = models.DateTimeField(_("created"), auto_now_add=True)
+    datetime_modified = models.DateTimeField(_("modified"), auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    
+class BlogImage(models.Model):
+    blog = models.ForeignKey(Blog, verbose_name=_("blog"), on_delete=models.CASCADE, related_name="images")
+    image = models.ImageField(_("image"), upload_to="blog_images", blank=True)
+    
+
+    def __str__(self):
+        return f"{self.blog} + image"
+    
+    
     

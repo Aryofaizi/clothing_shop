@@ -25,3 +25,11 @@ class UserProfile(LoginRequiredMixin, generic.UpdateView):
     
 def vendor_store(request):
     return render(request, "pages/vendor_store.html")
+
+
+
+class BlogListView(generic.ListView):
+    model = models.Blog
+    template_name = "pages/blog.html"
+    context_object_name = "blogs"
+    

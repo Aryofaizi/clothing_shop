@@ -1,0 +1,82 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+{% load store_filters %}
+{% load jalali_tags %}
+
+{% block page_title %}
+  {% trans "weblog" %}
+{% endblock page_title %}
+
+
+
+{% block content %}
+{% trans "weblog" as header %}
+{% include "header.html" with header=header %}
+
+
+<div class="blog-area py-100">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6 mx-auto">
+              <div class="site-heading text-center">
+                  <span class="site-title-tagline"> {% trans "our weblog" %}</span>
+                  <h2 class="site-title"> {% trans "last news and " %}<span>{% trans "weblog" %}</span></h2>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        {% for blog in blogs %}
+        <div class="col-md-6 col-lg-4">
+            <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
+                <div class="blog-item-img">
+                    <img src="{{blog.images.all|first_image}}" alt="Thumb">
+                </div>
+                <div class="blog-item-info">
+                    <div class="blog-item-meta">
+                        <ul>
+                            <li><a href="#"><i class="far fa-user-circle"></i> {% trans "written by " %}  {{blog.author}}</a></li>
+                            <li><a href="#"><i class="far fa-calendar-alt"></i> {{blog.datetime_created|to_jalali:'%Y/%m/%d '|persian_number }}  </a></li>
+                        </ul>
+                    </div>
+                    <h4 class="blog-title">
+                        <a href="#"> {{blog.title}}</a>
+                    </h4>
+                    <p>
+                        {{blog.text|truncatechars:40}}
+                    </p>
+                    <a class="theme-btn" href="#">بیشتر بخوانید<i class="fas fa-arrow-left-long"></i></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+
+      <div class="pagination-area mb-0">
+          <div aria-label="نمونه پیمایش صفحه">
+              <ul class="pagination">
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true"><i class="far fa-arrow-right"></i></span>
+                      </a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><span class="page-link">...</span></li>
+                  <li class="page-item"><a class="page-link" href="#">10</a></li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true"><i class="far fa-arrow-left"></i></span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+  </div>
+</div>
+
+
+{% include "newsletter.html" %}
+{% endblock content %}

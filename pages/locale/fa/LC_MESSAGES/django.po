@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-23 12:19+0330\n"
-"PO-Revision-Date: 2024-05-29 22:36+0330\n"
+"POT-Creation-Date: 2024-06-02 12:05+0330\n"
+"PO-Revision-Date: 2024-06-02 12:06+0330\n"
 "Last-Translator: آرش فیضی <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,30 +18,69 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\models.py:6 .\templates\pages\contact.html:98
+#: .\models.py:7 .\templates\pages\contact.html:98
 msgid "name"
 msgstr "نام"
 
-#: .\models.py:7 .\templates\pages\user_profile.html:74
+#: .\models.py:8 .\templates\pages\user_profile.html:74
 #: .\templates\pages\user_profile.html:76
 msgid "email"
 msgstr "ایمیل"
 
-#: .\models.py:8 .\templates\pages\contact.html:110
+#: .\models.py:9 .\templates\pages\contact.html:110
 msgid "subject"
 msgstr "موضوع"
 
-#: .\models.py:9
+#: .\models.py:10
 msgid "message text"
 msgstr "پیام"
 
-#: .\models.py:10
+#: .\models.py:11 .\models.py:23
 msgid "created"
 msgstr "ساخته شده"
 
-#: .\models.py:11
+#: .\models.py:12 .\models.py:24
 msgid "modified"
 msgstr "بروزرسانی"
+
+#: .\models.py:20
+msgid "title"
+msgstr "موضوع"
+
+#: .\models.py:21
+msgid "text"
+msgstr "متن"
+
+#: .\models.py:22
+msgid "author"
+msgstr "نویسنده"
+
+#: .\models.py:31
+msgid "blog"
+msgstr "وبلاگ"
+
+#: .\models.py:32
+msgid "image"
+msgstr "عکس"
+
+#: .\templates\pages\blog.html:8 .\templates\pages\blog.html:14
+#: .\templates\pages\blog.html:24
+msgid "weblog"
+msgstr "وبلاگ"
+
+#: .\templates\pages\blog.html:23
+#| msgid "your email"
+msgid "our weblog"
+msgstr "وبلاگ ما"
+
+#: .\templates\pages\blog.html:24
+#| msgid "last name"
+msgid "last news and "
+msgstr "آخرین اخبار و "
+
+#: .\templates\pages\blog.html:38
+msgid "written by "
+msgstr "توسط"
 
 #: .\templates\pages\contact.html:7
 msgid "contact"
@@ -56,7 +95,7 @@ msgstr "تماس با ما"
 msgid "office address"
 msgstr "آدرس دفتر"
 
-#: .\templates\pages\contact.html:31 .\templates\pages\vendor_store.html:42
+#: .\templates\pages\contact.html:31 .\templates\pages\vendor_store.html:44
 msgid "kurdestan sanandaj industrial town"
 msgstr "شهرک صنعتی خیابان تعاون خیابان 15 متری "
 
@@ -149,26 +188,26 @@ msgstr "نام کاربری"
 msgid "save changes"
 msgstr "ذخیره تغییرات"
 
-#: .\templates\pages\vendor_store.html:6
+#: .\templates\pages\vendor_store.html:8
 msgid "vendor"
 msgstr "فروشنده"
 
-#: .\templates\pages\vendor_store.html:11
+#: .\templates\pages\vendor_store.html:13
 msgid "vendor store"
 msgstr "فروشگاه فروشنده"
 
-#: .\templates\pages\vendor_store.html:27
+#: .\templates\pages\vendor_store.html:29
 msgid "tounique"
 msgstr "تونیک"
 
-#: .\templates\pages\vendor_store.html:34
+#: .\templates\pages\vendor_store.html:36
 msgid "comment(+25 thousand)"
 msgstr "(2.5 هزار نظر)"
 
-#: .\templates\pages\vendor_store.html:37
+#: .\templates\pages\vendor_store.html:39
 msgid " 9182841454 (98+)"
 msgstr "9182841454 (98+)"
 
-#: .\templates\pages\vendor_store.html:46
+#: .\templates\pages\vendor_store.html:48
 msgid "sell 250"
 msgstr "فروش 100+"
