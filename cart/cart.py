@@ -49,7 +49,7 @@ class Cart():
             product_id, size, color_id = key.split(",")
             try:
                 product = Product.objects.select_related("category").prefetch_related("images", "discount").get(id=int(product_id))
-                discount = Discount.objects.get(product=product)
+                discount = Discount.objects.filter(product=product).first()
                 color = Color.objects.get(id=int(color_id))
                 size = Size.objects.get(id=int(size))
                 item["product_obj"] = product
@@ -60,7 +60,7 @@ class Cart():
                 else:
                     item["total_price"] = item["quantity"] * product.price
                 yield item
-            except (Product.DoesNotExist, Color.DoesNotExist, Size.DoesNotExist, ValueError) as e:
+            except (Product.DoesNotExist, Color.DoesNotExist, Size.DoesNotExist, Discount.DoesNotExist, ValueError) as e:
                 print(f"Error processing item {key}: {e}")
 
             
