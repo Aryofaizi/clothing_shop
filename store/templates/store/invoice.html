@@ -1,0 +1,104 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load store_filters %}
+{% load jalali_tags %}
+
+{% block page_title %}
+{% trans "bulk order" %}
+{% endblock page_title %}
+
+
+{% block content %}
+<div class="invoice-area bg pt-40 pb-90">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="invoice-print">
+                  <a href="#" class="invoice-print-btn theme-btn"> {% trans "print invoice" %}</a>
+              </div>
+              <div class="invoice-wrapper">
+                  <div class="invoice-header">
+                      <div class="invoice-logo">
+                          <img src="{% static 'assets/img/logo/logo.png' %}" alt>
+                      </div>
+                      <div class="invoice-number invoice-width">
+                          <h3>{% trans "invoice" %}</h3>
+                          <p>{{invoice.id}}</p>
+                      </div>
+                  </div>
+                  <div class="invoice-date-box">
+                      <div class="invoice-date">
+                          <h6> {% trans "invoice date " %}</h6>
+                          <p>{{invoice.datetime_created|to_jalali:'%Y/%m/%d '|persian_number }}</p>
+                      </div>
+                      <div class="invoice-date invoice-width">
+                          <h6>  {% trans "invoice maturity date " %}</h6>
+                          <p>{{invoice.datetime_created|to_jalali:'%Y/%m/%d '|persian_number }}</p>
+                      </div>
+                  </div>
+                  <div class="invoice-address-box">
+                      <div class="invoice-address">
+                          <h5> {% trans "seller" %}</h5>
+                          <ul>
+                              <li>{% trans "tounique" %}</li>
+                              <li>{% trans "09182841454" %}</li>
+                              <li> {% trans "kurdestan sanandaj industrial town" %} </li>
+                          </ul>
+                      </div>
+                      <div class="invoice-address invoice-width">
+                          <h5>{% trans "client" %}</h5>
+                          <ul>
+                              <li> {{invoice.first_name}}</li>
+                              <li>{{invoice.phone_number}}</li>
+                              <li>  {{invoice.address}}</li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="invoice-table">
+                      <table>
+                          <thead>
+                          <tr>
+                              <th>{% trans "product" %}</th>
+                              <th>{% trans "quantity" %}</th>
+                              <th>{% trans "price" %}</th>
+                              <th>{% trans "with discount" %} </th>
+                              <th>{% trans "tax" %} </th>
+                              <th>{% trans "total" %}</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                        {% for item in invoice.items.all %}
+                        <tr>
+                            <td> {{item.product.title}}</td>
+                            <td>{{item.quantity}}</td>                            
+                            <td>{{item.product.price}} {% trans "$" %}</td>   
+                            {% for discount in item.product.discount.all%}
+                            <td>{{discount.calculate_discount}} {% trans "$" %}</td>
+                            {%empty%}
+                            <td>{% trans "no discount" %}</td>
+                            {% endfor %}   
+                            <td>{% trans "no tax" %} </td>
+                            <td>{{item.price}} {% trans "$" %}</td>
+                        {% endfor %}
+                          <tr>
+                              <th colspan="5">{% trans "total with tax" %}</th>
+                              <th> {{invoice.get_order_price_with_tax}} {% trans "$" %}</th>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="invoice-bottom">
+                      <a href="#">{% trans "website domain" %}</a>
+                      {% comment %} <a href="#"><span class="__cf_email__" data-cfemail="177e7961787e747257726f767a677b723974787a">ad@info.com</span></a> {% endcomment %}
+                      <a href="#">{% trans "website phone number" %}</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<a href="#" id="scroll-top"><i class="far fa-arrow-up-from-arc"></i></a>
+{% endblock content %}

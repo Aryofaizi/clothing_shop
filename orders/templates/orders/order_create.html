@@ -125,8 +125,10 @@
                                     <li class="shop-cart-total"><strong>{% trans "order total" %}</strong> <span>{{cart.get_total_price_with_tax|intcomma:False}} {% trans "$" %}</span></li>
                                 </ul>
                                 <div class="text-end mt-40">
-                                    <button type="submit" class="theme-btn">   {% trans "place order" %}<i
+                                    <button type="submit" name="single" class="theme-btn">   {% trans "place order" %}<i
                                             class="fas fa-arrow-left-long"></i></button>
+                                            <button type="submit" name="bulk" class="theme-btn">   {% trans "place bulk order" %}<i
+                                                class="fas fa-arrow-left-long"></i></button>
                                 </div>
                             </div>
                           </div>

@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-29 22:17+0330\n"
-"PO-Revision-Date: 2024-05-29 22:18+0330\n"
-"Last-Translator: آرش فیضی <admin@gmail.com>\n"
+"POT-Creation-Date: 2024-06-19 22:12+0330\n"
+"PO-Revision-Date: 2024-06-19 22:15+0330\n"
+"Last-Translator: test test <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,8 +46,7 @@ msgstr "امتیاز"
 msgid "comment text"
 msgstr "متن دیدگاه"
 
-#: .\models.py:139
-#| msgid "buy product"
+#: .\models.py:139 .\templates\store\invoice.html:63
 msgid "product"
 msgstr "محصول"
 
@@ -80,7 +79,9 @@ msgstr "تخفیف"
 #: .\templates\store\category_list.html:367
 #: .\templates\store\category_list.html:408 .\templates\store\home.html:147
 #: .\templates\store\home.html:220 .\templates\store\home.html:222
-#: .\templates\store\home.html:263 .\templates\store\product_detail.html:64
+#: .\templates\store\home.html:263 .\templates\store\invoice.html:76
+#: .\templates\store\invoice.html:78 .\templates\store\invoice.html:83
+#: .\templates\store\invoice.html:87 .\templates\store\product_detail.html:64
 #: .\templates\store\product_detail.html:65
 #: .\templates\store\product_detail.html:68
 #: .\templates\store\user_dashboard.html:75
@@ -101,13 +102,93 @@ msgstr "اضافه به سبد خرید"
 msgid "new"
 msgstr "جدید"
 
-#: .\templates\store\home.html:8
+#: .\templates\store\home.html:8 .\templates\store\invoice.html:45
 msgid "tounique"
 msgstr "تونیک"
 
 #: .\templates\store\home.html:42
 msgid "newest"
 msgstr "جدید"
+
+#: .\templates\store\invoice.html:9
+msgid "bulk order"
+msgstr "سفارش عمده"
+
+#: .\templates\store\invoice.html:19
+msgid "print invoice"
+msgstr "چاپ فاکتور"
+
+#: .\templates\store\invoice.html:27
+msgid "invoice"
+msgstr "فاکتور فروش"
+
+#: .\templates\store\invoice.html:33
+msgid "invoice date "
+msgstr "تاریخ ایجاد فاکتور"
+
+#: .\templates\store\invoice.html:37
+msgid "invoice maturity date "
+msgstr "تاریخ سررسید"
+
+#: .\templates\store\invoice.html:43
+#| msgid "see all orders"
+msgid "seller"
+msgstr "فروشنده"
+
+#: .\templates\store\invoice.html:46
+msgid "09182841454"
+msgstr "09182841454"
+
+#: .\templates\store\invoice.html:47
+msgid "kurdestan sanandaj industrial town"
+msgstr "کردستان سنندج شهرک صنعتی شماره یک خیابان تعاون خیابان 15 متری "
+
+#: .\templates\store\invoice.html:51
+#| msgid "percent"
+msgid "client"
+msgstr "مشتری"
+
+#: .\templates\store\invoice.html:64
+msgid "quantity"
+msgstr "تعداد"
+
+#: .\templates\store\invoice.html:65
+#| msgid "percent"
+msgid "price"
+msgstr "قیمت"
+
+#: .\templates\store\invoice.html:66
+msgid "with discount"
+msgstr "با تخفیف"
+
+#: .\templates\store\invoice.html:67
+msgid "tax"
+msgstr "مالیات"
+
+#: .\templates\store\invoice.html:68
+#| msgid "order total"
+msgid "total"
+msgstr "مجموع"
+
+#: .\templates\store\invoice.html:80
+msgid "no discount"
+msgstr "بدون تخفیف"
+
+#: .\templates\store\invoice.html:82
+msgid "no tax"
+msgstr "بدون مالیات"
+
+#: .\templates\store\invoice.html:86
+msgid "total with tax"
+msgstr "مجموع"
+
+#: .\templates\store\invoice.html:93
+msgid "website domain"
+msgstr "www.tounique.ir"
+
+#: .\templates\store\invoice.html:96
+msgid "website phone number"
+msgstr "09182841454"
 
 #: .\templates\store\product_detail.html:10
 msgid "product detail"
@@ -212,7 +293,7 @@ msgstr "جزئیات"
 msgid "no order yet"
 msgstr "سفارشی موجود نیست"
 
-#: .\views.py:30
+#: .\views.py:22 .\views.py:30
 msgid "underwear"
 msgstr "زیر پوش"
 
