@@ -4,6 +4,7 @@
 {% load i18n %}
 {% load jalali_tags %}
 {% load store_filters %}
+{% load humanize %}
 
 {% block page_title %}
   {% trans "user dashboard" %}
@@ -107,10 +108,10 @@
                                            <tr>
                                                <td><span class="table-list-code">{{order.id}}</span></td>
                                                <td>{{order.datetime_modified|to_jalali:'%Y/%m/%d '|persian_number }} </td>
-                                               <td>{{order|sum_order_items}} {% trans "$" %}</td>
+                                               <td>{{order|sum_order_items|intcomma:False}} {% trans "$" %}</td>
                                                <td><span class="badge badge-success">تکمیل شد</span></td>
                                                <td>
-                                                   <a href="order-detail.html"
+                                                   <a href="{{order.get_absolute_url}}"
                                                       class="btn btn-outline-secondary btn-sm rounded-2"
                                                       data-tooltip="tooltip" title="جزئیات"><i class="far fa-eye"></i></a>
                                                </td>
@@ -119,10 +120,10 @@
                                            <tr>
                                                <td><span class="table-list-code">{{order.id}}</span></td>
                                                <td>{{order.datetime_modified|to_jalali:'%Y/%m/%d '|persian_number }} </td>
-                                               <td>{{order|sum_order_items}} {% trans "$" %}</td>
+                                               <td>{{order|sum_order_items|intcomma:False}} {% trans "$" %}</td>
                                                <td><span class="badge badge-danger">لغو شد</span></td>
                                                <td>
-                                                   <a href="#"
+                                                   <a href="{{order.get_absolute_url}}"
                                                       class="btn btn-outline-secondary btn-sm rounded-2"
                                                       data-tooltip="tooltip" title="{% trans 'details' %}"><i class="far fa-eye"></i></a>
                                                </td>

@@ -110,7 +110,7 @@ class UserDashboard(LoginRequiredMixin, generic.ListView):
         context = super().get_context_data(**kwargs)
         context["not_paid_orders"] = self.queryset.filter(is_paid=False)
         context["paid_orders"] = self.queryset.filter(is_paid=True)
-        context["sliced_orders"] = Order.objects.filter(user = self.request.user).prefetch_related("items")[:6]
+        context["sliced_orders"] = Order.objects.order_by("-id").filter(user = self.request.user).prefetch_related("items")[:6]
         return context
 
 
@@ -118,3 +118,9 @@ def about(request):
     return render(request, "about.html")
 
 
+
+
+class InvoiceDetailView(generic.DetailView):
+    model = Order
+    template_name = "store/invoice.html"
+    context_object_name = "invoice"

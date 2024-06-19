@@ -1,6 +1,7 @@
 from django.db import models
 from store.models import Product
 from django.contrib.auth import get_user_model
+from django.shortcuts import reverse
 from store.models import Size, Color
 
 class Order(models.Model):
@@ -28,6 +29,10 @@ class Order(models.Model):
     def get_order_price_with_tax(self):
         return self.get_order_price() + 50_000
     
+    def get_absolute_url(self):
+        return reverse("invoice_detail", kwargs={"pk": self.pk})
+    
+    
     
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="items")
@@ -36,6 +41,7 @@ class OrderItem(models.Model):
     price = models.PositiveIntegerField()
     size = models.ForeignKey(Size, on_delete=models.CASCADE)
     color = models.ForeignKey(Color, on_delete=models.CASCADE)
+    total = models.PositiveIntegerField()
     
     def __str__(self):
         return f"order : {self.order} : {self.product}"

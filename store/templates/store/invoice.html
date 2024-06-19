@@ -4,6 +4,7 @@
 {% load static %}
 {% load store_filters %}
 {% load jalali_tags %}
+{% load humanize %}
 
 {% block page_title %}
 {% trans "bulk order" %}
@@ -25,7 +26,7 @@
                       </div>
                       <div class="invoice-number invoice-width">
                           <h3>{% trans "invoice" %}</h3>
-                          <p>{{invoice.id}}</p>
+                          <p>{{invoice.id|intcomma:False}}</p>
                       </div>
                   </div>
                   <div class="invoice-date-box">
@@ -50,7 +51,7 @@
                       <div class="invoice-address invoice-width">
                           <h5>{% trans "client" %}</h5>
                           <ul>
-                              <li> {{invoice.first_name}}</li>
+                              <li> {{invoice.first_name}} {{invoice.last_name}}</li>
                               <li>{{invoice.phone_number}}</li>
                               <li>  {{invoice.address}}</li>
                           </ul>
@@ -72,19 +73,19 @@
                         {% for item in invoice.items.all %}
                         <tr>
                             <td> {{item.product.title}}</td>
-                            <td>{{item.quantity}}</td>                            
-                            <td>{{item.product.price}} {% trans "$" %}</td>   
+                            <td>{{item.quantity|intcomma:False}}</td>                            
+                            <td>{{item.product.price|intcomma:False}} {% trans "$" %}</td>   
                             {% for discount in item.product.discount.all%}
-                            <td>{{discount.calculate_discount}} {% trans "$" %}</td>
+                            <td>{{discount.calculate_discount|intcomma:False}} {% trans "$" %}</td>
                             {%empty%}
                             <td>{% trans "no discount" %}</td>
                             {% endfor %}   
                             <td>{% trans "no tax" %} </td>
-                            <td>{{item.price}} {% trans "$" %}</td>
+                            <td>{{item.total|intcomma:False}} {% trans "$" %}</td>
                         {% endfor %}
                           <tr>
                               <th colspan="5">{% trans "total with tax" %}</th>
-                              <th> {{invoice.get_order_price_with_tax}} {% trans "$" %}</th>
+                              <th> {{invoice.get_order_price|intcomma:False}} {% trans "$" %}</th>
                           </tr>
                           </tbody>
                       </table>
